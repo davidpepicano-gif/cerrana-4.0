@@ -1,20 +1,58 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Cerrana AI - Sales Systems & Automation Platform
 
-# Run and deploy your AI Studio app
+![Cerrana AI Hero](https://via.placeholder.com/1200x630/0f0a1e/7c3aed?text=Cerrana+AI)
 
-This contains everything you need to run your app locally.
+**Cerrana AI** is a modern, conversion-focused web application designed for an agency specializing in Sales Systems, CRM implementation, and AI Automation for SMBs. 
 
-View your app in AI Studio: https://ai.studio/apps/drive/1i3kz48YJat5_ENAHPKoIBNXR3kAQkDu8
+Built with a "Dark Tech" aesthetic, it prioritizes clarity, speed, and conversion, featuring a fully responsive design and interactive AI demonstrations.
 
-## Run Locally
+## 🚀 Key Features
 
-**Prerequisites:**  Node.js
+*   **Modern "Dark Tech" UI**: Glassmorphism, neon glows, and a deep violet/slate palette designed to convey sophistication and technology.
+*   **Interactive Veo Demo**: Integrated Google GenAI (Veo 3.1) to demonstrate AI video generation capabilities directly in the browser.
+*   **Conversion Focused**: Strategic CTAs, clear pricing tiers (Core, Growth, Full Funnel), and optimized service breakdowns.
+*   **Responsive Layout**: Mobile-first design with a custom sticky CTA for mobile users and smooth navigation.
+*   **Dynamic Routing**: Full multi-page routing for Home, Services, Pricing, About, and Contact.
 
+## 🛠 Tech Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+*   **Frontend**: React 19, TypeScript
+*   **Styling**: Tailwind CSS (Custom Config)
+*   **Icons**: Lucide React
+*   **AI Integration**: Google GenAI SDK (`@google/genai`) - Veo 3.1 Model
+*   **Fonts**: Orbitron (Headings), Poppins (Body)
+
+## 📦 Project Structure
+
+```bash
+├── components/      # Reusable UI components (Layout, Header, Footer)
+├── pages/          # Page views (Home, Services, Pricing, About, Contact)
+├── types.ts        # TypeScript interfaces
+├── index.html      # Entry HTML with Tailwind & Font setup
+├── index.tsx       # Application Entry Point
+└── App.tsx         # Main Router Configuration
+```
+
+## 🔧 Setup & Development
+
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/davidpepicano-gif/cerrana-4.0.git
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Environment Setup**
+    Ensure you have a valid Google GenAI API Key enabled for the project to use the Veo demo.
+
+4.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
+
+## 📄 License
+
+Proprietary software for Cerrana AI. All rights reserved.

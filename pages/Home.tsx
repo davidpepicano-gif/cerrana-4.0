@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, CheckCircle, ChevronDown, Zap, Users, Repeat, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronDown, Zap, Users, Repeat, Star, Upload, Loader2, Play, Film } from 'lucide-react';
+import { GoogleGenAI } from "@google/genai";
 
 const FeatureCard: React.FC<{ 
   icon: React.ElementType, 
@@ -35,9 +36,9 @@ const ClientCard: React.FC<{
   title: string,
   problems: string[]
 }> = ({ title, problems }) => (
-  <div className="bg-dark-900 p-6 rounded-2xl border border-white/10 hover:border-brand-500/30 transition-colors min-w-[300px] h-full flex flex-col">
+  <div className="bg-dark-900 p-6 rounded-2xl border border-white/10 hover:border-brand-500/30 transition-colors">
     <h3 className="font-display font-bold text-lg text-white mb-4 pb-2 border-b border-white/10">{title}</h3>
-    <ul className="space-y-3 flex-grow">
+    <ul className="space-y-3">
       {problems.map((p, i) => (
         <li key={i} className="flex items-start gap-2 text-sm text-slate-400">
           <CheckCircle size={16} className="text-brand-500 mt-0.5 shrink-0 shadow-[0_0_8px_rgba(139,92,246,0.4)] rounded-full" />
@@ -48,88 +49,186 @@ const ClientCard: React.FC<{
   </div>
 );
 
-// Hero graphic component
-const HeroGraphic = () => (
-  <div className="relative w-full aspect-square md:aspect-[4/3] flex items-center justify-center">
-    {/* Main "Blob" Container */}
-    <div className="relative w-[80%] h-[80%] animate-float">
-      {/* 1. Base Gradient Layer - The main fluid shape */}
-      <div className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-gradient-to-br from-brand-600 via-brand-500 to-cyan-400 blur-2xl opacity-60 animate-morph mix-blend-screen"></div>
-      
-      {/* 2. Secondary Liquid Layer - Adds depth and motion */}
-      <div className="absolute top-[10%] left-[10%] w-[80%] h-[80%] rounded-[50%_50%_30%_70%/50%_30%_70%_40%] bg-gradient-to-tr from-cyan-500 via-purple-500 to-brand-700 blur-xl opacity-70 animate-morph-reverse mix-blend-overlay"></div>
-      
-      {/* 3. Glossy Highlights - The "shiny" plastic look */}
-      <div className="absolute top-[20%] left-[20%] w-[30%] h-[20%] rounded-full bg-white blur-xl opacity-40 mix-blend-overlay animate-pulse-slow"></div>
-      
-      {/* 4. Deep shadows/Contrast */}
-      <div className="absolute bottom-[20%] right-[20%] w-[40%] h-[40%] rounded-full bg-brand-950 blur-2xl opacity-50 mix-blend-multiply"></div>
+const VeoDemo: React.FC = () => {
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [status, setStatus] = useState<string>('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-      {/* 5. SVG Filter Overlay to create the "Liquid" distortion effect */}
-      <svg className="absolute inset-0 w-full h-full opacity-50 mix-blend-soft-light" style={{ filter: 'url(#liquid)' }}>
-         <rect width="100%" height="100%" fill="url(#grad1)" />
-         <defs>
-           <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-             <stop offset="0%" style={{ stopColor: '#7c3aed', stopOpacity: 1 }} />
-             <stop offset="100%" style={{ stopColor: '#22d3ee', stopOpacity: 1 }} />
-           </linearGradient>
-           <filter id="liquid">
-             <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
-             <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
-           </filter>
-         </defs>
-      </svg>
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result as string);
+        setVideoUrl(null); // Reset video if new image selected
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const generateVideo = async () => {
+    const fileInput = fileInputRef.current;
+    if (!imagePreview || !fileInput?.files?.[0]) return;
+    
+    try {
+      // 1. Check API Key
+      const hasKey = await (window as any).aistudio.hasSelectedApiKey();
+      if (!hasKey) {
+        await (window as any).aistudio.openSelectKey();
+        // Race condition mitigation: assume success and proceed, or prompt user to click again if it fails
+      }
+
+      setIsGenerating(true);
+      setStatus('Initializing Neural Engine...');
+
+      // 2. Prepare Data
+      const file = fileInput.files[0];
+      const base64Data = imagePreview.split(',')[1];
       
-      {/* 6. "RE" Text Element - Partially obscured/integrated */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-black text-9xl text-white mix-blend-overlay opacity-30 tracking-tighter select-none pointer-events-none">
-        RE
-      </div>
+      // 3. Initialize Client
+      // Create new instance to ensure latest API key is used
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+
+      setStatus('Uploading to Veo-3.1...');
+      
+      // 4. Start Generation
+      let operation = await ai.models.generateVideos({
+        model: 'veo-3.1-fast-generate-preview',
+        prompt: 'Cinematic, fluid motion, organic movement, high quality, 4k, slow motion',
+        image: {
+          imageBytes: base64Data,
+          mimeType: file.type,
+        },
+        config: {
+          numberOfVideos: 1,
+          resolution: '720p',
+          aspectRatio: '16:9'
+        }
+      });
+
+      // 5. Poll for completion
+      setStatus('Generating Video (this takes a moment)...');
+      while (!operation.done) {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        operation = await ai.operations.getVideosOperation({ operation: operation });
+      }
+
+      // 6. Fetch Result
+      if (operation.response?.generatedVideos?.[0]?.video?.uri) {
+        setStatus('Downloading Stream...');
+        const downloadLink = operation.response.generatedVideos[0].video.uri;
+        const response = await fetch(`${downloadLink}&key=${process.env.API_KEY}`);
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        setVideoUrl(url);
+      } else {
+        throw new Error("No video generated");
+      }
+
+    } catch (error: any) {
+      console.error(error);
+      if (error.message?.includes("Requested entity was not found") || error.message?.includes("404")) {
+        setStatus("Session expired. Please select API Key again.");
+        await (window as any).aistudio.openSelectKey();
+      } else {
+        setStatus('Generation failed. Try again.');
+      }
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
+  return (
+    <div className="w-full bg-dark-900 rounded-2xl border border-brand-500/30 overflow-hidden shadow-[0_0_40px_rgba(124,58,237,0.2)] relative group">
+       {/* Tech decorative header */}
+       <div className="h-8 bg-dark-950 border-b border-white/5 flex items-center justify-between px-4">
+          <div className="flex gap-1.5">
+             <div className="w-2 h-2 rounded-full bg-red-500"></div>
+             <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+             <div className="w-2 h-2 rounded-full bg-green-500"></div>
+          </div>
+          <div className="text-[10px] font-mono text-brand-400 tracking-widest uppercase opacity-70">
+             VEO-3.1 // NEURAL ANIMATION
+          </div>
+       </div>
+
+       <div className="p-1 bg-dark-950">
+          <div className="relative aspect-video bg-dark-900 rounded-lg overflow-hidden border border-white/5 group-hover:border-brand-500/20 transition-colors">
+            {videoUrl ? (
+              <video 
+                src={videoUrl} 
+                autoPlay 
+                loop 
+                muted 
+                controls 
+                className="w-full h-full object-cover"
+              />
+            ) : imagePreview ? (
+              <img 
+                src={imagePreview} 
+                alt="Preview" 
+                className="w-full h-full object-cover opacity-80"
+              />
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-500 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-10">
+                 <Film size={48} className="mb-4 opacity-50" />
+                 <span className="text-sm font-mono uppercase tracking-wide">Ready for Input</span>
+              </div>
+            )}
+
+            {/* Overlay Interface */}
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-transparent to-transparent pointer-events-none"></div>
+            
+            <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-4 pointer-events-auto z-10">
+               {isGenerating ? (
+                 <div className="bg-dark-900/80 backdrop-blur border border-brand-500/30 rounded-xl p-4 flex items-center gap-4">
+                    <Loader2 className="animate-spin text-brand-400" size={24} />
+                    <div className="flex-grow">
+                       <div className="text-xs font-mono text-brand-300 mb-1 uppercase tracking-wider">{status}</div>
+                       <div className="h-1 bg-dark-800 rounded-full overflow-hidden">
+                          <div className="h-full bg-brand-500 w-1/3 animate-glow"></div>
+                       </div>
+                    </div>
+                 </div>
+               ) : (
+                 <div className="flex gap-3">
+                   <div className="flex-grow">
+                      <input 
+                        type="file" 
+                        ref={fileInputRef}
+                        accept="image/*"
+                        onChange={handleFileSelect}
+                        className="hidden"
+                        id="veo-upload"
+                      />
+                      <label 
+                        htmlFor="veo-upload"
+                        className="flex items-center justify-center gap-2 w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl cursor-pointer transition-all text-sm font-medium text-slate-300"
+                      >
+                         <Upload size={16} /> {imagePreview ? 'Change Image' : 'Upload Image'}
+                      </label>
+                   </div>
+                   {imagePreview && (
+                     <button 
+                       onClick={generateVideo}
+                       className="px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow-[0_0_15px_rgba(124,58,237,0.4)] flex items-center gap-2 transition-all"
+                     >
+                       <Play size={16} fill="currentColor" /> ANIMATE
+                     </button>
+                   )}
+                 </div>
+               )}
+            </div>
+          </div>
+       </div>
     </div>
-  </div>
-);
-
-const clients = [
-  {
-    title: "Attorneys & Law Firms",
-    problems: ["Missed calls = lost cases", "Manual intake takes too long", "Follow-up is inconsistent"]
-  },
-  {
-    title: "Car Dealerships",
-    problems: ["Leads get cold quickly", "Repetitive inventory questions", "Booking test drives is manual"]
-  },
-  {
-    title: "Agencies & Service Biz",
-    problems: ["Feast or famine pipeline", "Proposal chasing eats time", "Need to automate onboarding"]
-  },
-  {
-    title: "Cleaning Business",
-    problems: ["Missed calls while on jobs", "Scheduling headaches", "No review generation"]
-  },
-  {
-    title: "Plumbing",
-    problems: ["Emergency calls go to voicemail", "Dispatch coordination", "High lead cost"]
-  },
-  {
-    title: "Consultant Services",
-    problems: ["Feast or famine pipeline", "Manual qualifying", "Chasing invoices"]
-  }
-];
+  );
+};
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -320, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 320, behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="pb-24 md:pb-0 bg-dark-950 overflow-x-hidden">
@@ -154,7 +253,7 @@ export const Home: React.FC = () => {
                 <span className="tracking-wide">PREDICTABLE SALES SYSTEMS</span>
               </div>
               
-              <h1 className="text-3xl md:text-5xl font-display font-bold text-white tracking-tight mb-8 leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight mb-8 leading-tight">
                 STOP CHASING TOOLS. <br className="hidden md:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-brand-200 to-cyan-300 drop-shadow-[0_0_10px_rgba(139,92,246,0.3)]">
                   BUILD A SALES SYSTEM.
@@ -181,9 +280,14 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Hero Graphic */}
+            {/* Right Column: Veo Demo */}
             <div className="relative">
-               <HeroGraphic />
+               {/* Decorative glow behind the demo */}
+               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-600/20 blur-[80px] rounded-full pointer-events-none"></div>
+               <VeoDemo />
+               <div className="mt-4 text-center text-xs text-slate-500 font-mono">
+                  POWERED BY VEO-3.1 // GENERATIVE VIDEO PREVIEW
+               </div>
             </div>
 
           </div>
@@ -225,47 +329,35 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Who We Help - Carousel */}
-      <section className="py-24 bg-dark-900/50 border-y border-white/5 overflow-hidden">
+      {/* Who We Help */}
+      <section className="py-24 bg-dark-900/50 border-y border-white/5">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
               <h2 className="text-3xl font-display font-bold text-white mb-2 tracking-wide">WHO WE HELP</h2>
               <p className="text-slate-400">Businesses ready to scale beyond manual chaos.</p>
             </div>
-            <div className="flex items-center gap-4">
-               {/* Navigation Buttons */}
-               <div className="flex gap-2">
-                 <button onClick={scrollLeft} className="p-3 rounded-full bg-dark-800 hover:bg-dark-700 text-white border border-white/10 hover:border-brand-500/50 transition-all shadow-lg">
-                   <ChevronLeft size={20} />
-                 </button>
-                 <button onClick={scrollRight} className="p-3 rounded-full bg-dark-800 hover:bg-dark-700 text-white border border-white/10 hover:border-brand-500/50 transition-all shadow-lg">
-                   <ChevronRight size={20} />
-                 </button>
-               </div>
-               <button 
-                onClick={() => navigate('/services')}
-                className="text-brand-400 font-semibold flex items-center gap-1 hover:gap-2 transition-all hover:text-brand-300 font-display tracking-wide ml-4"
-              >
-                VIEW FULL SERVICES <ArrowRight size={18} />
-              </button>
-            </div>
+            <button 
+              onClick={() => navigate('/services')}
+              className="text-brand-400 font-semibold flex items-center gap-1 hover:gap-2 transition-all hover:text-brand-300 font-display tracking-wide"
+            >
+              VIEW FULL SERVICES <ArrowRight size={18} />
+            </button>
           </div>
 
-          {/* Carousel Container */}
-          <div 
-            ref={carouselRef}
-            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-             {clients.map((client, idx) => (
-               <div key={idx} className="min-w-[300px] md:min-w-[350px] snap-center">
-                 <ClientCard 
-                   title={client.title} 
-                   problems={client.problems} 
-                 />
-               </div>
-             ))}
+          <div className="grid md:grid-cols-3 gap-6">
+            <ClientCard 
+              title="Attorneys & Law Firms" 
+              problems={["Missed calls = lost cases", "Manual intake takes too long", "Follow-up is inconsistent"]}
+            />
+            <ClientCard 
+              title="Car Dealerships" 
+              problems={["Leads get cold quickly", "Repetitive inventory questions", "Booking test drives is manual"]}
+            />
+            <ClientCard 
+              title="Agencies & Service Biz" 
+              problems={["Feast or famine pipeline", "Proposal chasing eats time", "Need to automate onboarding"]}
+            />
           </div>
         </div>
       </section>
