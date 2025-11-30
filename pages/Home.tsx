@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, CheckCircle, ChevronDown, Zap, Users, Repeat, Star, Upload, Loader2, Play, Film } from 'lucide-react';
+import { ArrowRight, CheckCircle, ChevronDown, Zap, Users, Repeat, Star, Upload, Loader2, Play, Film, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
 
 const FeatureCard: React.FC<{ 
@@ -48,6 +48,120 @@ const ClientCard: React.FC<{
     </ul>
   </div>
 );
+
+// --- Testimonial Data & Component ---
+const TESTIMONIALS = [
+  {
+    id: 1,
+    quote: "We were drowning in leads but closing nothing. Cerrana's AI assistant now qualifies everyone instantly. Our booking rate tripled in 3 weeks.",
+    author: "Elena Rodriguez",
+    role: "Founder",
+    company: "Luxe Legal Partners"
+  },
+  {
+    id: 2,
+    quote: "I was skeptical about 'automation' replacing my sales team. It didn't replace them—it gave them superpowers. The CRM setup is flawless.",
+    author: "Marcus Chen",
+    role: "Sales Director",
+    company: "Apex Solar Solutions"
+  },
+  {
+    id: 3,
+    quote: "The speed to launch was incredible. We went from a messy spreadsheet to a fully automated pipeline in 10 days. The ROI is undeniable.",
+    author: "Sarah Jenkins",
+    role: "Owner",
+    company: "Jenkins HVAC Services"
+  }
+];
+
+const TestimonialSlider: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const next = () => setCurrent((prev) => (prev + 1) % TESTIMONIALS.length);
+  const prev = () => setCurrent((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+
+  return (
+    <div 
+      className="relative max-w-4xl mx-auto"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Abstract decorative glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-900/20 blur-[60px] rounded-full pointer-events-none"></div>
+
+      <div className="relative bg-dark-900/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl overflow-hidden min-h-[300px] flex flex-col justify-center">
+        {/* Large Quote Icon Background */}
+        <div className="absolute top-6 left-8 text-brand-900/30">
+          <Quote size={120} fill="currentColor" />
+        </div>
+
+        <div className="relative z-10">
+          {TESTIMONIALS.map((t, idx) => (
+            <div 
+              key={t.id}
+              className={`transition-all duration-700 ease-in-out absolute inset-0 flex flex-col justify-center px-8 md:px-12 ${
+                idx === current 
+                  ? 'opacity-100 translate-x-0 relative' 
+                  : 'opacity-0 translate-x-8 absolute pointer-events-none'
+              }`}
+            >
+              <p className="text-xl md:text-2xl text-slate-200 font-light leading-relaxed italic mb-8 text-center md:text-left">
+                "{t.quote}"
+              </p>
+              <div className="flex items-center gap-4 border-t border-white/5 pt-6 justify-center md:justify-start">
+                <div className="w-12 h-12 bg-gradient-to-br from-brand-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-[0_0_15px_rgba(124,58,237,0.4)]">
+                  {t.author.charAt(0)}
+                </div>
+                <div>
+                  <div className="text-white font-display font-bold tracking-wide">{t.author}</div>
+                  <div className="text-sm text-brand-400">{t.role}, {t.company}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Controls */}
+        <div className="absolute bottom-6 right-8 flex gap-3 z-20">
+          <button 
+            onClick={prev}
+            className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-all border border-white/5 hover:border-brand-500/30"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button 
+            onClick={next}
+            className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-all border border-white/5 hover:border-brand-500/30"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-8">
+        {TESTIMONIALS.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrent(idx)}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              idx === current ? 'w-8 bg-brand-500 shadow-[0_0_8px_rgba(139,92,246,0.6)]' : 'w-2 bg-slate-700'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const VeoDemo: React.FC = () => {
   const [imagePreview, setImagePreview] = useState<string | null>(null);
@@ -359,6 +473,17 @@ export const Home: React.FC = () => {
               problems={["Feast or famine pipeline", "Proposal chasing eats time", "Need to automate onboarding"]}
             />
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 bg-dark-950">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+             <h2 className="text-3xl font-display font-bold text-white mb-4 tracking-wide">CLIENT RESULTS</h2>
+             <p className="text-slate-400">Don't take our word for it. See what our systems build.</p>
+          </div>
+          <TestimonialSlider />
         </div>
       </section>
 
