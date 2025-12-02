@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
 import { Mail, Calendar } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../utils/translations';
 
 export const Contact: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
   
   // Inject the script for the booking widget logic
   useEffect(() => {
@@ -27,26 +31,26 @@ export const Contact: React.FC = () => {
           {/* Left Column: Copy */}
           <div className="sticky top-24">
             <div className="inline-block px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-sm font-medium mb-6 border border-brand-500/20">
-              STRATEGY AUDIT
+              {t.audit}
             </div>
             <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 leading-tight tracking-wide">
-              LET'S MAP YOUR <br/> <span className="text-brand-500">SALES SYSTEM</span>.
+              {t.title} <br/> <span className="text-brand-500">{t.titleHighlight}</span>.
             </h1>
             <p className="text-lg text-slate-400 mb-10 leading-relaxed font-light">
-              Select a time on the calendar to book your free 30-minute Strategy Audit. We'll look at your current process and show you exactly where AI and automation can add revenue.
+              {t.desc}
             </p>
             
             <div className="bg-dark-900 p-8 rounded-2xl border border-white/5 shadow-lg mb-10 relative overflow-hidden">
                <div className="absolute top-0 left-0 w-1 h-full bg-brand-600"></div>
-              <h3 className="font-display font-bold text-white mb-6 tracking-wide">WHAT HAPPENS NEXT?</h3>
+              <h3 className="font-display font-bold text-white mb-6 tracking-wide">{t.nextSteps.title}</h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4 text-slate-300 text-sm">
                   <div className="bg-brand-500/10 p-2 rounded-lg text-brand-400 border border-brand-500/20"><Calendar size={18} /></div>
-                  <div className="mt-1">You will receive a calendar confirmation with a Zoom link.</div>
+                  <div className="mt-1">{t.nextSteps.step1}</div>
                 </li>
                 <li className="flex items-start gap-4 text-slate-300 text-sm">
                   <div className="bg-brand-500/10 p-2 rounded-lg text-brand-400 border border-brand-500/20"><Mail size={18} /></div>
-                  <div className="mt-1">We'll send you a brief questionnaire to prepare for the call so we don't waste time.</div>
+                  <div className="mt-1">{t.nextSteps.step2}</div>
                 </li>
               </ul>
             </div>
@@ -57,7 +61,7 @@ export const Contact: React.FC = () => {
                 <div className="w-8 h-8 rounded-full bg-slate-600 border-2 border-dark-950"></div>
                 <div className="w-8 h-8 rounded-full bg-slate-500 border-2 border-dark-950"></div>
               </div>
-              <p>Trusted by 50+ businesses this year.</p>
+              <p>{t.trusted}</p>
             </div>
           </div>
 
