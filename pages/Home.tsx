@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, CheckCircle, ChevronDown, Zap, Users, Repeat, Star, Upload, Loader2, Play, Film, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { GoogleGenAI } from "@google/genai";
+import { ArrowRight, CheckCircle, ChevronDown, Zap, Users, Repeat, Star, Quote, ChevronLeft, ChevronRight, Check, Activity, DollarSign, MessageSquare, Briefcase, Building, Hexagon, Triangle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
 import { Testimonial } from '../types';
@@ -155,173 +154,106 @@ const TestimonialSlider: React.FC<{ data: Testimonial[] }> = ({ data }) => {
   );
 };
 
-const VeoDemo: React.FC = () => {
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [isGenerating, setIsGenerating] = useState(false);
-  const [status, setStatus] = useState<string>('');
-  const fileInputRef = useRef<HTMLInputElement>(null);
+const SalesSystemDemo: React.FC = () => {
+  const [step, setStep] = useState(0);
   const { language } = useLanguage();
-  const t = translations[language].home.veo;
+  const t = translations[language].home.systemDemo;
+  
+  // Animation cycle: 
+  // 0: Idle
+  // 1: Lead Detected
+  // 2: AI Engaging
+  // 3: Qualified
+  // 4: Booked
+  // 5: Revenue Up
 
-  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImagePreview(reader.result as string);
-        setVideoUrl(null); // Reset video if new image selected
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const generateVideo = async () => {
-    const fileInput = fileInputRef.current;
-    if (!imagePreview || !fileInput?.files?.[0]) return;
-    
-    try {
-      const hasKey = await (window as any).aistudio.hasSelectedApiKey();
-      if (!hasKey) {
-        await (window as any).aistudio.openSelectKey();
-      }
-
-      setIsGenerating(true);
-      setStatus(t.initializing);
-
-      const file = fileInput.files[0];
-      const base64Data = imagePreview.split(',')[1];
-      
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
-      setStatus(t.uploading);
-      
-      let operation = await ai.models.generateVideos({
-        model: 'veo-3.1-fast-generate-preview',
-        prompt: 'Cinematic, fluid motion, organic movement, high quality, 4k, slow motion',
-        image: {
-          imageBytes: base64Data,
-          mimeType: file.type,
-        },
-        config: {
-          numberOfVideos: 1,
-          resolution: '720p',
-          aspectRatio: '16:9'
-        }
-      });
-
-      setStatus(t.generating);
-      while (!operation.done) {
-        await new Promise(resolve => setTimeout(resolve, 3000));
-        operation = await ai.operations.getVideosOperation({ operation: operation });
-      }
-
-      if (operation.response?.generatedVideos?.[0]?.video?.uri) {
-        setStatus(t.downloading);
-        const downloadLink = operation.response.generatedVideos[0].video.uri;
-        const response = await fetch(`${downloadLink}&key=${process.env.API_KEY}`);
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        setVideoUrl(url);
-      } else {
-        throw new Error("No video generated");
-      }
-
-    } catch (error: any) {
-      console.error(error);
-      if (error.message?.includes("Requested entity was not found") || error.message?.includes("404")) {
-        setStatus("Session expired. Please select API Key again.");
-        await (window as any).aistudio.openSelectKey();
-      } else {
-        setStatus('Generation failed. Try again.');
-      }
-    } finally {
-      setIsGenerating(false);
-    }
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setStep(prev => (prev + 1) % 6);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div className="w-full bg-dark-900 rounded-2xl border border-brand-500/30 overflow-hidden shadow-[0_0_40px_rgba(124,58,237,0.2)] relative group">
+    <div className="w-full bg-dark-950 rounded-2xl border border-brand-500/30 overflow-hidden shadow-[0_0_50px_rgba(124,58,237,0.15)] relative group">
        {/* Tech decorative header */}
-       <div className="h-8 bg-dark-950 border-b border-white/5 flex items-center justify-between px-4">
+       <div className="h-10 bg-dark-900 border-b border-white/10 flex items-center justify-between px-4">
           <div className="flex gap-1.5">
-             <div className="w-2 h-2 rounded-full bg-red-500"></div>
-             <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-             <div className="w-2 h-2 rounded-full bg-green-500"></div>
+             <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
+             <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
           </div>
-          <div className="text-[10px] font-mono text-brand-400 tracking-widest uppercase opacity-70">
-             {t.label}
+          <div className="text-[10px] font-mono text-brand-400 tracking-[0.2em] uppercase opacity-80 flex items-center gap-2">
+             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+             {t.status}
           </div>
        </div>
 
-       <div className="p-1 bg-dark-950">
-          <div className="relative aspect-video bg-dark-900 rounded-lg overflow-hidden border border-white/5 group-hover:border-brand-500/20 transition-colors">
-            {videoUrl ? (
-              <video 
-                src={videoUrl} 
-                autoPlay 
-                loop 
-                muted 
-                controls 
-                className="w-full h-full object-cover"
-              />
-            ) : imagePreview ? (
-              <img 
-                src={imagePreview} 
-                alt="Preview" 
-                className="w-full h-full object-cover opacity-80"
-              />
-            ) : (
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-500 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] bg-opacity-10">
-                 <Film size={48} className="mb-4 opacity-50" />
-                 <span className="text-sm font-mono uppercase tracking-wide">{t.ready}</span>
-              </div>
-            )}
-
-            {/* Overlay Interface */}
-            <div className="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-transparent to-transparent pointer-events-none"></div>
+       <div className="p-6 relative min-h-[300px] flex flex-col justify-between">
+          {/* Background Grid */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+          
+          {/* Main Activity Feed */}
+          <div className="relative z-10 space-y-4">
+            <div className="text-xs font-mono text-slate-500 mb-2 uppercase tracking-wider">{t.liveFeed}</div>
             
-            <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col gap-4 pointer-events-auto z-10">
-               {isGenerating ? (
-                 <div className="bg-dark-900/80 backdrop-blur border border-brand-500/30 rounded-xl p-4 flex items-center gap-4">
-                    <Loader2 className="animate-spin text-brand-400" size={24} />
-                    <div className="flex-grow">
-                       <div className="text-xs font-mono text-brand-300 mb-1 uppercase tracking-wider">{status}</div>
-                       <div className="h-1 bg-dark-800 rounded-full overflow-hidden">
-                          <div className="h-full bg-brand-500 w-1/3 animate-glow"></div>
-                       </div>
-                    </div>
-                 </div>
-               ) : (
-                 <div className="flex gap-3">
-                   <div className="flex-grow">
-                      <input 
-                        type="file" 
-                        ref={fileInputRef}
-                        accept="image/*"
-                        onChange={handleFileSelect}
-                        className="hidden"
-                        id="veo-upload"
-                      />
-                      <label 
-                        htmlFor="veo-upload"
-                        className="flex items-center justify-center gap-2 w-full py-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-xl cursor-pointer transition-all text-sm font-medium text-slate-300"
-                      >
-                         <Upload size={16} /> {imagePreview ? t.changeImage : t.uploadImage}
-                      </label>
-                   </div>
-                   {imagePreview && (
-                     <button 
-                       onClick={generateVideo}
-                       className="px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow-[0_0_15px_rgba(124,58,237,0.4)] flex items-center gap-2 transition-all"
-                     >
-                       <Play size={16} fill="currentColor" /> {t.animate}
-                     </button>
-                   )}
-                 </div>
-               )}
+            {/* Step 1: Lead Detected */}
+            <div className={`flex items-center gap-3 p-3 rounded-lg border transition-all duration-500 ${step >= 1 ? 'bg-brand-900/20 border-brand-500/30 opacity-100 translate-x-0' : 'bg-transparent border-transparent opacity-30 -translate-x-4'}`}>
+               <div className="w-8 h-8 rounded-full bg-brand-600 flex items-center justify-center text-white shadow-[0_0_10px_rgba(124,58,237,0.5)]">
+                  <Users size={16} />
+               </div>
+               <div>
+                  <div className="text-sm text-white font-medium">{t.leadDetected}</div>
+                  <div className="text-xs text-brand-300">Source: Website Form</div>
+               </div>
+            </div>
+
+            {/* Step 2: AI Engaging */}
+            <div className={`flex items-center gap-3 p-3 rounded-lg border transition-all duration-500 ${step >= 2 ? 'bg-cyan-900/20 border-cyan-500/30 opacity-100 translate-x-0' : 'bg-transparent border-transparent opacity-30 -translate-x-4'}`}>
+               <div className="w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center text-white shadow-[0_0_10px_rgba(34,211,238,0.5)]">
+                  <MessageSquare size={16} />
+               </div>
+               <div>
+                  <div className="text-sm text-white font-medium">{t.aiActive}</div>
+                  <div className="text-xs text-cyan-300">{t.engaging}</div>
+               </div>
+            </div>
+
+            {/* Step 4: Booked */}
+            <div className={`flex items-center gap-3 p-3 rounded-lg border transition-all duration-500 ${step >= 4 ? 'bg-green-900/20 border-green-500/30 opacity-100 translate-x-0' : 'bg-transparent border-transparent opacity-30 -translate-x-4'}`}>
+               <div className="w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-white shadow-[0_0_10px_rgba(34,197,94,0.5)]">
+                  <Check size={16} />
+               </div>
+               <div>
+                  <div className="text-sm text-white font-medium">{t.booked}</div>
+                  <div className="text-xs text-green-300">Calendar Updated</div>
+               </div>
             </div>
           </div>
+
+          {/* Bottom Metrics */}
+          <div className="grid grid-cols-2 gap-4 mt-6 relative z-10">
+             <div className="bg-dark-900/80 p-3 rounded-xl border border-white/5 backdrop-blur">
+                <div className="text-[10px] text-slate-400 uppercase tracking-wide mb-1 flex items-center gap-1">
+                   <DollarSign size={10} /> {t.revenue}
+                </div>
+                <div className={`text-xl font-display font-bold text-white transition-all duration-300 ${step >= 5 ? 'text-green-400 scale-110 origin-left' : ''}`}>
+                   $24,500
+                </div>
+             </div>
+             <div className="bg-dark-900/80 p-3 rounded-xl border border-white/5 backdrop-blur">
+                <div className="text-[10px] text-slate-400 uppercase tracking-wide mb-1 flex items-center gap-1">
+                   <Activity size={10} /> {t.conversion}
+                </div>
+                <div className="text-xl font-display font-bold text-white">
+                   18.4% <span className="text-xs font-sans font-normal text-green-500 ml-1">↑ 2.1%</span>
+                </div>
+             </div>
+          </div>
+       </div>
+
+       {/* Footer Label */}
+       <div className="absolute bottom-2 right-4 text-[9px] text-white/10 font-mono pointer-events-none">
+          {t.label}
        </div>
     </div>
   );
@@ -383,16 +315,55 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Column: Veo Demo */}
+            {/* Right Column: Sales System Demo */}
             <div className="relative">
                {/* Decorative glow behind the demo */}
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-600/20 blur-[80px] rounded-full pointer-events-none"></div>
-               <VeoDemo />
-               <div className="mt-4 text-center text-xs text-slate-500 font-mono">
-                  {t.veo.poweredBy}
-               </div>
+               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-600/10 blur-[80px] rounded-full pointer-events-none"></div>
+               <SalesSystemDemo />
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted By Section */}
+      <section className="bg-dark-900 border-y border-white/5 py-12 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <p className="text-center text-sm font-display font-bold text-slate-500 tracking-widest uppercase mb-8">
+            {t.trustedBy}
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
+             {/* Logo 1: Apex Solar */}
+             <div className="group flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300 hover:opacity-100 hover:scale-105 cursor-default">
+                <div className="w-8 h-8 bg-brand-500/20 rounded flex items-center justify-center border border-brand-500/50">
+                  <Briefcase size={18} className="text-brand-400" />
+                </div>
+                <span className="font-display font-bold text-xl text-white">APEX<span className="text-brand-400">SOLAR</span></span>
+             </div>
+
+             {/* Logo 2: Luxe Legal */}
+             <div className="group flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300 hover:opacity-100 hover:scale-105 cursor-default">
+                <div className="w-8 h-8 bg-cyan-500/20 rounded flex items-center justify-center border border-cyan-500/50">
+                   <Building size={18} className="text-cyan-400" />
+                </div>
+                <span className="font-display font-bold text-xl text-white">LUXE<span className="text-cyan-400 font-serif italic">LEGAL</span></span>
+             </div>
+
+             {/* Logo 3: Jenkins HVAC */}
+             <div className="group flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300 hover:opacity-100 hover:scale-105 cursor-default">
+                <div className="w-8 h-8 bg-orange-500/20 rounded flex items-center justify-center border border-orange-500/50">
+                   <Hexagon size={18} className="text-orange-400" />
+                </div>
+                <span className="font-display font-bold text-xl text-white">JENKINS<span className="font-mono text-orange-400 text-lg">HVAC</span></span>
+             </div>
+
+             {/* Logo 4: TechFlow */}
+             <div className="group flex items-center gap-2 grayscale hover:grayscale-0 transition-all duration-300 hover:opacity-100 hover:scale-105 cursor-default">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/50">
+                   <Triangle size={18} className="text-green-400 rotate-90" />
+                </div>
+                <span className="font-display font-bold text-xl text-white">TECH<span className="text-green-400">FLOW</span></span>
+             </div>
           </div>
         </div>
       </section>
@@ -537,7 +508,7 @@ export const Home: React.FC = () => {
 
               <ul className="space-y-4 mb-8 flex-grow">
                  {common.growth.features.map((f: string, i: number) => (
-                   <li key={i} className="flex gap-3 text-sm text-white"><CheckCircle size={16} className="text-brand-400 shrink-0 shadow-[0_0_5px_#a78bfa]" /> {f}</li>
+                   <li key={i} className="flex gap-3 text-white"><CheckCircle size={16} className="text-brand-400 shrink-0 shadow-[0_0_5px_#a78bfa]" /> {f}</li>
                 ))}
               </ul>
               <button onClick={() => navigate('/pricing')} className="w-full py-4 rounded-lg bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white transition-all font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] font-display tracking-wide uppercase">{common.viewDetails}</button>

@@ -24,17 +24,18 @@ export const translations = {
         ctaPrimary: 'BOOK STRATEGY CALL',
         ctaSecondary: 'HOW IT WORKS'
       },
-      veo: {
-        label: 'VEO-3.1 // NEURAL ANIMATION',
-        ready: 'Ready for Input',
-        initializing: 'Initializing Neural Engine...',
-        uploading: 'Uploading to Veo-3.1...',
-        generating: 'Generating Video (this takes a moment)...',
-        downloading: 'Downloading Stream...',
-        changeImage: 'Change Image',
-        uploadImage: 'Upload Image',
-        animate: 'ANIMATE',
-        poweredBy: 'POWERED BY VEO-3.1 // GENERATIVE VIDEO PREVIEW'
+      trustedBy: 'TRUSTED BY 50+ INNOVATIVE BUSINESSES',
+      systemDemo: {
+        status: 'SYSTEM STATUS: ONLINE',
+        liveFeed: 'LIVE ACTIVITY FEED',
+        leadDetected: 'New Lead Detected',
+        aiActive: 'AI Assistant Active',
+        engaging: 'Engaging Prospect via SMS...',
+        qualified: 'Lead Qualified',
+        booked: 'Strategy Call Booked',
+        revenue: 'Pipeline Value',
+        conversion: 'Conversion Rate',
+        label: 'SALES_OS v4.0'
       },
       coreFour: {
         title: 'OUR CORE FOUR',
@@ -291,17 +292,18 @@ export const translations = {
         ctaPrimary: 'AGENDAR LLAMADA',
         ctaSecondary: 'CÓMO FUNCIONA'
       },
-      veo: {
-        label: 'VEO-3.1 // ANIMACIÓN NEURONAL',
-        ready: 'Listo para Entrada',
-        initializing: 'Inicializando Motor Neural...',
-        uploading: 'Subiendo a Veo-3.1...',
-        generating: 'Generando Video (esto toma un momento)...',
-        downloading: 'Descargando Stream...',
-        changeImage: 'Cambiar Imagen',
-        uploadImage: 'Subir Imagen',
-        animate: 'ANIMAR',
-        poweredBy: 'IMPULSADO POR VEO-3.1 // VISTA PREVIA DE VIDEO GENERATIVO'
+      trustedBy: 'CONFIADO POR MÁS DE 50 EMPRESAS INNOVADORAS',
+      systemDemo: {
+        status: 'ESTADO DEL SISTEMA: ONLINE',
+        liveFeed: 'ACTIVIDAD EN VIVO',
+        leadDetected: 'Nuevo Lead Detectado',
+        aiActive: 'Asistente IA Activo',
+        engaging: 'Contactando prospecto via SMS...',
+        qualified: 'Lead Calificado',
+        booked: 'Llamada Agendada',
+        revenue: 'Valor del Pipeline',
+        conversion: 'Tasa de Conversión',
+        label: 'SALES_OS v4.0'
       },
       coreFour: {
         title: 'NUESTROS CUATRO PILARES',

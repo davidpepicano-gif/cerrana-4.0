@@ -28,8 +28,8 @@ export const Services: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="w-16 h-16 bg-brand-900/20 text-brand-400 rounded-2xl flex items-center justify-center mb-6 border border-brand-500/20 shadow-[0_0_20px_rgba(124,58,237,0.15)]">
-                <Globe size={32} />
+              <div className="group w-16 h-16 bg-brand-900/20 text-brand-400 rounded-2xl flex items-center justify-center mb-6 border border-brand-500/20 shadow-[0_0_20px_rgba(124,58,237,0.15)] transition-all duration-300 hover:scale-110 hover:bg-brand-900/40 hover:shadow-[0_0_30px_rgba(124,58,237,0.4)] cursor-default">
+                <Globe size={32} className="transition-transform duration-700 group-hover:rotate-[180deg]" />
               </div>
               <h2 className="text-3xl font-display font-bold text-white mb-4 tracking-wide">{t.web.title}</h2>
               <p className="text-lg text-slate-400 mb-8 leading-relaxed">
@@ -152,8 +152,8 @@ export const Services: React.FC = () => {
             </div>
             
             <div className="order-1 md:order-2">
-              <div className="w-16 h-16 bg-cyan-900/20 text-cyan-400 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20 shadow-[0_0_20px_rgba(34,211,238,0.15)]">
-                <Activity size={32} />
+              <div className="group w-16 h-16 bg-cyan-900/20 text-cyan-400 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/20 shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300 hover:scale-110 hover:bg-cyan-900/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.4)] cursor-default">
+                <Activity size={32} className="transition-transform duration-300 group-hover:scale-125" />
               </div>
               <h2 className="text-3xl font-display font-bold text-white mb-4 tracking-wide">{t.crm.title}</h2>
               <p className="text-lg text-slate-400 mb-8 leading-relaxed">
@@ -182,8 +182,8 @@ export const Services: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="w-16 h-16 bg-purple-900/20 text-purple-400 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 shadow-[0_0_20px_rgba(168,85,247,0.15)]">
-                <Bot size={32} />
+              <div className="group w-16 h-16 bg-purple-900/20 text-purple-400 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20 shadow-[0_0_20px_rgba(168,85,247,0.15)] transition-all duration-300 hover:scale-110 hover:bg-purple-900/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] cursor-default">
+                <Bot size={32} className="transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" />
               </div>
               <h2 className="text-3xl font-display font-bold text-white mb-4 tracking-wide">{t.ai.title}</h2>
               <p className="text-lg text-slate-400 mb-8 leading-relaxed">
