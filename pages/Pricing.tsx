@@ -50,7 +50,7 @@ export const Pricing: React.FC = () => {
                 ))}
               </ul>
               
-              <button onClick={() => navigate('/contact')} className="w-full py-3 rounded-lg border border-white/20 text-slate-300 hover:bg-white/10 transition-colors font-semibold font-display tracking-wide uppercase text-sm">
+              <button onClick={() => window.open('https://api.orbitpenguintech.com/payment-link/693742c2bbe2195bc3522919', '_blank')} className="w-full py-3 rounded-lg border border-white/20 text-slate-300 hover:bg-white/10 transition-colors font-semibold font-display tracking-wide uppercase text-sm">
                 {t.tiers.core.cta}
               </button>
             </div>
@@ -78,7 +78,7 @@ export const Pricing: React.FC = () => {
                 ))}
               </ul>
               
-              <button onClick={() => navigate('/contact')} className="w-full py-4 rounded-lg bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white transition-all font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] font-display tracking-wide uppercase text-sm">
+              <button onClick={() => window.open('https://api.orbitpenguintech.com/payment-link/69373fc3bbe219f70852224e', '_blank')} className="w-full py-4 rounded-lg bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white transition-all font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] font-display tracking-wide uppercase text-sm">
                 {t.tiers.growth.cta}
               </button>
             </div>
@@ -101,11 +101,11 @@ export const Pricing: React.FC = () => {
 
               <ul className="space-y-4 mb-8 flex-grow">
                 {t.tiers.full.features.map((f, i) => (
-                  <li key={i} className="flex gap-3 text-sm text-slate-300"><Check size={16} className="text-brand-500 shrink-0 mt-0.5" /> <strong>{f}</strong></li>
+                  <li key={i} className="flex gap-3 text-sm text-slate-300"><Check size={16} className="text-brand-500 shrink-0" /> <strong>{f}</strong></li>
                 ))}
               </ul>
               
-              <button onClick={() => navigate('/contact')} className="w-full py-3 rounded-lg border border-white/20 text-slate-300 hover:bg-white/10 transition-colors font-semibold font-display tracking-wide uppercase text-sm">
+              <button onClick={() => window.open('https://api.orbitpenguintech.com/payment-link/69373ebfd8c1a809410a2d71', '_blank')} className="w-full py-3 rounded-lg border border-white/20 text-slate-300 hover:bg-white/10 transition-colors font-semibold font-display tracking-wide uppercase text-sm">
                 {t.tiers.full.cta}
               </button>
             </div>
@@ -129,7 +129,12 @@ export const Pricing: React.FC = () => {
                 </div>
                 <div className="text-center md:text-right">
                     <div className="text-3xl font-bold text-white">$247<span className="text-sm font-normal text-slate-500">/{t.common.month}</span></div>
-                    <button onClick={() => navigate('/contact')} className="mt-2 text-sm text-brand-400 hover:text-white transition-colors underline decoration-brand-500/30 underline-offset-4">{t.alaCarte.capture.cta}</button>
+                    <button 
+                        onClick={() => window.open('https://api.orbitpenguintech.com/payment-link/69373d67d8c1a827930a2b23', '_blank')} 
+                        className="mt-2 text-sm text-brand-400 hover:text-white transition-colors underline decoration-brand-500/30 underline-offset-4"
+                    >
+                        {t.alaCarte.capture.cta}
+                    </button>
                 </div>
             </div>
 
@@ -141,7 +146,12 @@ export const Pricing: React.FC = () => {
                 </div>
                 <div className="text-center md:text-right">
                     <div className="text-3xl font-bold text-white">$97<span className="text-sm font-normal text-slate-500">/{t.common.month}</span></div>
-                    <button onClick={() => navigate('/contact')} className="mt-2 text-sm text-brand-400 hover:text-white transition-colors underline decoration-brand-500/30 underline-offset-4">{t.alaCarte.web.cta}</button>
+                    <button 
+                        onClick={() => window.open('https://api.orbitpenguintech.com/payment-link/6937340bbbe219324d521079', '_blank')} 
+                        className="mt-2 text-sm text-brand-400 hover:text-white transition-colors underline decoration-brand-500/30 underline-offset-4"
+                    >
+                        {t.alaCarte.web.cta}
+                    </button>
                 </div>
             </div>
         </div>

@@ -33,15 +33,22 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     { label: t.nav.contact, path: '/contact' },
   ];
 
-  // Custom Logo Component - 3 Dots Design
+  // Custom Logo Component - Tech Circuit Design
   const Logo = () => (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white">
-      {/* Top Dot */}
-      <circle cx="14" cy="12" r="5" fill="#8b5cf6" />
-      {/* Middle Dot (Offset Right) */}
-      <circle cx="26" cy="20" r="5" fill="#8b5cf6" />
-      {/* Bottom Dot */}
-      <circle cx="14" cy="28" r="5" fill="#8b5cf6" />
+    <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Top Line & Dot */}
+      <path d="M10 25 H 55 C 65 25 70 25 70 25" stroke="white" strokeWidth="12" strokeLinecap="round" />
+      <circle cx="70" cy="25" r="14" fill="#8b5cf6" />
+      
+      {/* Middle Line & Dot */}
+      <path d="M10 50 H 35 C 45 50 50 50 50 50" stroke="white" strokeWidth="12" strokeLinecap="round" />
+      <circle cx="50" cy="50" r="14" fill="#8b5cf6" />
+      
+      {/* Bottom Line & Dot */}
+      <path d="M10 75 H 55 C 65 75 70 75 70 75" stroke="white" strokeWidth="12" strokeLinecap="round" />
+      <circle cx="70" cy="75" r="14" fill="#8b5cf6" />
+      
+      {/* Connecting Curve (The 'C' shape backing) - Optional, keeping it clean lines for now based on abstract description */}
     </svg>
   );
 
@@ -57,10 +64,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       >
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-4 group">
-            <div className="bg-gradient-to-br from-brand-900/50 to-dark-900 p-1 rounded-lg group-hover:shadow-[0_0_15px_rgba(139,92,246,0.6)] transition-all border border-brand-500/20">
+            <div className="bg-transparent p-1 rounded-lg group-hover:scale-105 transition-all">
               <Logo />
             </div>
-            <span className="text-xl md:text-2xl font-display font-bold tracking-wider text-white">
+            <span className="text-xl md:text-3xl font-display font-bold tracking-wider text-white">
               CERRANA
             </span>
           </Link>
