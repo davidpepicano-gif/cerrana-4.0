@@ -66,15 +66,15 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Right Column: Booking Calendar Iframe */}
-          <div className="bg-dark-900 p-2 md:p-4 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.3)] border border-white/10 relative min-h-[600px]">
+          <div className="bg-dark-900 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.3)] border border-white/10 relative min-h-[700px] overflow-hidden">
              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-600/5 to-transparent pointer-events-none rounded-3xl"></div>
              
              <iframe 
                 src="https://api.orbitpenguintech.com/widget/booking/8VOP9c0P6N573TCKO1BB" 
-                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '650px' }} 
-                scrolling="no" 
+                style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '750px' }} 
+                scrolling="auto" 
                 id="8VOP9c0P6N573TCKO1BB_1764537972996"
-                className="rounded-xl relative z-10"
+                className="relative z-10"
                 title="Booking Calendar"
              ></iframe>
           </div>

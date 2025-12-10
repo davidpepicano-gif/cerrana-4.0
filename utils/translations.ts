@@ -13,7 +13,8 @@ export const translations = {
       company: 'COMPANY',
       connect: 'CONNECT',
       rights: 'All rights reserved.',
-      privacy: 'Privacy Policy'
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service'
     },
     home: {
       hero: {
@@ -281,7 +282,8 @@ export const translations = {
       company: 'EMPRESA',
       connect: 'CONECTAR',
       rights: 'Todos los derechos reservados.',
-      privacy: 'Política de Privacidad'
+      privacy: 'Política de Privacidad',
+      terms: 'Términos de Servicio'
     },
     home: {
       hero: {

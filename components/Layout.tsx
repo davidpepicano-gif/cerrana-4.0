@@ -217,9 +217,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div>
               <h3 className="text-white font-display font-semibold mb-4 tracking-wide">{t.footer.connect}</h3>
               <ul className="space-y-3 text-sm">
-                <li className="flex items-center gap-2"><Phone size={14} className="text-brand-500" /> +1 (555) 123-4567</li>
-                <li className="flex items-center gap-2 text-slate-300">hello@cerrana.ai</li>
-                <li><Link to="/privacy" className="hover:text-brand-400 transition-colors">{t.footer.privacy}</Link></li>
+                <li className="flex items-center gap-2"><Phone size={14} className="text-brand-500" /> +1 (919) 918-0505</li>
+                <li className="flex items-center gap-2 text-slate-300">support@cerrana.com</li>
+                <li><Link to="/privacy_policy" className="hover:text-brand-400 transition-colors">{t.footer.privacy}</Link></li>
+                <li><Link to="/terms_of_service" className="hover:text-brand-400 transition-colors">{t.footer.terms}</Link></li>
               </ul>
             </div>
           </div>

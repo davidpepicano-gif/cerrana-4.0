@@ -6,6 +6,8 @@ import { Services } from './pages/Services';
 import { Pricing } from './pages/Pricing';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfService } from './pages/TermsOfService';
 import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+            <Route path="/terms_of_service" element={<TermsOfService />} />
           </Routes>
         </Layout>
       </Router>
