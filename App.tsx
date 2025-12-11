@@ -8,6 +8,7 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
+import { CerranaOS } from './pages/CerranaOS';
 import { LanguageProvider } from './contexts/LanguageContext';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/platform" element={<CerranaOS />} />
             <Route path="/services" element={<Services />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />

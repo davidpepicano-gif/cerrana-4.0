@@ -27,6 +27,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   }, [location]);
 
   const navItems: NavItem[] = [
+    { label: t.nav.platform, path: '/platform' },
     { label: t.nav.services, path: '/services' },
     { label: t.nav.pricing, path: '/pricing' },
     { label: t.nav.about, path: '/about' },
