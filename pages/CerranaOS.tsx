@@ -279,7 +279,7 @@ export const CerranaOS: React.FC = () => {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-brand-900/20 rounded-full blur-[120px] pointer-events-none"></div>
 
                 <div className="container mx-auto px-4 text-center relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold border border-brand-500/20 mb-6 animate-pulse">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold border border-brand-500/20 mb-6 animate-pulse backdrop-blur-sm">
                         <Monitor size={12} /> SYSTEM ONLINE
                     </div>
                     <h1 className="text-4xl md:text-7xl font-display font-bold text-white mb-6 tracking-tight">
@@ -292,16 +292,16 @@ export const CerranaOS: React.FC = () => {
                         {t.hero.desc}
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-                        <button onClick={() => document.getElementById('demo')?.scrollIntoView({behavior:'smooth'})} className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full font-bold border border-white/10 transition-colors">
+                        <button onClick={() => document.getElementById('demo')?.scrollIntoView({behavior:'smooth'})} className="px-8 py-4 bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 hover:border-white/30 text-white rounded-full font-bold transition-all shadow-lg hover:shadow-white/5">
                             {t.hero.cta1}
                         </button>
-                        <button onClick={() => navigate('/pricing')} className="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-full font-bold shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all hover:scale-105">
+                        <button onClick={() => navigate('/pricing')} className="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-full font-bold shadow-[0_0_30px_rgba(139,92,246,0.3)] transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(139,92,246,0.5)]">
                             {t.hero.cta2}
                         </button>
                     </div>
 
                     {/* Animated Dashboard Mockup */}
-                    <div className="max-w-5xl mx-auto bg-dark-900 rounded-xl border border-white/10 shadow-2xl p-2 relative overflow-hidden group">
+                    <div className="max-w-5xl mx-auto bg-dark-900/80 backdrop-blur-md rounded-xl border border-white/10 shadow-2xl p-2 relative overflow-hidden group">
                         <div className="absolute inset-0 bg-gradient-to-b from-brand-500/5 to-transparent pointer-events-none"></div>
                         <div className="bg-dark-950 rounded-lg overflow-hidden relative">
                             {/* Header */}
@@ -359,7 +359,7 @@ export const CerranaOS: React.FC = () => {
                         <div className="absolute w-[300px] h-[300px] bg-brand-500/10 rounded-full animate-ping [animation-duration:3s]"></div>
 
                         {/* Center Core */}
-                        <div className="w-32 h-32 bg-dark-950 rounded-full border-4 border-brand-500 shadow-[0_0_50px_rgba(139,92,246,0.6)] flex items-center justify-center z-20 relative animate-bounce [animation-duration:3s]">
+                        <div className="w-32 h-32 bg-dark-950/90 backdrop-blur rounded-full border-4 border-brand-500 shadow-[0_0_50px_rgba(139,92,246,0.6)] flex items-center justify-center z-20 relative animate-bounce [animation-duration:3s]">
                             <span className="font-display font-bold text-white text-xl tracking-wider">OS</span>
                         </div>
                         
@@ -383,7 +383,7 @@ export const CerranaOS: React.FC = () => {
                                         }}
                                     >
                                         <div 
-                                            className="px-4 py-2 bg-dark-800 border border-white/10 rounded-full text-xs font-bold text-slate-300 shadow-lg hover:border-brand-500/50 hover:text-white transition-colors cursor-default pointer-events-auto backdrop-blur-md"
+                                            className="px-4 py-2 bg-dark-800/80 backdrop-blur-md border border-white/10 rounded-full text-xs font-bold text-slate-300 shadow-lg hover:border-brand-500/50 hover:text-white transition-colors cursor-default pointer-events-auto"
                                             style={{ animation: `counter-spin 60s linear infinite` }} // Keep text upright
                                         >
                                             {mod}
@@ -422,7 +422,7 @@ export const CerranaOS: React.FC = () => {
                         {t.features.map((feature: any, i: number) => {
                             const Icon = icons[i];
                             return (
-                                <div key={i} className="bg-dark-900 rounded-xl border border-white/5 p-6 hover:border-brand-500/30 transition-all hover:-translate-y-1 group relative overflow-hidden">
+                                <div key={i} className="bg-dark-900 rounded-xl border border-white/5 p-6 hover:border-brand-500/30 transition-all hover:-translate-y-1 group relative overflow-hidden backdrop-blur-sm">
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-brand-500/10"></div>
                                     
                                     <div className="flex items-center justify-between mb-6 relative z-10">
@@ -448,7 +448,7 @@ export const CerranaOS: React.FC = () => {
                     </div>
 
                     {/* MID-SECTION CTA */}
-                    <div className="max-w-4xl mx-auto bg-gradient-to-r from-brand-900/50 to-dark-900 border border-brand-500/30 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
+                    <div className="max-w-4xl mx-auto bg-gradient-to-r from-brand-900/50 to-dark-900 border border-brand-500/30 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden shadow-[0_0_40px_rgba(124,58,237,0.1)]">
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
                         <div className="relative z-10">
                             <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-6">
@@ -456,7 +456,7 @@ export const CerranaOS: React.FC = () => {
                             </h3>
                             <button 
                                 onClick={() => navigate('/pricing')}
-                                className="px-8 py-4 bg-white text-brand-900 font-bold rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 transition-transform uppercase tracking-wider"
+                                className="px-8 py-4 bg-white/90 backdrop-blur-md text-brand-900 font-bold rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105 transition-transform uppercase tracking-wider hover:bg-white"
                             >
                                 {t.midFeatureCta?.button || "Build Your System"}
                             </button>
@@ -490,9 +490,9 @@ export const CerranaOS: React.FC = () => {
                         </div>
 
                         {/* Growth */}
-                        <div className="bg-dark-900 rounded-2xl border border-brand-500 p-8 flex flex-col relative shadow-[0_0_30px_rgba(124,58,237,0.15)] transform md:-translate-y-4">
+                        <div className="bg-dark-900 rounded-2xl border border-brand-500 p-8 flex flex-col relative shadow-[0_0_30px_rgba(124,58,237,0.15)] transform md:-translate-y-4 backdrop-blur-sm">
                             <div className="absolute top-0 right-0 left-0 -mt-3 flex justify-center">
-                                <span className="bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">{t.plans.growth.badge}</span>
+                                <span className="bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">{t.plans.growth.badge}</span>
                             </div>
                             <h3 className="font-display font-bold text-xl text-white mb-2 mt-2">{t.plans.growth.title}</h3>
                             <p className="text-xs text-brand-400 font-bold uppercase tracking-widest mb-6">{t.plans.growth.subtitle}</p>
@@ -505,7 +505,7 @@ export const CerranaOS: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <button onClick={() => navigate('/pricing')} className="w-full py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-lg transition-colors uppercase tracking-wide text-sm shadow-lg">
+                            <button onClick={() => navigate('/pricing')} className="w-full py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-lg transition-colors uppercase tracking-wide text-sm shadow-lg shadow-brand-500/20">
                                 {t.plans.growth.cta}
                             </button>
                         </div>
@@ -578,10 +578,10 @@ export const CerranaOS: React.FC = () => {
                     <p className="text-xl text-brand-300 mb-12">{t.finalCta.subtitle}</p>
                     
                     <div className="flex flex-col sm:flex-row justify-center gap-6 mb-8">
-                        <button onClick={() => document.getElementById('demo')?.scrollIntoView({behavior:'smooth'})} className="px-10 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/5 transition-colors">
+                        <button onClick={() => document.getElementById('demo')?.scrollIntoView({behavior:'smooth'})} className="px-10 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full hover:bg-white/5 transition-colors backdrop-blur-sm">
                             {t.finalCta.btn1}
                         </button>
-                        <button onClick={() => navigate('/pricing')} className="px-10 py-4 bg-white text-brand-900 font-bold rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-transform">
+                        <button onClick={() => navigate('/pricing')} className="px-10 py-4 bg-white/90 backdrop-blur text-brand-900 font-bold rounded-full shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:scale-105 transition-transform hover:bg-white">
                             {t.finalCta.btn2}
                         </button>
                     </div>

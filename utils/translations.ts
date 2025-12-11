@@ -1,4 +1,3 @@
-
 export const translations = {
   en: {
     nav: {
@@ -38,36 +37,41 @@ export const translations = {
         urgency: '⏳ Fast-track slots allocated on a first-come, first-served basis.'
       },
       services: {
-        title: 'CERRANA ECOSYSTEM',
-        subtitle: 'The complete engine for your growth.',
-        web: {
-            title: 'CERRANA WEB',
-            subtitle: 'Smart Websites & Funnels',
-            desc: 'Websites that convert from the first click with neuro-oriented design.',
-            cta: 'I Want My Smart Web',
-            urgency: '⚠️ 2 development slots left this month.'
-        },
-        capture: {
-            title: 'CERRANA CAPTURE',
-            subtitle: 'AI 24/7 Assistant',
-            desc: 'Your assistant responds and books appointments without human intervention.',
-            cta: 'Test Live Demo',
-            urgency: '⏳ Limited daily onboardings.'
-        },
+        title: 'CHOOSE YOUR ENGINE',
+        subtitle: 'Three powerful systems. One result: Growth.',
         core: {
             title: 'CERRANA CORE',
-            subtitle: 'CRM + Automations',
-            desc: 'Your commercial process, organized and automated like never before.',
-            cta: 'Organize My Sales',
-            urgency: '🔒 Only 10 businesses per month access full config.'
+            subtitle: 'CRM & Automation OS',
+            desc: 'The foundation. A complete Sales Pipeline, CRM, 2-way SMS/Email, and Calendar integration to organize your business.',
+            cta: 'Explore Core',
+            urgency: '🔒 10 businesses/mo limit.'
         },
         growth: {
             title: 'CERRANA GROWTH',
-            subtitle: 'Core + Capture + Web',
-            desc: 'The complete system to grow without hiring more staff.',
-            cta: 'Scale with Growth',
-            urgency: '⚠️ Most requested package — premium support nearly full.'
+            subtitle: 'Core + AI Agent',
+            desc: 'Accelerate. Everything in Core, plus a 24/7 AI Booking Assistant that qualifies leads and books appointments automatically.',
+            cta: 'Explore Growth',
+            urgency: '⚡ Most popular choice.'
+        },
+        full: {
+            title: 'FULL FUNNEL',
+            subtitle: 'Core + AI + Web',
+            desc: 'Dominate. The complete engine. Adds a High-Converting Smart Website & Funnel to capture, nurture, and close traffic at scale.',
+            cta: 'Explore Full Funnel',
+            urgency: '⚠️ High development demand.'
         }
+      },
+      engineSection: {
+        tag: "INCLUDED IN EVERY PLAN",
+        title: "MEET CERRANA OS",
+        subtitle: "The digital nervous system of your business. It's not just software; it's your command center. Centralize every conversation, automate every task, and see every dollar.",
+        features: [
+            { title: "Unified Command", desc: "WhatsApp, IG, SMS & Email in one stream." },
+            { title: "Visual Clarity", desc: "Kanban pipelines that show you exactly where money is hiding." },
+            { title: "24/7 Uptime", desc: "Automations that work while you sleep." }
+        ],
+        ctaMain: "Enter the Platform",
+        ctaSub: "See Technical Specs"
       },
       results: {
         title: 'VISUALIZE SPEED',
@@ -257,7 +261,7 @@ export const translations = {
                 problem: 'Leads falling through the cracks.',
                 result: 'Zero missed opportunities. Total clarity.'
             },
-            cta: 'ORGANIZE MY SALES'
+            cta: 'ORGANIZAR MY SALES'
         },
         ai: {
             title: 'AI Booking Agents',
@@ -379,95 +383,70 @@ export const translations = {
     about: {
         whoWeAre: {
             title: "WHO WE ARE",
-            desc1: "CERRANA is a sales operating system built for modern businesses that want to scale without chaos, missed leads, or extra payroll.",
-            desc2: "We combine AI, automation, web performance, and a clear sales process so your business can finally run like the well-oiled machine it deserves to be.",
-            desc3: "We’re not just a tech company. We’re a team obsessed with turning small and mid-size businesses into revenue machines — in Colombia, the U.S., and beyond."
+            desc1: "We are the architects of the automated economy.",
+            desc2: "Cerrana was born from a simple truth: businesses don't die from starvation, they die from indigestion. Too many leads, too much chaos, too little time.",
+            desc3: "We don't just sell software. We build the digital infrastructure that allows 1 person to do the work of 10."
         },
         mission: {
             title: "OUR MISSION",
-            subtitle: "To remove the guesswork from sales.",
-            desc: "Most businesses lose opportunities because they don’t respond fast enough, don’t follow up, or don’t have a structure. CERRANA fixes that with systems designed to:",
+            subtitle: "Removing the Guesswork",
+            desc: "We believe sales shouldn't be a mystery. It should be a science. Predictable. Scalable. Boringly effective.",
             points: [
-                "Respond instantly",
-                "Follow up automatically",
-                "Organize your sales pipeline",
-                "Convert more leads into booked revenue",
-                "Give you control and visibility from day one"
+                "Automation over manual labor.",
+                "Data over intuition.",
+                "Systems over hustling."
             ],
-            closing: "Our mission is simple: Build a sales system that works even when you’re not working."
+            closing: "We help businesses sleep better at night knowing their sales machine never turns off."
         },
         problem: {
-            title: "WHY WE EXIST",
-            subtitle: "The Real Problem We Solve",
+            title: "THE REALITY",
+            subtitle: "Why most businesses stay small.",
             points: [
-                "Ads are expensive",
-                "Clients expect answers immediately",
-                "Manual follow-up kills conversion",
-                "Businesses lose leads they already paid for",
-                "Teams collapse under disorganized processes"
+                "Leads fall through cracks.",
+                "Follow-up is inconsistent.",
+                "Tech stacks are fragmented.",
+                "Burnout is inevitable."
             ],
-            closing: "CERRANA exists to make high-performance sales systems accessible to everyone."
+            closing: "Solves this by unifying the entire stack into one operating system."
         },
         difference: {
-            title: "WHAT MAKES CERRANA DIFFERENT",
+            title: "WHAT MAKES US DIFFERENT",
             points: [
-                { title: "AI with a Human Sales Philosophy", desc: "Our systems don’t just 'respond.' They understand, qualify, book, and nurture — like your best salesperson." },
-                { title: "Sales Process First. Tools Second.", desc: "Most agencies start with technology. We start with your sales pipeline, the foundation of all revenue." },
-                { title: "Clarity over Complexity", desc: "We eliminate shiny-object syndrome. You get only what's necessary for growth — nothing that distracts." },
-                { title: "Real Business Impact", desc: "Websites that convert. AI that responds. CRM that organizes. Automation that saves hours. Everything working together." },
-                { title: "Long-Term Scale", desc: "We build for long-term scale, not temporary hacks." }
+                { title: "Engineering First", desc: "We are builders, not just marketers. Our systems are robust." },
+                { title: "Speed", desc: "We deploy in days, not months." },
+                { title: "Focus", desc: "We only solve sales & operations problems. No fluff." },
+                { title: "Partnership", desc: "We don't just hand you a login. We build it with you." }
             ]
         },
         industries: {
             title: "WHO WE SERVE",
-            list: [
-                "Legal services",
-                "Home services (plumbing, cleaning, roofing, HVAC)",
-                "Clinics & aesthetic centers",
-                "Coaches & consultants",
-                "Restaurants & local businesses",
-                "Car dealerships",
-                "Fitness & wellness",
-                "Agencies"
-            ],
-            closing: "If your business handles leads, appointments, or follow-up… CERRANA will transform your sales process."
+            list: ["Healthcare", "Legal", "Real Estate", "Home Services", "Agencies", "Coaching", "SaaS"],
+            closing: "Any business where a missed call equals lost revenue."
         },
         team: {
-            title: "OUR TEAM PHILOSOPHY",
-            desc: "Behind CERRANA is a group of sales strategists, AI engineers, designers, and automation specialists. But more than that:",
-            values: [
-                "We are builders.",
-                "We like systems that work.",
-                "We care about results, not vanity metrics.",
-                "We believe in speed, clarity, and measurable progress."
-            ],
-            closing: "We don’t complicate. We simplify, automate, and scale."
+            title: "OUR PHILOSOPHY",
+            desc: "We are a small, elite team of engineers and strategists.",
+            values: ["Radical Truth", "Extreme Ownership", "Speed as a Habit"],
+            closing: "WE BUILD SYSTEMS THAT WORK."
         },
         impact: {
-            title: "OUR IMPACT (TRUSTED RESULTS)",
+            title: "THE IMPACT",
             testimonials: [
-                { quote: "Before CERRANA, we lost leads every day. Now our AI responds instantly and we doubled our bookings.", author: "Carolina T." },
-                { quote: "CERRANA organized our entire sales process. We finally know what’s happening with every client.", author: "Luis F." },
-                { quote: "The website + AI combination is unreal. We closed 47% more in the first month.", author: "Daniel S." },
-                { quote: "No more late replies, no more chaos. CERRANA runs our sales system better than we ever did manually.", author: "María R." }
+                { quote: "They completely rewired our business brain.", author: "CEO, TechFlow" },
+                { quote: "Finally, a system that actually does what it says.", author: "Founder, Apex Solar" }
             ]
         },
         commitment: {
-            title: "OUR COMMITMENT TO YOU",
-            subtitle: "We built CERRANA to give entrepreneurs freedom:",
-            points: [
-                "Freedom from working late replying to messages",
-                "Freedom from worrying about forgotten leads",
-                "Freedom from disorganized sales",
-                "Freedom to scale calmly"
-            ],
-            closing: "You focus on serving your clients. We build the system that brings them to you."
+            title: "OUR COMMITMENT",
+            subtitle: "To our clients and partners.",
+            points: ["Transparency", "Reliability", "Results"],
+            closing: "We treat your business as if it were our own."
         },
         cta: {
-            title: "Ready to see how CERRANA can transform your business?",
-            btn1: "Book Your Free Strategy Call",
-            btn2: "See a Live Demo",
-            urgency: "⏳ Weekly onboarding spots are limited to ensure quality."
+            title: "Ready to Automate?",
+            btn1: "Book Strategy Call",
+            btn2: "Back to Home",
+            urgency: "Limited availability for new partners."
         }
     },
     contact: {
@@ -521,36 +500,41 @@ export const translations = {
         urgency: '⏳ Los cupos de activación rápida se asignan por orden de llegada.'
       },
       services: {
-        title: 'ECOSISTEMA CERRANA',
-        subtitle: 'El motor completo para tu crecimiento.',
-        web: {
-            title: 'CERRANA WEB',
-            subtitle: 'Smart Websites & Funnels',
-            desc: 'Webs que convierten desde el primer clic con diseño neuro-orientado.',
-            cta: 'Quiero mi Web Inteligente',
-            urgency: '⚠️ 2 espacios de desarrollo este mes.'
-        },
-        capture: {
-            title: 'CERRANA CAPTURE',
-            subtitle: 'IA 24/7',
-            desc: 'Tu asistente responde y agenda citas sin intervención humana.',
-            cta: 'Probar Demo en Vivo',
-            urgency: '⏳ Onboardings diarios limitados.'
-        },
+        title: 'ELIGE TU MOTOR',
+        subtitle: 'Tres sistemas potentes. Un resultado: Crecimiento.',
         core: {
             title: 'CERRANA CORE',
-            subtitle: 'CRM + Automas',
-            desc: 'Tu proceso comercial, ordenado y automatizado como nunca.',
-            cta: 'Organizar mi Proceso',
-            urgency: '🔒 Solo 10 negocios al mes acceden a configuración completa.'
+            subtitle: 'OS de Ventas y CRM',
+            desc: 'La base. Pipeline de Ventas completo, CRM, SMS/Email bidireccional e integración de Calendario para organizar tu negocio.',
+            cta: 'Explorar Core',
+            urgency: '🔒 Límite 10 negocios/mes.'
         },
         growth: {
             title: 'CERRANA GROWTH',
-            subtitle: 'Core + Capture + Web',
-            desc: 'El sistema completo para crecer sin contratar más personal.',
-            cta: 'Escalar con Growth',
-            urgency: '⚠️ Paquete más solicitado — soporte premium casi lleno.'
+            subtitle: 'Core + Agente IA',
+            desc: 'Acelera. Todo lo de Core, más un Asistente de Reservas IA 24/7 que califica leads y agenda citas automáticamente.',
+            cta: 'Explorar Growth',
+            urgency: '⚡ Opción más popular.'
+        },
+        full: {
+            title: 'FULL FUNNEL',
+            subtitle: 'Core + IA + Web',
+            desc: 'Domina. El motor completo. Añade un Sitio Web y Embudo Inteligente de Alta Conversión para capturar, nutrir y cerrar tráfico a escala.',
+            cta: 'Explorar Full Funnel',
+            urgency: '⚠️ Alta demanda de desarrollo.'
         }
+      },
+      engineSection: {
+        tag: "INCLUIDO EN CADA PLAN",
+        title: "CONOCE CERRANA OS",
+        subtitle: "El sistema nervioso digital de tu negocio. No es solo software; es tu centro de comando. Centraliza cada conversación, automatiza cada tarea y visualiza cada dólar.",
+        features: [
+            { title: "Comando Unificado", desc: "WhatsApp, IG, SMS y Email en un solo flujo." },
+            { title: "Claridad Visual", desc: "Pipelines Kanban que te muestran exactamente dónde está el dinero." },
+            { title: "24/7 Activo", desc: "Automatizaciones que trabajan mientras duermes." }
+        ],
+        ctaMain: "Entrar a la Plataforma",
+        ctaSub: "Ver Especificaciones Técnicas"
       },
       results: {
         title: 'VISUALIZA LA VELOCIDAD',
@@ -862,95 +846,70 @@ export const translations = {
     about: {
         whoWeAre: {
             title: "QUIÉNES SOMOS",
-            desc1: "CERRANA es un sistema operativo de ventas creado para negocios modernos que quieren escalar sin caos, sin perder leads y sin nómina extra.",
-            desc2: "Combinamos IA, automatización, rendimiento web y un proceso de ventas claro para que tu negocio funcione finalmente como la máquina bien engrasada que merece ser.",
-            desc3: "No somos solo una empresa de tecnología. Somos un equipo obsesionado con convertir pequeñas y medianas empresas en máquinas de ingresos — en Colombia, EE.UU. y más allá."
+            desc1: "Somos los arquitectos de la economía automatizada.",
+            desc2: "Cerrana nació de una verdad simple: los negocios no mueren de hambre, mueren de indigestión. Demasiados leads, demasiado caos, muy poco tiempo.",
+            desc3: "No solo vendemos software. Construimos la infraestructura digital que permite a 1 persona hacer el trabajo de 10."
         },
         mission: {
             title: "NUESTRA MISIÓN",
-            subtitle: "Eliminar las suposiciones de las ventas.",
-            desc: "La mayoría de los negocios pierden oportunidades porque no responden lo suficientemente rápido, no hacen seguimiento o no tienen una estructura. CERRANA soluciona esto con sistemas diseñados para:",
+            subtitle: "Eliminando las Suposiciones",
+            desc: "Creemos que las ventas no deberían ser un misterio. Deberían ser una ciencia. Predecible. Escalable. Aburridamente efectiva.",
             points: [
-                "Responder al instante",
-                "Hacer seguimiento automático",
-                "Organizar tu pipeline de ventas",
-                "Convertir más leads en ingresos agendados",
-                "Darte control y visibilidad desde el primer día"
+                "Automatización sobre trabajo manual.",
+                "Datos sobre intuición.",
+                "Sistemas sobre ajetreo."
             ],
-            closing: "Nuestra misión es simple: Construir un sistema de ventas que funcione incluso cuando tú no estás trabajando."
+            closing: "Ayudamos a los negocios a dormir mejor sabiendo que su máquina de ventas nunca se apaga."
         },
         problem: {
-            title: "POR QUÉ EXISTIMOS",
-            subtitle: "El Problema Real Que Resolvemos",
+            title: "LA REALIDAD",
+            subtitle: "Por qué la mayoría de los negocios se quedan pequeños.",
             points: [
-                "Los anuncios son caros",
-                "Los clientes esperan respuestas inmediatas",
-                "El seguimiento manual mata la conversión",
-                "Los negocios pierden leads por los que ya pagaron",
-                "Los equipos colapsan bajo procesos desorganizados"
+                "Los leads se pierden.",
+                "El seguimiento es inconsistente.",
+                "La tecnología está fragmentada.",
+                "El agotamiento es inevitable."
             ],
-            closing: "CERRANA existe para hacer accesibles los sistemas de ventas de alto rendimiento para todos."
+            closing: "Cerrana resuelve esto unificando todo el stack en un sistema operativo."
         },
         difference: {
-            title: "QUÉ HACE DIFERENTE A CERRANA",
+            title: "LO QUE NOS HACE DIFERENTES",
             points: [
-                { title: "IA con Filosofía de Ventas Humana", desc: "Nuestros sistemas no solo 'responden'. Entienden, califican, agendan y nutren — como tu mejor vendedor." },
-                { title: "Primero el Proceso de Ventas. Segundo las Herramientas.", desc: "La mayoría de las agencias empiezan con tecnología. Nosotros empezamos con tu pipeline de ventas, la base de todos los ingresos." },
-                { title: "Claridad sobre Complejidad", desc: "Eliminamos el síndrome del objeto brillante. Obtienes solo lo necesario para crecer — nada que distraiga." },
-                { title: "Impacto Real en el Negocio", desc: "Webs que convierten. IA que responde. CRM que organiza. Automatización que ahorra horas. Todo trabajando junto." },
-                { title: "Escala a Largo Plazo", desc: "Construimos para escalar a largo plazo, no hacks temporales." }
+                { title: "Ingeniería Primero", desc: "Somos constructores, no solo marketeros. Nuestros sistemas son robustos." },
+                { title: "Velocidad", desc: "Desplegamos en días, no meses." },
+                { title: "Enfoque", desc: "Solo resolvemos problemas de ventas y operaciones. Sin relleno." },
+                { title: "Alianza", desc: "No solo te damos un login. Lo construimos contigo." }
             ]
         },
         industries: {
             title: "A QUIÉN SERVIMOS",
-            list: [
-                "Servicios legales",
-                "Servicios del hogar (plomería, limpieza, techos, HVAC)",
-                "Clínicas y centros estéticos",
-                "Coaches y consultores",
-                "Restaurantes y negocios locales",
-                "Concesionarios de autos",
-                "Fitness y bienestar",
-                "Agencias"
-            ],
-            closing: "Si tu negocio maneja leads, citas o seguimiento… CERRANA transformará tu proceso de ventas."
+            list: ["Salud", "Legal", "Bienes Raíces", "Servicios del Hogar", "Agencias", "Coaching", "SaaS"],
+            closing: "Cualquier negocio donde una llamada perdida signifique ingresos perdidos."
         },
         team: {
-            title: "FILOSOFÍA DE NUESTRO EQUIPO",
-            desc: "Detrás de CERRANA hay un grupo de estrategas de ventas, ingenieros de IA, diseñadores y especialistas en automatización. Pero más que eso:",
-            values: [
-                "Somos constructores.",
-                "Nos gustan los sistemas que funcionan.",
-                "Nos importan los resultados, no las métricas de vanidad.",
-                "Creemos en la velocidad, la claridad y el progreso medible."
-            ],
-            closing: "No complicamos. Simplificamos, automatizamos y escalamos."
+            title: "NUESTRA FILOSOFÍA",
+            desc: "Somos un equipo pequeño y de élite de ingenieros y estrategas.",
+            values: ["Verdad Radical", "Propiedad Extrema", "Velocidad como Hábito"],
+            closing: "CONSTRUIMOS SISTEMAS QUE FUNCIONAN."
         },
         impact: {
-            title: "NUESTRO IMPACTO (RESULTADOS CONFIABLES)",
+            title: "EL IMPACTO",
             testimonials: [
-                { quote: "Antes de CERRANA, perdíamos leads todos los días. Ahora nuestra IA responde al instante y duplicamos nuestras reservas.", author: "Carolina T." },
-                { quote: "CERRANA organizó todo nuestro proceso de ventas. Finalmente sabemos qué pasa con cada cliente.", author: "Luis F." },
-                { quote: "La combinación de web + IA es irreal. Cerramos un 47% más en el primer mes.", author: "Daniel S." },
-                { quote: "Sin respuestas tardías, sin caos. CERRANA maneja nuestro sistema de ventas mejor de lo que nunca lo hicimos manualmente.", author: "María R." }
+                { quote: "Recablearon completamente el cerebro de nuestro negocio.", author: "CEO, TechFlow" },
+                { quote: "Finalmente, un sistema que realmente hace lo que dice.", author: "Fundador, Apex Solar" }
             ]
         },
         commitment: {
-            title: "NUESTRO COMPROMISO CONTIGO",
-            subtitle: "Construimos CERRANA para dar libertad a los emprendedores:",
-            points: [
-                "Libertad de trabajar tarde respondiendo mensajes",
-                "Libertad de preocuparse por leads olvidados",
-                "Libertad de ventas desorganizadas",
-                "Libertad para escalar con calma"
-            ],
-            closing: "Tú enfócate en servir a tus clientes. Nosotros construimos el sistema que los trae hacia ti."
+            title: "NUESTRO COMPROMISO",
+            subtitle: "Con nuestros clientes y socios.",
+            points: ["Transparencia", "Fiabilidad", "Resultados"],
+            closing: "Tratamos tu negocio como si fuera el nuestro."
         },
         cta: {
-            title: "¿Listo para ver cómo CERRANA puede transformar tu negocio?",
-            btn1: "Agenda Tu Estrategia Gratis",
-            btn2: "Ver una Demo en Vivo",
-            urgency: "⏳ Los cupos de onboarding semanal son limitados para asegurar calidad."
+            title: "¿Listo para Automatizar?",
+            btn1: "Agendar Llamada",
+            btn2: "Volver al Inicio",
+            urgency: "Disponibilidad limitada para nuevos socios."
         }
     },
     contact: {
