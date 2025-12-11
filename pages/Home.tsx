@@ -661,7 +661,7 @@ export const Home: React.FC = () => {
                          </div>
                          <div className="md:w-1/2 bg-brand-900/10 rounded-3xl p-8 border border-brand-500/20 text-center relative overflow-hidden backdrop-blur-sm">
                              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-                             <h3 className="relative z-10 text-2xl font-bold text-white mb-6">Ready to automate?</h3>
+                             <h3 className="relative z-10 text-2xl font-bold text-white mb-6">{t.process.readyTitle}</h3>
                              <button onClick={() => navigate('/contact')} className="relative z-10 px-8 py-3 bg-white text-dark-950 font-bold rounded-lg hover:scale-105 transition-transform shadow-lg">
                                  {t.process.cta}
                              </button>

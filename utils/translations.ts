@@ -59,7 +59,7 @@ export const translations = {
             desc: 'Dominate. The complete engine. Adds a High-Converting Smart Website & Funnel to capture, nurture, and close traffic at scale.',
             cta: 'Explore Full Funnel',
             urgency: '⚠️ High development demand.'
-        }
+        },
       },
       engineSection: {
         tag: "INCLUDED IN EVERY PLAN",
@@ -94,6 +94,7 @@ export const translations = {
             { title: 'Build', desc: 'We connect and configure engines.' },
             { title: 'Launch', desc: 'You automate and sell.' }
         ],
+        readyTitle: 'Ready to automate?',
         cta: 'Book Strategy (Last Slots)',
         urgency: '🟡 3 spaces left before current cycle closes.'
       },
@@ -158,6 +159,22 @@ export const translations = {
         urgency: '⏳ Last spots before waitlist opens.'
       }
     },
+    // ... [Previous Translations kept as is] ...
+    cerra: {
+        intro: "INITIATING SCAN... 👁️",
+        greetings: [
+            "Wait... human detected.",
+            "I've scanned your funnel...",
+            "It looks... thirsty.",
+            "Want to fix that? 💧"
+        ],
+        btnYes: "Yes, hydrate my business",
+        btnNo: "No, I like losing money",
+        responseYes: "Wise choice, human. Let's build a machine.",
+        responseNo: "Error 404: Logic not found. But okay, bye! 👋",
+        cta: "INCOMING TRANSMISSION"
+    },
+    // ... [Keep other sections identical]
     os_page: {
         hero: {
             title: "CERRANA OS",
@@ -336,7 +353,7 @@ export const translations = {
         full: {
           title: 'FULL FUNNEL',
           subtitle: 'CORE + CAPTURE + WEB',
-          desc: 'The ultimate engine. CRM, Asistente de IA y un sitio web de alta conversión.',
+          desc: 'The ultimate engine. CRM, AI Assistant, and a high-converting website.',
           features: ['Everything in Growth Bundle', 'Smart Website / Funnel', 'SEO-Ready Structure', 'Conversion Rate Optimization', 'Priority Support'],
           cta: 'Select Full Funnel'
         }
@@ -557,6 +574,7 @@ export const translations = {
             { title: 'Construcción', desc: 'Conectamos y configuramos.' },
             { title: 'Lanzamiento', desc: 'Automatizas y vendes.' }
         ],
+        readyTitle: '¿Listo para automatizar?',
         cta: 'Agendar Estrategia (Últimos Cupos)',
         urgency: '🟡 Quedan 3 espacios antes del cierre del ciclo actual.'
       },
@@ -621,6 +639,21 @@ export const translations = {
         urgency: '⏳ Últimos cupos antes de abrir lista de espera.'
       }
     },
+    // ... [Previous Translations kept as is] ...
+    cerra: {
+        intro: "INICIANDO ESCANEO... 👁️",
+        greetings: [
+            "Espera... humano detectado.",
+            "Escaneé tu embudo...",
+            "Se ve... deshidratado.",
+            "¿Lo arreglamos? 💧"
+        ],
+        btnYes: "Sí, hidrata mi negocio",
+        btnNo: "No, me gusta perder dinero",
+        responseYes: "Sabia elección, humano. Construyamos la máquina.",
+        responseNo: "Error 404: Lógica no encontrada. ¡Pero vale, adiós! 👋",
+        cta: "TRANSMISIÓN ENTRANTE"
+    },
     os_page: {
         hero: {
             title: "CERRANA OS",
@@ -635,20 +668,20 @@ export const translations = {
             modules: ["CRM Pro", "IA 24/7", "Funnels", "Automations", "Inbox Unificado", "Pagos", "Reputación", "App Móvil"]
         },
         features: [
-            { title: "Conversations Hub", desc: "WhatsApp, SMS, Email, IG, FB y Webchat en un solo lugar.", benefit: "Nunca pierdes conversaciones." },
-            { title: "Smart Sales Pipeline", desc: "Kanban interactivo. Arrastrar y soltar leads.", benefit: "Control total del proceso comercial." },
+            { title: "Centro de Conversaciones", desc: "WhatsApp, SMS, Email, IG, FB y Webchat en un solo lugar.", benefit: "Nunca pierdes conversaciones." },
+            { title: "Pipeline de Ventas Inteligente", desc: "Kanban interactivo. Arrastrar y soltar leads.", benefit: "Control total del proceso comercial." },
             { title: "CRM Completo", desc: "Todos los contactos organizados con etiquetas, notas, tareas.", benefit: "Claridad total del historial del cliente." },
             { title: "IA Conversacional", desc: "Responde 24/7, califica, agenda, nutre.", benefit: "Más citas, menos trabajo humano." },
             { title: "Workflows Automáticos", desc: "Secuencias de Email, SMS, WhatsApp, llamadas, tareas.", benefit: "Seguimiento perfecto sin esfuerzo." },
-            { title: "Calendar & Booking", desc: "Reservas automáticas, recordatorios, confirmaciones.", benefit: "Más citas, menos no-shows." },
-            { title: "Websites & Funnels", desc: "Constructor visual de páginas de alta conversión.", benefit: "Convierte clics en clientes." },
+            { title: "Calendario y Reservas", desc: "Reservas automáticas, recordatorios, confirmaciones.", benefit: "Más citas, menos no-shows." },
+            { title: "Sitios Web y Embudos", desc: "Constructor visual de páginas de alta conversión.", benefit: "Convierte clics en clientes." },
             { title: "Email Marketing", desc: "Plantillas, programaciones, newsletters.", benefit: "Comunicación profesional sin complicación." },
             { title: "SMS Marketing", desc: "Mensajes masivos y automatizados.", benefit: "Tasas de apertura altísimas." },
-            { title: "Reputation Management", desc: "Solicitud automática de reseñas en Google.", benefit: "Más confianza = más ventas." },
+            { title: "Gestión de Reputación", desc: "Solicitud automática de reseñas en Google.", benefit: "Más confianza = más ventas." },
             { title: "Pagos & Facturas", desc: "Cobros online, envíos de facturas, suscripciones.", benefit: "Cobras más rápido y más fácil." },
-            { title: "Memberships & Courses", desc: "Plataformas de cursos y áreas privadas.", benefit: "Ingresos recurrentes." },
-            { title: "Call Tracking", desc: "Grabación, seguimiento e IVR de llamadas.", benefit: "Más cierre, menos fricción." },
-            { title: "Analytics Dashboard", desc: "Métricas en tiempo real: leads, citas, ventas.", benefit: "Decisiones basadas en datos." },
+            { title: "Membresías y Cursos", desc: "Plataformas de cursos y áreas privadas.", benefit: "Ingresos recurrentes." },
+            { title: "Seguimiento de Llamadas", desc: "Grabación, seguimiento e IVR de llamadas.", benefit: "Más cierre, menos fricción." },
+            { title: "Panel de Analíticas", desc: "Métricas en tiempo real: leads, citas, ventas.", benefit: "Decisiones basadas en datos." },
             { title: "App Móvil", desc: "Todo el sistema en tu bolsillo.", benefit: "Controla tu negocio desde donde estés." }
         ],
         midFeatureCta: {

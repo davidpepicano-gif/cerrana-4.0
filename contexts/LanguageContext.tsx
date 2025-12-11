@@ -12,15 +12,36 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [language, setLanguage] = useState<Language>('en');
 
   useEffect(() => {
+    // 1. Check LocalStorage (Highest Priority - Explicit User Choice)
     const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang) {
+    if (savedLang === 'en' || savedLang === 'es') {
       setLanguage(savedLang);
+      return;
+    }
+
+    // 2. Check Cookies (Secondary persistence)
+    const getCookie = (name: string) => {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return match[2];
+      return null;
+    };
+    const cookieLang = getCookie('language') as Language;
+    if (cookieLang === 'en' || cookieLang === 'es') {
+      setLanguage(cookieLang);
+      return;
+    }
+
+    // 3. Auto-detect from Browser (Fallback)
+    const browserLang = navigator.language || (navigator.languages && navigator.languages[0]) || '';
+    if (browserLang.toLowerCase().startsWith('es')) {
+      setLanguage('es');
     }
   }, []);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
+    document.cookie = `language=${lang}; path=/; max-age=31536000`; // Persist for 1 year
   };
 
   return (
