@@ -220,8 +220,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center gap-2"><Phone size={14} className="text-brand-500" /> +1 (919) 918-0505</li>
                 <li className="flex items-center gap-2 text-slate-300">support@cerrana.com</li>
-                <li><Link to="/privacy_policy" className="hover:text-brand-400 transition-colors">{t.footer.privacy}</Link></li>
-                <li><Link to="/terms_of_service" className="hover:text-brand-400 transition-colors">{t.footer.terms}</Link></li>
+                <li><Link to="/privacy-policy" className="hover:text-brand-400 transition-colors">{t.footer.privacy}</Link></li>
+                <li><Link to="/terms-of-service" className="hover:text-brand-400 transition-colors">{t.footer.terms}</Link></li>
               </ul>
             </div>
           </div>
