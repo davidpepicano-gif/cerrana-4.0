@@ -159,7 +159,6 @@ export const translations = {
         urgency: '⏳ Last spots before waitlist opens.'
       }
     },
-    // ... [Previous Translations kept as is] ...
     cerra: {
         intro: "INITIATING SCAN... 👁️",
         greetings: [
@@ -174,7 +173,6 @@ export const translations = {
         responseNo: "Error 404: Logic not found. But okay, bye! 👋",
         cta: "INCOMING TRANSMISSION"
     },
-    // ... [Keep other sections identical]
     os_page: {
         hero: {
             title: "CERRANA OS",
