@@ -1,8 +1,14 @@
 import React from 'react';
+import { SEO } from '../components/SEO';
 
 export const TermsOfService: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen pb-24 pt-24 md:pt-32 text-slate-200">
+      <SEO 
+        title="Terms of Service | Cerrana AI" 
+        description="Review our Terms of Service regarding the use of Cerrana AI's platform and services."
+      />
+
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <h1 className="text-3xl md:text-5xl font-display font-bold text-white mb-8 tracking-wide">
           Terms of Service

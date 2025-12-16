@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
+import { SEO } from '../components/SEO';
 
 /* ------------------------------------------------------------
    Advanced Visuals for Each Module (CSS + State)
@@ -272,6 +273,10 @@ export const CerranaOS: React.FC = () => {
 
     return (
         <div className="bg-dark-950 min-h-screen text-slate-200">
+            <SEO 
+                title="Cerrana OS | The All-In-One Sales Operating System" 
+                description="Replace your fragmented tech stack. Cerrana OS combines CRM, AI, Funnels, and Automation into one powerful command center."
+            />
             
             {/* 1. HERO SECTION */}
             <section className="pt-32 pb-20 relative overflow-hidden">

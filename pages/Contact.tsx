@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Mail, Calendar } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
+import { SEO } from '../components/SEO';
 
 export const Contact: React.FC = () => {
   const { language } = useLanguage();
@@ -20,8 +21,30 @@ export const Contact: React.FC = () => {
     };
   }, []);
 
+  const contactSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "description": "Book a strategy audit with Cerrana AI to discuss automation and CRM solutions.",
+    "mainEntity": {
+        "@type": "LocalBusiness",
+        "name": "Cerrana AI",
+        "telephone": "+19199180505",
+        "email": "support@cerrana.com",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales"
+        }
+    }
+  });
+
   return (
     <div className="bg-dark-950 min-h-screen pb-24 md:pb-0 text-slate-200">
+      <SEO 
+        title="Contact Us | Book Your Strategy Audit - Cerrana AI" 
+        description="Schedule a free strategy audit. We'll map your sales process and identify where AI and automation can add immediate revenue."
+        schema={contactSchema}
+      />
+
       <div className="container mx-auto px-4 md:px-6 py-12 md:py-24 relative">
         {/* Background glow */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-900/10 rounded-full blur-[100px] pointer-events-none"></div>

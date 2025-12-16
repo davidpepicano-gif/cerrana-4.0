@@ -4,6 +4,7 @@ import { ArrowRight, ChevronRight, Check, Zap, Globe, MessageSquare, Activity, C
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
 import { Testimonial } from '../types';
+import { SEO } from '../components/SEO';
 
 /* ------------------------------------------------------------
    COMPONENT: Interactive Chat Simulation (Hero)
@@ -478,8 +479,33 @@ export const Home: React.FC = () => {
     const { language } = useLanguage();
     const t = translations[language].home;
 
+    const organizationSchema = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Cerrana AI",
+        "url": "https://cerrana.com",
+        "logo": "https://cerrana.com/logo.png",
+        "description": "Cerrana AI builds digital infrastructure, AI Sales Agents, and CRM systems for service businesses.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-919-918-0505",
+            "contactType": "sales",
+            "areaServed": ["US", "LATAM"],
+            "availableLanguage": ["English", "Spanish"]
+        },
+        "sameAs": [
+            "https://twitter.com/cerranaai",
+            "https://linkedin.com/company/cerrana-ai"
+        ]
+    });
+
     return (
         <div className="bg-dark-950 overflow-x-hidden pb-24">
+            <SEO 
+                title="Cerrana AI | Sales Systems, CRM & AI Automation" 
+                description="Cerrana builds digital infrastructure for service businesses. We implement AI Sales Agents, CRM systems, and high-converting funnels to automate your growth."
+                schema={organizationSchema}
+            />
             
             {/* 1. HERO SECTION (Interactive Chat) */}
             <section className="relative pt-32 pb-24 overflow-hidden">

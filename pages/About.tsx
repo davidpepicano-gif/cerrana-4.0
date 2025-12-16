@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Target, Shield, Zap, Cpu, Check, X, ArrowRight, Heart, Brain, Users, Globe, Building2, Wrench, Briefcase } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
+import { SEO } from '../components/SEO';
 
 export const About: React.FC = () => {
   const navigate = useNavigate();
@@ -11,6 +12,10 @@ export const About: React.FC = () => {
 
   return (
     <div className="bg-dark-950 min-h-screen text-slate-200">
+      <SEO 
+        title="About Us | Cerrana AI - Architects of Automation" 
+        description="We are engineers, not gurus. Cerrana AI builds the digital infrastructure that lets service businesses scale without breaking."
+      />
       
       {/* 1. HERO: WHO WE ARE */}
       <section className="pt-32 pb-20 relative overflow-hidden">

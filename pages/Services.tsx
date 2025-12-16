@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
+import { SEO } from '../components/SEO';
 
 const ServiceExplainer: React.FC<{
     icon: React.ElementType,
@@ -106,8 +107,52 @@ export const Services: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language].services_page;
 
+  const serviceSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "AI Automation and CRM Implementation",
+    "provider": {
+        "@type": "Organization",
+        "name": "Cerrana AI"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Cerrana Services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Smart Funnels & Websites"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "CRM & Automation"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Booking Agents"
+                }
+            }
+        ]
+    }
+  });
+
   return (
     <div className="pb-24 md:pb-0 bg-dark-950 text-slate-200">
+      <SEO 
+        title="Our Services | Cerrana AI - CRM, Funnels & AI Agents" 
+        description="Explore our specialized services: AI Sales Agents, CRM Implementation, and High-Converting Funnels. We build the engine that drives your revenue."
+        schema={serviceSchema}
+      />
+
       <section className="bg-dark-900/50 border-b border-white/5 py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-900/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -408,7 +453,7 @@ export const Services: React.FC = () => {
                     ].map((log, i) => (
                         <div key={i} className="p-3 border-b border-white/5 hover:bg-white/5 transition-colors cursor-default">
                             <div className="flex justify-between mb-1">
-                                <span className={`text-[10px] font-bold ${log.type === 'success' ? 'text-green-400' : log.type === 'warning' ? 'text-brand-400' : 'text-blue-400'}`}>{log.event}</span>
+                                <span className="text-[10px] font-bold ${log.type === 'success' ? 'text-green-400' : log.type === 'warning' ? 'text-brand-400' : 'text-blue-400'}">{log.event}</span>
                                 <span className="text-[9px] text-slate-600">{log.time}</span>
                             </div>
                             <div className="text-[10px] text-slate-400 font-mono">{log.detail}</div>

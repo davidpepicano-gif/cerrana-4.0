@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Check, Minus, Zap, ArrowRight, MousePointer2, Layers, Cpu, Globe, Rocket, ShieldCheck, PlayCircle, Eye } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
+import { SEO } from '../components/SEO';
 
 type TierId = 'core' | 'growth' | 'full';
 
@@ -39,8 +40,63 @@ export const Pricing: React.FC = () => {
       }
   };
 
+  const pricingSchema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Cerrana AI Sales System",
+    "description": "Comprehensive sales automation, CRM, and AI agent solution.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Cerrana AI"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Core CRM",
+        "price": "147.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "147.00",
+            "priceCurrency": "USD",
+            "unitCode": "MON"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Growth Bundle",
+        "price": "347.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "347.00",
+            "priceCurrency": "USD",
+            "unitCode": "MON"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Full Funnel",
+        "price": "397.00",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "397.00",
+            "priceCurrency": "USD",
+            "unitCode": "MON"
+        }
+      }
+    ]
+  });
+
   return (
     <div className="bg-dark-950 min-h-screen pb-24 text-slate-200">
+      <SEO 
+        title="Pricing Plans - Core, Growth & Funnels | Cerrana AI" 
+        description="Transparent pricing for your sales infrastructure. Choose from Core CRM, Growth AI Bundle, or the Full Funnel Stack."
+        schema={pricingSchema}
+      />
+
       {/* Hero */}
       <section className="relative py-20 md:py-32 overflow-hidden text-center">
          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-900/20 rounded-full blur-[100px] pointer-events-none"></div>

@@ -1,8 +1,14 @@
 import React from 'react';
+import { SEO } from '../components/SEO';
 
 export const PrivacyPolicy: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen pb-24 pt-24 md:pt-32 text-slate-200">
+      <SEO 
+        title="Privacy Policy | Cerrana AI" 
+        description="Learn how Cerrana AI collects, uses, and protects your personal data."
+      />
+
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         {/* Header */}
         <h1 className="text-3xl md:text-5xl font-display font-bold text-white mb-8 tracking-wide">
