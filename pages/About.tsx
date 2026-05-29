@@ -13,8 +13,8 @@ export const About: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen text-slate-200">
       <SEO 
-        title="About Us | Cerrana AI - Architects of Automation" 
-        description="We are engineers, not gurus. Cerrana AI builds the digital infrastructure that lets service businesses scale without breaking."
+        title={language === 'es' ? "Arquitectos de la Automatización Clínica | Cerrana AI" : "Architects of Clinic Automation | Cerrana AI"} 
+        description={language === 'es' ? "Nuestra misión es eliminar el ajetreo administrativo de tu estética u odontología respondiendo en segundos y pre-calificando pacientes." : "Our mission is to eliminate clinic admin workload, responding to patient leads in seconds and pre-qualifying them on auto-pilot."}
       />
       
       {/* 1. HERO: WHO WE ARE */}

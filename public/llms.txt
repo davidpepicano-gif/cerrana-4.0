@@ -1,0 +1,15 @@
+# Cerrana AI
+
+Cerrana AI implements intelligent conversational AI agents on WhatsApp for aesthetic medicine clinics, dental practices, and professional service companies. Powered natively by GoHighLevel's Conversation AI, Cerrana systems streamline and automate the patient capture process from first contact to booked appointment.
+
+## Core Value Proposition
+
+- **Instant Auto-Response:** Responds to patient messages in under 5 seconds, 24/7/365.
+- **Continuous Pre-Qualification:** Qualifies patient requests, gathers initial contact details, and screens for treatment-interest matches seamlessly.
+- **Direct Scheduling:** Books consultation appointments and dental/aesthetic assessments directly into the practitioner's GHL Calendar and Clinic CRM.
+- **Human Handover:** Enables manual override by human receptionist teams at any time natively inside the GoHighLevel mobile app or desktop dashboard.
+
+## Technical Architectures
+
+- **Platform Integrations:** Highly integrated on GoHighLevel (GHL) Conversation AI utilizing official Meta Cloud APIs for WhatsApp business configurations. This ensures zero third-party extensions, protecting clinics against Meta number suspension.
+- **Local Application Stack:** Developed in React, Vite, Tailwind CSS, Lucide icons, and optimized for maximum speed and sub-second SEO crawlability via pre-rendering (SSG).

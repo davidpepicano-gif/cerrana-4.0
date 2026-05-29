@@ -110,35 +110,38 @@ export const Services: React.FC = () => {
   const serviceSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "AI Automation and CRM Implementation",
+    "serviceType": "Agentes de IA en WhatsApp & Implementación CRM para Clínicas",
     "provider": {
         "@type": "Organization",
         "name": "Cerrana AI"
     },
-    "areaServed": "Worldwide",
+    "areaServed": {
+        "@type": "Country",
+        "name": "Spain"
+    },
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Cerrana Services",
+        "name": "Servicios Clínicos de Cerrana",
         "itemListElement": [
             {
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
-                    "name": "Smart Funnels & Websites"
+                    "name": "Funnels de Captación y Sitios Web CRO Clínicos"
                 }
             },
             {
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
-                    "name": "CRM & Automation"
+                    "name": "CRM y Automatización GoHighLevel"
                 }
             },
             {
                 "@type": "Offer",
                 "itemOffered": {
                     "@type": "Service",
-                    "name": "AI Booking Agents"
+                    "name": "Agente Booker de WhatsApp Oficial Meta AI"
                 }
             }
         ]
@@ -148,8 +151,8 @@ export const Services: React.FC = () => {
   return (
     <div className="pb-24 md:pb-0 bg-dark-950 text-slate-200">
       <SEO 
-        title="Our Services | Cerrana AI - CRM, Funnels & AI Agents" 
-        description="Explore our specialized services: AI Sales Agents, CRM Implementation, and High-Converting Funnels. We build the engine that drives your revenue."
+        title={language === 'es' ? "Servicios de Automatización y Agentes IA para Clínicas | Cerrana" : "Clinic Automation & WhatsApp AI Agent Services | Cerrana"} 
+        description={language === 'es' ? "Agente de WhatsApp Conversation AI nativo en GoHighLevel, embudos CRO de alta conversión para tratamientos de estética u odontología, y CRM integrado." : "Native GHL WhatsApp AI Booker agent, custom high-converting aesthetic/dental marketing CRO funnels, and integrated CRM implementation."}
         schema={serviceSchema}
       />
 

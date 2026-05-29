@@ -43,8 +43,8 @@ export const Pricing: React.FC = () => {
   const pricingSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Cerrana AI Sales System",
-    "description": "Comprehensive sales automation, CRM, and AI agent solution.",
+    "name": "Cerrana Clinic OS",
+    "description": "Automatización de ventas, CRM clínico, y agente de Meta WhatsApp AI Booker para clínicas.",
     "brand": {
       "@type": "Brand",
       "name": "Cerrana AI"
@@ -92,8 +92,8 @@ export const Pricing: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen pb-24 text-slate-200">
       <SEO 
-        title="Pricing Plans - Core, Growth & Funnels | Cerrana AI" 
-        description="Transparent pricing for your sales infrastructure. Choose from Core CRM, Growth AI Bundle, or the Full Funnel Stack."
+        title={language === 'es' ? "Planes y Precios Recurrentes | Cerrana Clinic OS" : "Pricing Plans & Tiering | Cerrana Clinic OS"} 
+        description={language === 'es' ? "Desde pipelines y CRM clínicos hasta el WhatsApp AI Booker oficial de Meta. Elige el motor idóneo para escalar la facturación de tu clínica." : "From medical CRM pipelines to Meta WhatsApp AI Booker. Select the perfect engine to scale your aesthetic or dental clinic sales."}
         schema={pricingSchema}
       />
 

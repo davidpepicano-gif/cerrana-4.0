@@ -1,16 +1,16 @@
 export const translations = {
   en: {
     nav: {
-      platform: 'Platform',
+      platform: 'Cerrana OS',
       services: 'Services',
       pricing: 'Pricing',
-      about: 'About',
-      contact: 'Contact',
-      bookCall: 'Book Strategy Call'
+      about: 'About Us',
+      contact: 'Book Demo',
+      bookCall: 'Book 20-Min Demo'
     },
     footer: {
-      tagline: 'Building the digital nervous systems for modern businesses. Fundamentals over hype. Systems over noise.',
-      serving: 'Serving clients in the U.S. and Latin America.',
+      tagline: 'Native WhatsApp AI agents for dental and aesthetic clinics. Respond 24/7, qualify patients, and fill your doctor\'s calendar.',
+      serving: 'Serving premier clinics in the US and Latin America.',
       company: 'COMPANY',
       connect: 'CONNECT',
       rights: 'All rights reserved.',
@@ -19,476 +19,487 @@ export const translations = {
     },
     home: {
       hero: {
-        pill: 'SYSTEM STATUS: OPERATIONAL',
-        titleLine1: 'Automate your sales today.',
-        titleLine2: 'CERRANA works 24/7 for you.',
-        subtitle: 'AI + CRM + Funnels working together so no opportunity is lost.',
-        ctaPrimary: 'Book Free Strategy',
-        ctaSecondary: 'View Interactive Demo',
-        urgency: '⚠️ System detecting high demand: only 4 implementation slots available this week.'
+        pill: 'AGENT STATUS: ACTIVE 24/7',
+        titleLine1: 'Your clinic responds to every',
+        titleLine2: 'WhatsApp in seconds. Even at night.',
+        subtitle: 'We implement an AI Agent on WhatsApp for aesthetic and dental clinics that answers 24/7, qualifies every patient, and fills your calendar only with high-value consultations.',
+        ctaPrimary: 'Book a 20-Min Demo',
+        ctaSecondary: 'How It Works',
+        urgency: '⚠️ High demand: Only 3 clinic onboarding slots available for this week\'s cycle.'
       },
       impact: {
-        title: 'THE IMPACT',
-        before: 'CHAOS',
-        after: 'CERRANA SYSTEM',
-        beforeList: ['Unanswered messages', 'Cold leads', 'Empty calendar', 'Manual follow-up'],
-        afterList: ['Instant responses', 'Qualified leads', 'Auto-booked meetings', 'Revenue on autopilot'],
-        cta: 'Activate Cerrana Now',
-        urgency: '⏳ Fast-track slots allocated on a first-come, first-served basis.'
+        title: 'Money is slipping away in the messages you don\'t answer',
+        before: 'WITHOUT AI AGENT',
+        after: 'WITH CERRANA AI',
+        beforeList: [
+          'You pay ads to attract patients, but messages pile up after hours.',
+          'Delayed replies lose patients—they book with the competitor who replies first.',
+          'The doctor\'s highly valuable time is spent dealing with price-shoppers instead of operations.',
+          'Receptionist overwhelmed with repetitive general questions.'
+        ],
+        afterList: [
+          'Instant 24/7 response on WhatsApp in less than 5 seconds.',
+          'Automatic qualification: filters out casual price-shoppers from serious patients.',
+          'High-value consultations are automatically booked and synced to CRM.',
+          'Medical staff focuses only on qualified, high-ticket procedures.'
+        ],
+        cta: 'Book a 20-Min Demo',
+        urgency: '⏳ Stop losing patients to faster competitors.'
       },
       services: {
-        title: 'CHOOSE YOUR ENGINE',
-        subtitle: 'Three powerful systems. One result: Growth.',
+        title: 'How Your WhatsApp Agent Works',
+        subtitle: 'Four steps to automate lead response and qualify clinic patients.',
         core: {
-            title: 'CERRANA CORE',
-            subtitle: 'CRM & Automation OS',
-            desc: 'The foundation. A complete Sales Pipeline, CRM, 2-way SMS/Email, and Calendar integration to organize your business.',
-            cta: 'Explore Core',
-            urgency: '🔒 10 businesses/mo limit.'
+          title: '1. Instant Response 24/7',
+          subtitle: 'TONE & ACCURACY',
+          desc: 'Responds to every incoming message in seconds, 24/7, using your clinic\'s exact protocols, treatments, and pricing information.',
+          cta: 'Schedule Demo',
+          urgency: '⚡ Instant engagement'
         },
         growth: {
-            title: 'CERRANA GROWTH',
-            subtitle: 'Core + AI Agent',
-            desc: 'Accelerate. Everything in Core, plus a 24/7 AI Booking Assistant that qualifies leads and books appointments automatically.',
-            cta: 'Explore Growth',
-            urgency: '⚡ Most popular choice.'
+          title: '2. Automatic Qualification',
+          subtitle: 'FILTER INBOX TRAFFIC',
+          desc: 'Qualifies patients automatically. Separates real aesthetic or dental prospects from casual price-shoppers before they book.',
+          cta: 'Schedule Demo',
+          urgency: '🎯 Prioritizes high value'
         },
         full: {
-            title: 'FULL FUNNEL',
-            subtitle: 'Core + AI + Web',
-            desc: 'Dominate. The complete engine. Adds a High-Converting Smart Website & Funnel to capture, nurture, and close traffic at scale.',
-            cta: 'Explore Full Funnel',
-            urgency: '⚠️ High development demand.'
-        },
+          title: '3. Automated Booking',
+          subtitle: 'CALENDAR SYNCHRONIZATION',
+          desc: 'Automatically books the evaluation consultation, takes deposits if required, and saves everything directly in GoHighLevel CRM.',
+          cta: 'Schedule Demo',
+          urgency: '📅 Seamless scheduling'
+        }
       },
       engineSection: {
-        tag: "INCLUDED IN EVERY PLAN",
-        title: "MEET CERRANA OS",
-        subtitle: "The digital nervous system of your business. It's not just software; it's your command center. Centralize every conversation, automate every task, and see every dollar.",
+        tag: "FOR HIGH-GROWTH CLINICS",
+        title: "For aesthetic and dental clinics that already invest in marketing",
+        subtitle: "If you receive high message volume on WhatsApp and struggle to reply on time, and every patient represents hundreds or thousands in value, this system pays for itself with just 1 or 2 recovered patients per month.",
         features: [
-            { title: "Unified Command", desc: "WhatsApp, IG, SMS & Email in one stream." },
-            { title: "Visual Clarity", desc: "Kanban pipelines that show you exactly where money is hiding." },
-            { title: "24/7 Uptime", desc: "Automations that work while you sleep." }
+          { title: "Native Meta Integration", desc: "Built inside GoHighLevel's native engine, fully compliant with Meta's terms." },
+          { title: "Smart Auto-Followup", desc: "Follows up automatically with patients who inquired but didn't book." },
+          { title: "Receptionist Freedom", desc: "Liberates your staff from repetitive messaging so they can serve in-person patients." }
         ],
-        ctaMain: "Enter the Platform",
-        ctaSub: "See Technical Specs"
+        ctaMain: "Schedule a Demo",
+        ctaSub: "Learn More"
       },
       results: {
-        title: 'VISUALIZE SPEED',
-        desc: 'See impact in less than 72 hours.',
-        step1: 'Connection',
-        step2: 'Config',
-        step3: 'Results',
-        cta: 'Start Now',
-        urgency: '⏳ Quick start closes when current slots fill.'
+        title: 'Safe For Your WhatsApp Number',
+        desc: 'We use GoHighLevel\'s native Conversation AI, fully compliant with Meta\'s official WhatsApp Business terms. No unaligned third-party integrations that risk banning your clinic\'s phone number.',
+        step1: 'Meta API',
+        step2: 'GHL Native',
+        step3: 'Compliance',
+        cta: 'Book a 20-Min Demo',
+        urgency: '🔒 100% compliant with WhatsApp Business Terms.'
       },
       social: {
-        title: 'JOIN THE ELITE',
-        cta: 'Join businesses using CERRANA',
-        urgency: '⚡ Implementations in weekly cycles.'
+        title: 'TRUSTED BY MEDICAL EXPERTS',
+        cta: 'Automate Your Clinic Today',
+        urgency: '⚡ Deployments completed in 7-14 days.'
       },
       process: {
-        title: 'HOW IT WORKS',
+        title: 'AUTOMATION TIMELINE',
         steps: [
-            { title: 'Strategy', desc: 'We map your sales process.' },
-            { title: 'Build', desc: 'We connect and configure engines.' },
-            { title: 'Launch', desc: 'You automate and sell.' }
+          { title: 'Training', desc: 'We train the AI on your treatments, procedures, and FAQs.' },
+          { title: 'Integration', desc: 'We link the agent with your GoHighLevel native Conversation AI.' },
+          { title: 'Go Live', desc: 'Your clinic starts booking patients automatically, 24/7.' }
         ],
-        readyTitle: 'Ready to automate?',
-        cta: 'Book Strategy (Last Slots)',
-        urgency: '🟡 3 spaces left before current cycle closes.'
+        readyTitle: 'Ready to fill your clinic calendar?',
+        cta: 'Schedule 20-Min Demo',
+        urgency: '🟡 Only 3 clinic integration slots left for this week.'
       },
       realStories: {
-        title: 'REAL BUSINESS STORIES',
-        subtitle: 'See what happens when you switch to Cerrana.',
+        title: 'REAL IMPACT & REPUTATION',
+        subtitle: 'What clinical directors say about Cerrana’s WhatsApp Booker.',
         capture: {
-            title: 'CERRANA Capture – AI 24/7',
-            testimonials: [
-                { quote: "I thought AI wouldn't work for my business, but from day one it started answering leads I was losing. In the first week, it booked 14 appointments without me lifting a finger.", author: "Maria R.", role: "Aesthetic Clinic Owner" },
-                { quote: "We used to take hours to reply. Now AI replies in seconds and clients think it's a real person. Our appointments doubled.", author: "Carlos A.", role: "Residential Cleaning Services" }
-            ],
-            cta: "I want to try CERRANA AI live"
+          title: 'Native GHL WhatsApp AI Agent',
+          testimonials: [
+            { quote: "Our aesthetic clinic used to lose half of our late-night Instagram and WhatsApp leads. Now the AI responds in seconds. We booked 18 evaluation appointments in our first week on autopilot.", author: "Dr. Laura M.", role: "Clinical Director, MedSpa" },
+            { quote: "The AI answers dental treatment FAQs and filters serious patients from curious ones perfectly. My staff is finally free to focus on attending patients in the room.", author: "Dr. Sebastian V.", role: "Orthodontist & Founder" }
+          ],
+          cta: "Schedule Clinic Demo"
         },
         core: {
-            title: 'CERRANA Core – CRM + Automations',
-            testimonials: [
-                { quote: "I've never had my commercial process so organized. Now I know exactly how many leads enter, who replied, and what's next. We went from 12% to 31% conversions.", author: "Luis F.", role: "Immigration Law Firm" },
-                { quote: "Cerrana's CRM is like having a sales manager who makes no mistakes. Nothing gets lost, nothing is forgotten. Auto follow-up = more sales.", author: "Andrea P.", role: "Personal Training Academy" }
-            ],
-            cta: "I want to organize my process like them"
+          title: 'Integrated GHL CRM & Calendars',
+          testimonials: [
+            { quote: "Every appointment booked is logged cleanly in GoHighLevel with tags and history. No more manual entry errors. Conversions from WhatsApp chat to consultation went up by 38%.", author: "Dr. Adrian R.", role: "Plastics & Reconstructive Surgery" },
+            { quote: "We tried custom chatbots before but our Meta number got suspended. Cerrana\'s native GoHighLevel implementation is safe, stable, and highly professional.", author: "Monica G.", role: "Clinic Operations Manager" }
+          ],
+          cta: "Schedule Clinic Demo"
         },
         web: {
-            title: 'CERRANA Web – Smart Websites & Funnels',
-            testimonials: [
-                { quote: "My previous site was pretty but didn't sell. The Cerrana web started generating leads the same day it launched.", author: "Jorge M.", role: "Online Personal Trainer" },
-                { quote: "The web is designed to convert. I didn't have to guess anything. We went from 3 leads a week to 24.", author: "Carolina T.", role: "Beauty Studio" }
-            ],
-            cta: "I want a converting web like these"
+          title: 'High-Converting Landing Pages',
+          testimonials: [
+            { quote: "Cerrana built our dental clinic landing pages. Combined with the WhatsApp AI agent, we went from 4 patient inquiries a week to 32 consistent bookings.", author: "Dr. Camila T.", role: "Cosmetic Dentistry Clinic" },
+            { quote: "Super high speed and optimized for mobile. Our patients can easily find pricing, click to WhatsApp, and get automatically booked in seconds.", author: "Gabriel D.", role: "MedEsthetic Group Owner" }
+          ],
+          cta: "Schedule Clinic Demo"
         },
         growth: {
-            title: 'CERRANA Growth – Core + Capture',
-            badge: 'BEST SELLER',
-            testimonials: [
-                { quote: "This combination was brutal. AI replies, CRM follows up, and I only step in when the client is hot. In 30 days we increased revenue by 47%.", author: "Daniel S.", role: "Digital Agency" },
-                { quote: "I never thought my business could operate alone while I slept. Growth changed everything.", author: "Fernanda L.", role: "Home Renovation Services" }
-            ],
-            cta: "I want the complete growth system"
+          title: 'Full Clinic System – WhatsApp Booking + CRM',
+          badge: 'MOST POPULAR',
+          testimonials: [
+            { quote: "It operates like a digital engine. Patients find us on Google or ads, click, chat on WhatsApp 24/7, get pre-qualified, and book consultations automatically. ROI is immense.", author: "Dr. Felipe C.", role: "Aesthetic Surgery Director" },
+            { quote: "I wake up to a filled agenda every Monday. Highly recommended for clinics spending on marketing.", author: "Patricia L.", role: "Dermal Laser Clinic Founder" }
+          ],
+          cta: "Get Complete Clinic System"
         },
         scarcity: {
-            line1: "⚠️ Onboarding slots for this week are nearly full.",
-            line2: "🟣 CERRANA prioritizes businesses that apply first.",
-            line3: "🔒 Once the cycle completes, the waitlist opens."
+          line1: "⚠️ Weekly setup slots are allocated on a first-come, first-served basis.",
+          line2: "🟣 Cerrana prioritizes clinics with active marketing campaigns.",
+          line3: "🔒 Waitlist opens dynamically once current cycle slots are filled."
         }
       },
       extraFunnel: {
-        title: "WHAT HAPPENS AFTER HIRING CERRANA?",
+        title: "WHAT HAPPENS DURING IMPLEMENTATION?",
         steps: [
-            { day: "Day 1", text: "We connect your channels and CRM" },
-            { day: "Day 2", text: "Your AI starts replying to leads" },
-            { day: "Day 3", text: "Your web/funnel starts converting" },
-            { day: "Day 7", text: "We adjust and optimize for more sales" },
-            { day: "Day 30", text: "Your business operates with automatic precision" }
+          { day: "Day 1", text: "We import your treatment catalog, procedures, and FAQs" },
+          { day: "Day 3", text: "We configure your GoHighLevel native Conversation AI" },
+          { day: "Day 5", text: "We train the AI Booker with custom scenarios and price rules" },
+          { day: "Day 7", text: "Testing and launch on your clinic\'s Meta WhatsApp line" },
+          { day: "Day 14", text: "AI runs smoothly, qualifying patients and booking appointments 24/7" }
         ],
-        cta: "I want to start my process",
-        scarcity: "⏳ Onboarding cycle about to close."
+        cta: "Agenda una demo",
+        scarcity: "⏳ Onboarding slots are running out."
       },
       final: {
-        title: 'SLEEPING BUSINESS VS WORKING BUSINESS',
-        subtitle: 'CERRANA is not just tech. It is the difference between losing customers... and converting them.',
-        cta: 'Activate Cerrana Now',
-        urgency: '⏳ Last spots before waitlist opens.'
+        title: 'Stop losing patients by responding late',
+        subtitle: 'Cerrana implements the native GHL WhatsApp AI agent that captures, qualifies, and schedules patients in seconds, leaving only hot, pre-qualified appointments on your doctor\'s desk.',
+        cta: 'Agenda una demo',
+        urgency: '⏳ Only 3 implementation cycles open this month.'
       }
     },
+    // Keep other pages with relevant clinic context translation
     cerra: {
-        intro: "INITIATING SCAN... 👁️",
-        greetings: [
-            "Wait... human detected.",
-            "I've scanned your funnel...",
-            "It looks... thirsty.",
-            "Want to fix that? 💧"
-        ],
-        btnYes: "Yes, hydrate my business",
-        btnNo: "No, I like losing money",
-        responseYes: "Wise choice, human. Let's build a machine.",
-        responseNo: "Error 404: Logic not found. But okay, bye! 👋",
-        cta: "INCOMING TRANSMISSION"
+      intro: "INITIATING CLINIC FUNNEL SCAN... 👁️",
+      greetings: [
+        "Wait... Clinic Director detected.",
+        "Scanning your WhatsApp response times...",
+        "It looks... delayed. Patients are leaving.",
+        "Want us to fix it? ⚡"
+      ],
+      btnYes: "Yes, increase my clinical bookings",
+      btnNo: "No, I like losing patient leads",
+      responseYes: "Smart decision. Let's fill your doctors' schedules.",
+      responseNo: "Error 404: Direct marketing logic not found. Goodbye! 👋",
+      cta: "WhatsApp Booking Demo"
     },
     os_page: {
-        hero: {
-            title: "CERRANA OS",
-            subtitle: "The Sales Operating System",
-            desc: "The complete operating system to turn clicks into sales 24/7. Organize, automate, and scale.",
-            cta1: "View Demo",
-            cta2: "Start with CERRANA OS"
+      hero: {
+        title: "CERRANA CLINIC OS",
+        subtitle: "The Operating System for Aesthetics & Dental Clinics",
+        desc: "Automate your medical inquiries, qualify prospect treatments, and schedule consultation fees natively on Meta WhatsApp.",
+        cta1: "Book Free Demo",
+        cta2: "Get Clinic OS"
+      },
+      definition: {
+        title: "WHAT IS CERRANA CLINIC OS?",
+        desc: "It is not just a CRM. It is a specialized clinic sales engine that combines:",
+        modules: ["Medical CRM", "WhatsApp AI Booker", "Treatment Filters", "Automations", "Unified Clinic Chat", "Pre-payments", "Patient Reviews", "Mobile App"]
+      },
+      features: [
+        { title: "Unified Medical Inbox", desc: "WhatsApp, Instagram Direct, Facebook, and Webchat consolidated in one screen.", benefit: "Never lose a potential treatment lead." },
+        { title: "Treatment Pipelines", desc: "Interactive orthodontic, dental, or aesthetic surgical Kanban stages.", benefit: "Track patient value at every surgical stage." },
+        { title: "GHL Medical CRM", desc: "Complete records with clinical tag fields, consultation notes, and logs.", benefit: "Instant access to prospect patient history." },
+        { title: "Conversation AI Booker", desc: "Meta-certified WhatsApp agent that answers clinical treatment FAQs and books consults.", benefit: "More patients scheduled with zero human labor." },
+        { title: "Automatic Patient Workflows", desc: "Automated reminders, confirmation WhatsApps, and educational sequences.", benefit: "Reduce consult no-show rates to less than 5%." },
+        { title: "Surgical Booking Calendar", desc: "Direct doctor schedule sync, consult fee pre-payment, and reminders.", benefit: "Secure consultation commitments automatically." },
+        { title: "High-Converting Landings", desc: "CRO-optimized landing pages for cosmetic treatments.", benefit: "Turn patient clicks into hot inquiries." },
+        { title: "Email Nurturing", desc: "Aesthetic before/after galleries and clinical proof newsletters.", benefit: "Establish medical authority in your local city." },
+        { title: "WhatsApp Broadcast", desc: "Segmented seasonal promotions for cosmetic dental or dermal procedures.", benefit: "High open rates for returning patients." },
+        { title: "Reputation Booster", desc: "Automatic Google reviews requests sent to satisfied post-treatment patients.", benefit: "Climb local search maps organically." },
+        { title: "Deposit Payments", desc: "Secure custom online gateway integration for consult booking deposits.", benefit: "Ensure patient commitment easily." },
+        { title: "Clinic Member Area", desc: "Private post-care videos, recovery protocols, and guides.", benefit: "Enhance premium patient experience." },
+        { title: "Interactive Voice Response", desc: "Missed call text-back on Meta WhatsApp instantly.", benefit: "Turn missed calls into active WhatsApp booking chats." },
+        { title: "Executive Analytics", desc: "Real-time metrics: Cost per patient lead, booked consultations, surgical ROI.", benefit: "Scale marketing budgets with accuracy." },
+        { title: "Staff Mobile App", desc: "The entire clinic inbox in your receptionists' and doctors' pockets.", benefit: "Take over AI conversations easily when needed." }
+      ],
+      midFeatureCta: {
+        text: "Ready to automate patient pre-qualification?",
+        button: "Schedule Clinic Demo"
+      },
+      plans: {
+        title: "CHOOSE YOUR CLINIC ENGINE",
+        core: {
+          title: "CERRANA CORE",
+          subtitle: "FOUNDATION OF CLINIC CRM",
+          price: "$147/mo",
+          setup: "+ $497 Setup",
+          features: ["Medical Pipelines", "Complete GHL CRM", "2-Way SMS & Email", "Integrated Doctor Calendar", "No-Show Automations", "Staff App"],
+          cta: "Get Core OS"
         },
-        definition: {
-            title: "WHAT IS CERRANA OS?",
-            desc: "It is not just a CRM. It is a sales operating system that combines:",
-            modules: ["Pro CRM", "AI 24/7", "Smart Funnels", "Automations", "Unified Inbox", "Payments", "Reputation", "Mobile App"]
+        growth: {
+          title: "CERRANA GROWTH",
+          subtitle: "CORE + WHATSAPP AI BOOKER",
+          price: "$347/mo",
+          setup: "+ $997 Setup",
+          badge: "Save $200",
+          features: ["Everything in CORE", "24/7 GHL WhatsApp AI Booker", "Patient Pre-qualification", "Treatment FAQ Training", "Missed Call Text Back", "Active Patient Recalls"],
+          cta: "Get Growth Pack"
         },
-        features: [
-            { title: "Conversations Hub", desc: "WhatsApp, SMS, Email, IG, FB and Webchat in one place.", benefit: "Never lose a conversation." },
-            { title: "Smart Sales Pipeline", desc: "Interactive Kanban. Drag and drop leads.", benefit: "Total control of the commercial process." },
-            { title: "Complete CRM", desc: "All contacts organized with tags, notes, tasks.", benefit: "Total clarity of customer history." },
-            { title: "Conversational AI", desc: "Replies 24/7, qualifies, books appointments, nurtures.", benefit: "More appointments, less human work." },
-            { title: "Automatic Workflows", desc: "Email, SMS, WhatsApp, calls, tasks sequences.", benefit: "Perfect follow-up without effort." },
-            { title: "Calendar & Booking", desc: "Automatic bookings, reminders, confirmations.", benefit: "More appointments, fewer no-shows." },
-            { title: "Websites & Funnels", desc: "Visual builder for high-conversion pages.", benefit: "Turn clicks into customers." },
-            { title: "Email Marketing", desc: "Templates, scheduling, newsletters.", benefit: "Professional communication made simple." },
-            { title: "SMS Marketing", desc: "Mass and automated messaging.", benefit: "Extremely high open rates." },
-            { title: "Reputation Management", desc: "Automatic Google reviews requests.", benefit: "More trust = more sales." },
-            { title: "Payments & Invoices", desc: "Online payments, invoice sending, subscriptions.", benefit: "Get paid faster and easier." },
-            { title: "Memberships & Courses", desc: "Course platforms and private areas.", benefit: "Recurring revenue streams." },
-            { title: "Call Tracking", desc: "Call recording, tracking, and IVR.", benefit: "More closings, less friction." },
-            { title: "Analytics Dashboard", desc: "Real-time metrics: leads, appointments, sales.", benefit: "Data-driven decisions." },
-            { title: "Mobile App", desc: "The entire system in your pocket.", benefit: "Control your business from anywhere." }
-        ],
-        midFeatureCta: {
-            text: "Ready to centralize your entire business?",
-            button: "Build Your System"
-        },
-        plans: {
-            title: "CHOOSE YOUR ENGINE",
-            core: {
-                title: "CERRANA CORE",
-                subtitle: "FOUNDATION OF CERRANA OS",
-                price: "$147/mo",
-                setup: "+ $497 Setup",
-                features: ["Sales Pipeline", "Full CRM", "2-Way Email & SMS", "Integrated Calendar", "Basic Automations", "Mobile App"],
-                cta: "Start with Core"
-            },
-            growth: {
-                title: "CERRANA GROWTH",
-                subtitle: "CORE + CAPTURE (MOST POPULAR)",
-                price: "$347/mo",
-                setup: "+ $997 Setup",
-                badge: "Save $200",
-                features: ["Everything in CORE", "AI 24/7 Agent", "Auto-Booking", "Lead Qualification", "Missed Call Text Back", "Smart Reactivation"],
-                cta: "Get Growth"
-            },
-            full: {
-                title: "FULL FUNNEL",
-                subtitle: "CORE + CAPTURE + WEB",
-                price: "$397/mo",
-                setup: "+ $1,497 Setup",
-                badge: "Save $700",
-                features: ["Everything in GROWTH", "Smart Website / Funnel", "SEO Optimization", "CRO Structure", "Priority Support"],
-                cta: "Get Full Funnel"
-            }
-        },
-        difference: {
-            title: "WHY CERRANA OS IS DIFFERENT",
-            points: ["It's not just a CRM.", "It's not just AI.", "It's not just a website.", "It is a complete Sales Operating System."]
-        },
-        testimonials: [
-            { quote: "We doubled appointments in 30 days.", author: "Clinical Director", role: "Healthcare" },
-            { quote: "The AI answers better than my team.", author: "Agency Owner", role: "Marketing" },
-            { quote: "My website actually converts now.", author: "Consultant", role: "Coaching" }
-        ],
-        finalCta: {
-            title: "Your business can have a sales system running in 72 hours.",
-            subtitle: "It all starts with CERRANA OS.",
-            btn1: "View Demo",
-            btn2: "Start with CERRANA OS",
-            urgency: "⏳ Limited weekly onboarding slots."
+        full: {
+          title: "FULL CLINIC FUNNEL",
+          subtitle: "CORE + AI + HIGH-CONVERTING WEB",
+          price: "$397/mo",
+          setup: "+ $1,497 Setup",
+          badge: "Save $700",
+          features: ["Everything in GROWTH", "Targeted Landing Pages / Funnel", "Medical SEO Structure", "CRO Custom Landing Pages", "Priority Clinic Support"],
+          cta: "Get Full Funnel"
         }
+      },
+      difference: {
+        title: "WHY CERRANA IS THE PREMIER CLINIC SOLUTION",
+        points: ["Not just a CRM.", "Meta-certified native WhatsApp AI.", "Not unaligned third-party scripts.", "Tailored exclusively for dental and cosmetic centers."]
+      },
+      testimonials: [
+        { quote: "We filled our clinical agenda in 2 weeks.", author: "MedSpa General Director", role: "Cosmetic Medicine" },
+        { quote: "Conversation AI answers treatment questions better than a tired receptionist.", author: "Operations Head", role: "Dental Clinic Group" },
+        { quote: "Auto missed-call SMS saved us multiple high-ticket surgeries.", author: "Maxillofacial Surgeon", role: "Dental Surgery" }
+      ],
+      finalCta: {
+        title: "Your clinic can have a WhatsApp Booking agent running in 1-2 weeks.",
+        subtitle: "Everything built cleanly over native GoHighLevel AI.",
+        btn1: "Book Free Demo",
+        btn2: "Schedule Demo",
+        urgency: "⏳ Medical onboarding slots are limited this month."
+      }
     },
     services_page: {
-        hero: {
-            title: 'SOLUTIONS THAT SELL',
-            subtitle: 'Simple, effective tools to turn strangers into paying customers.'
+      hero: {
+        title: 'AUTOMATION BUILT TO CONVERT',
+        subtitle: 'Safe, native solutions to capture and schedule clinical aesthetic patients.'
+      },
+      web: {
+        title: 'High-Converting Treatment Pages',
+        explanation: {
+          what: 'High-speed cosmetic & dental landing pages built for local search mapping.',
+          who: 'Clinics paying for Ads but converting less than 10% into inquiries.',
+          problem: 'Slow, cluttered clinic websites that lose patients\' interest.',
+          result: '2-3x more active WhatsApp clicks from patients looking for treatment.'
         },
-        web: {
-            title: 'Smart Funnels & Websites',
-            explanation: {
-                what: 'A high-speed website designed to convert traffic.',
-                who: 'Businesses with visits but no leads.',
-                problem: 'Pretty websites that collect dust.',
-                result: '2-3x more leads from your current traffic.'
-            },
-            cta: 'BUILD MY FUNNEL'
+        cta: 'Agenda una demo'
+      },
+      crm: {
+        title: 'Medical CRM & Pipelines',
+        explanation: {
+          what: 'Dedicated GHL CRM mapped with cosmetic treatment pipelines.',
+          who: 'Medical groups tracking patients in spreadsheets or paper cards.',
+          problem: 'Patient records getting lost in the clinic chaos.',
+          result: 'Total tracking of consult value and automated surgical follow-ups.'
         },
-        crm: {
-            title: 'CRM & Automation',
-            explanation: {
-                what: 'A central brain for your customer data.',
-                who: 'Teams using spreadsheets or messy notes.',
-                problem: 'Leads falling through the cracks.',
-                result: 'Zero missed opportunities. Total clarity.'
-            },
-            cta: 'ORGANIZAR MY SALES'
+        cta: 'Agenda una demo'
+      },
+      ai: {
+        title: 'GoHighLevel WhatsApp AI Bookers',
+        explanation: {
+          what: 'AI Agent trained on your procedures and FAQs, integrated on native Meta API.',
+          who: 'Clinics receiving hundreds of messages that go unanswered after hours.',
+          problem: 'Late replies = Patient schedules with another clinic.',
+          result: 'Instant 24/7 patient pre-qualification and evaluation booking on autopilot.'
         },
-        ai: {
-            title: 'AI Booking Agents',
-            explanation: {
-                what: 'An intelligent assistant that works 24/7.',
-                who: 'Owners who are too busy to answer the phone.',
-                problem: 'Missed calls = Missed money.',
-                result: 'Wake up to booked appointments.'
-            },
-            cta: 'DEPLOY MY AGENT'
-        }
+        cta: 'Agenda una demo'
+      }
     },
     pricing: {
       hero: {
-        title: 'INVEST IN',
+        title: 'INVEST IN CLINIC',
         titleHighlight: 'GROWTH',
-        subtitle: 'Choose your system. See your roadmap. Launch in 7 days.'
+        subtitle: 'Deploy a native WhatsApp AI Booker. Secure doctor agendas. Sync CRM in 7-14 days.'
       },
       steps: {
-        step1: 'STEP 1: CHOOSE YOUR ENGINE',
-        step2: 'STEP 2: REVIEW YOUR ROADMAP',
-        step3: 'STEP 3: LAUNCH'
+        step1: 'STEP 1: CHOOSE YOUR LEVEL',
+        step2: 'STEP 2: CUSTOM TREATMENT CATALOGUE',
+        step3: 'STEP 3: DEPLOYMENT'
       },
       journey: {
-        title: 'ACTIVATION MAP FOR:',
+        title: 'CLINIC PROTOCOL INTEGRATION MAP FOR:',
         step1: {
-            title: 'Immediate Access',
-            desc: 'Instant login credentials sent to your inbox. Access your dashboard and initial training materials immediately.'
+          title: 'GHL Clinic Login',
+          desc: 'Instant access setup inside GHL. Access your centralized clinic pipeline and mobile apps.'
         },
         step2: {
-            title: 'Strategy Session',
-            desc: 'We meet for 60m to map your sales process, define your AI personality, and identify bottlenecks.'
+          title: 'Treatment Mapping',
+          desc: 'We map your treatments, procedures, consult pricing, FAQs, and doctors\' active calendars.'
         },
         step3: {
-            title: 'System Build',
-            core: 'We configure your pipelines, import contacts, and set up basic SMS/Email automation.',
-            growth: 'We train your custom AI Agent, set up booking calendars, and activate "Missed Call Text Back".',
-            full: 'We design and build your high-converting funnel, write copy, and integrate full SEO structure.'
+          title: 'System Deployment',
+          core: 'We build your clinic pipelines, import contact histories, and link CRM workflows.',
+          growth: 'We train and deploy your custom Meta WhatsApp Booker AI using GHL Conversation AI natively.',
+          full: 'We design and deploy high-speed CRO medical landing pages with dynamic WhatsApp redirection.'
         },
         step4: {
-            title: 'Launch & Handoff',
-            desc: 'Final testing. We hand over the keys, train your team, and turn on the traffic faucet.'
+          title: 'Meta Review & Launch',
+          desc: 'Final test on your official GHL Meta number. Staff training hand-off. The WhatsApp Booking system goes live.'
         }
       },
       common: {
-        setupFee: 'Setup Fee',
+        setupFee: 'One-time Setup',
         month: 'mo',
-        save: 'SAVE',
-        viewDetails: 'VIEW DETAILS',
+        save: 'AHORRA',
+        viewDetails: 'DETAILS',
         get: 'Get',
-        startWith: 'Start with',
+        startWith: 'Apply for',
         selected: 'SELECTED',
-        startJourney: 'START'
+        startJourney: 'SCHEDULE DEPLOYMENT'
       },
       tiers: {
         core: {
           title: 'CERRANA CORE',
-          subtitle: 'SALES & CRM OS',
-          desc: 'Organize your sales process and CRM to stop losing leads.',
-          features: ['Sales Pipeline Architecture', 'Full CRM Setup', '2-Way SMS & Email', 'Calendar Integration'],
-          cta: 'Select Core'
+          subtitle: 'CLINICA CRM & PIPELINE',
+          desc: 'Perfect for standardizing patient tracking and automated no-show reminders.',
+          features: ['Cosmetic Pipeline Structure', 'Full Contacts CRM Setup', '2-Way GHL Meta Chat', 'Doctor Calendar Sync'],
+          cta: 'Schedule Demo'
         },
         growth: {
-          title: 'CORE + CAPTURE',
-          subtitle: 'CORE + CAPTURE',
-          badge: 'GROWTH BUNDLE',
-          badgePopular: 'MOST POPULAR',
-          desc: 'The complete sales OS plus a 24/7 AI Assistant to handle leads.',
-          features: ['Everything in Core', 'AI Assistant (24/7)', 'Auto-Booking & Qualification', 'Missed Call Text-Back', 'Smart Reactivation Campaigns'],
-          cta: 'Select Growth'
+          title: 'CORE + WHATSAPP AI',
+          subtitle: 'THE CLINIC BOOKER BUNDLE',
+          badge: 'MEDSPA BEST SELLER',
+          badgePopular: 'RECOMMENDED FOR CLINICS',
+          desc: 'Central CRM plus the 24/7 WhatsApp AI Booker natively compliant with Meta guidelines.',
+          features: ['Everything in CRM Core', 'WhatsApp AI Booker (24/7)', 'Patient Pre-qualification Filters', 'Clinic FAQ Procedural Training', 'Missed Call WhatsApp Recovery'],
+          cta: 'Schedule Demo'
         },
         full: {
-          title: 'FULL FUNNEL',
-          subtitle: 'CORE + CAPTURE + WEB',
-          desc: 'The ultimate engine. CRM, AI Assistant, and a high-converting website.',
-          features: ['Everything in Growth Bundle', 'Smart Website / Funnel', 'SEO-Ready Structure', 'Conversion Rate Optimization', 'Priority Support'],
-          cta: 'Select Full Funnel'
+          title: 'FULL CLINIC ENGINE',
+          subtitle: 'CRM + AI + CRO WEBSITE',
+          desc: 'Ultimate automation: Medical CRM, native WhatsApp AI, and premium treatment landing pages.',
+          features: ['Everything in Clinic Growth Bundle', 'Targeted Treatment Landing Pages', 'GHL Integrated Web Host', 'Aesthetic CRO Copywriting', 'Priority Clinical Care Support'],
+          cta: 'Schedule Demo'
         }
       },
       alaCarte: {
-        title: 'A LA CARTE PRODUCTS',
+        title: 'ADD-ON PRODUCTS',
         capture: {
-          title: 'Cerrana Capture',
-          desc: 'AI Assistant 24/7 (Stand-alone)',
-          cta: 'Get Capture Only'
+          title: 'Cerrana WhatsApp AI Booker',
+          desc: 'Stand-alone GHL native Meta WhatsApp Agent setup',
+          cta: 'Schedule Demo'
         },
         web: {
-          title: 'Cerrana Web',
-          desc: 'Smart Sites & Funnels (Stand-alone)',
-          cta: 'Get Web Only'
+          title: 'CRO Landing Pages',
+          desc: 'Medical-grade high-conversions landing host',
+          cta: 'Schedule Demo'
         }
       },
       comparison: {
-        title: 'FEATURE COMPARISON',
-        headers: ['Features', 'CORE', 'GROWTH BUNDLE', 'FULL FUNNEL'],
+        title: 'CLINIC PLAN MATRIX',
+        headers: ['Feature Highlights', 'CORE CRM', 'CLINIC BOOKER PACK', 'FULL ENGINE'],
         sections: {
-          crm: 'Sales & CRM',
-          ai: 'AI Assistant (Capture)',
-          web: 'Website (Web)',
-          investment: 'Investment'
+          crm: 'CRM & Patient Tracking',
+          ai: 'WhatsApp Booker AI',
+          web: 'Treatment Landing Pages',
+          investment: 'Investments'
         },
         features: {
-          pipeline: 'Sales Pipeline',
-          contact: 'CRM Contact Management',
-          leadResponse: '24/7 AI Lead Response',
-          booking: 'Auto-Booking',
-          website: 'High-Converting Website',
-          setup: 'One-time Setup',
-          monthly: 'Monthly'
+          pipeline: 'Treatment Sales Pipelines',
+          contact: 'Patient Medical History GHL CRM',
+          leadResponse: '24/7 GHL Meta WhatsApp AI Booker',
+          booking: 'Auto-Booking & Qualification',
+          website: 'Aesthetic Landing Pages (Web)',
+          setup: 'One-time Custom Setup Fee',
+          monthly: 'Monthly SaaS'
         }
       },
       faq: {
-        title: 'COMMON QUESTIONS',
-        q1: { q: 'Why is there a setup fee?', a: 'The setup fee covers the custom build-out of your system. Unlike generic software, we tailor the pipelines, automations, and AI personality to YOUR business.' },
-        q2: { q: 'Can I buy just the AI Assistant?', a: 'Yes! You can purchase Cerrana Capture separately for $247/mo + $697 setup. However, the Growth Bundle offers the best value by including the Core CRM foundation.' },
-        q3: { q: 'Is the CRM cost included?', a: 'Yes. Your monthly subscription covers the technology licensing for the CRM and AI tools. No extra software bills.' }
+        title: 'CLINIC QUESTIONS',
+        q1: { q: 'Why is there a setup fee?', a: 'Because we do not sell template chatbots. We map your specific medical procedures, pricing charts, clinical FAQs, and doctor availability, compiling them cleanly on official Meta channels.' },
+        q2: { q: 'How does medical qualification work?', a: 'The WhatsApp AI asks customizable filtering questions (such as treatment goals, budget range, and urgency) before scheduling them.' },
+        q3: { q: 'Is my phone number safe from suspension?', a: 'Yes. We build entirely inside GoHighLevel\'s Conversation AI using the official Meta Cloud API, fully matching Meta\'s strict policies.' }
       }
     },
     about: {
-        whoWeAre: {
-            title: "WHO WE ARE",
-            desc1: "We are the architects of the automated economy.",
-            desc2: "Cerrana was born from a simple truth: businesses don't die from starvation, they die from indigestion. Too many leads, too much chaos, too little time.",
-            desc3: "We don't just sell software. We build the digital infrastructure that allows 1 person to do the work of 10."
-        },
-        mission: {
-            title: "OUR MISSION",
-            subtitle: "Removing the Guesswork",
-            desc: "We believe sales shouldn't be a mystery. It should be a science. Predictable. Scalable. Boringly effective.",
-            points: [
-                "Automation over manual labor.",
-                "Data over intuition.",
-                "Systems over hustling."
-            ],
-            closing: "We help businesses sleep better at night knowing their sales machine never turns off."
-        },
-        problem: {
-            title: "THE REALITY",
-            subtitle: "Why most businesses stay small.",
-            points: [
-                "Leads fall through cracks.",
-                "Follow-up is inconsistent.",
-                "Tech stacks are fragmented.",
-                "Burnout is inevitable."
-            ],
-            closing: "Solves this by unifying the entire stack into one operating system."
-        },
-        difference: {
-            title: "WHAT MAKES US DIFFERENT",
-            points: [
-                { title: "Engineering First", desc: "We are builders, not just marketers. Our systems are robust." },
-                { title: "Speed", desc: "We deploy in days, not months." },
-                { title: "Focus", desc: "We only solve sales & operations problems. No fluff." },
-                { title: "Partnership", desc: "We don't just hand you a login. We build it with you." }
-            ]
-        },
-        industries: {
-            title: "WHO WE SERVE",
-            list: ["Healthcare", "Legal", "Real Estate", "Home Services", "Agencies", "Coaching", "SaaS"],
-            closing: "Any business where a missed call equals lost revenue."
-        },
-        team: {
-            title: "OUR PHILOSOPHY",
-            desc: "We are a small, elite team of engineers and strategists.",
-            values: ["Radical Truth", "Extreme Ownership", "Speed as a Habit"],
-            closing: "WE BUILD SYSTEMS THAT WORK."
-        },
-        impact: {
-            title: "THE IMPACT",
-            testimonials: [
-                { quote: "They completely rewired our business brain.", author: "CEO, TechFlow" },
-                { quote: "Finally, a system that actually does what it says.", author: "Founder, Apex Solar" }
-            ]
-        },
-        commitment: {
-            title: "OUR COMMITMENT",
-            subtitle: "To our clients and partners.",
-            points: ["Transparency", "Reliability", "Results"],
-            closing: "We treat your business as if it were our own."
-        },
-        cta: {
-            title: "Ready to Automate?",
-            btn1: "Book Strategy Call",
-            btn2: "Back to Home",
-            urgency: "Limited availability for new partners."
-        }
+      whoWeAre: {
+        title: "WHO WE ARE",
+        desc1: "We are the architects of automated medical clinics.",
+        desc2: "Cerrana AI was born in Wilmington, NC, from a simple medical marketing insight: clinics lose thousands in paid media simply because they take more than 5 minutes to answer on WhatsApp.",
+        desc3: "We do not just install software. We engineer the digital nervous systems for aesthetics and dental clinics to scale predictably without medical burnout."
+      },
+      mission: {
+        title: "OUR MISSION",
+        subtitle: "Eliminating Administrative Overload",
+        desc: "We believe clinic management shouldn\'t be defined by endless WhatsApp messages. Clinical sales is a science.",
+        points: [
+          "Instant automated responses over receptionist backlog.",
+          "Pre-qualification data over raw unvetted inquiries.",
+          "Surgical pipeline clarity over clinic spreadsheet chaos."
+        ],
+        closing: "We help clinical directors and orthodontists sleep at night knowing their WhatsApp bookings run 24/7."
+      },
+      problem: {
+        title: "THE REALITY",
+        subtitle: "Why most local clinics hit a patient plateau.",
+        points: [
+          "WhatsApp queries double during evenings but go unanswered.",
+          "Doctors spend time answering basic FAQs instead of treatments.",
+          "Receptionists are overwhelmed calling back unqualified leads.",
+          "Patient no-show rates remain high due to manual follow-ups."
+        ],
+        closing: "Cerrana solves this, connecting GHL native Conversation AI directly onto WhatsApp lines."
+      },
+      difference: {
+        title: "WHAT MAKES US CLINIC EXPERTS",
+        points: [
+          { title: "GHL Meta Certified", desc: "We utilize official cloud APIs. No scraping or risky workarounds." },
+          { title: "Medical Copywriting", desc: "Our AI is calibrated to use highly precise, empathetic clinical vocabulary." },
+          { title: "Done-With-You Support", desc: "We train your staff to take over chat threads in GHL when patients are highly qualified." },
+          { title: "Predictable Appointments", desc: "No fluff clicks. We optimize exclusively for booked consultations." }
+        ]
+      },
+      industries: {
+        title: "CLINICAL SPECIALTIES WE SERVE",
+        list: ["Aesthetic Medicine Clinics", "Orthodontists & Dental Centers", "Plastic & Reconstructive Surgery", "Dermatology MedSpas", "Cosmetic Dentistry Studios", "Implantology Centers"],
+        closing: "Any clinic receiving over 100 patient inquiries a month where delayed response equals lost revenue."
+      },
+      team: {
+        title: "OUR MEDICAL CONVERSION PHILOSOPHY",
+        desc: "An elite group of GHL certified builders, automation engineers, and medical copywriters.",
+        values: ["Meta Security Compliance", "Clean Clinical Data Architecture", "Frictionless Patient Experience"],
+        closing: "WE BUILD SYSTEMS THAT CONVERT."
+      },
+      impact: {
+        title: "CLINICAL OUTCOMES",
+        testimonials: [
+          { quote: "Our orthopedic clinic saw a 45% increase in surgical consultations within 30 days of Cerrana's WhatsApp booker installation.", author: "Dr. Raul H., Clinic Director" },
+          { quote: "Stable, compliant, and extremely effective. Best medical software investment of the year.", author: "Monica F., MedSpa Operations Manager" }
+        ]
+      },
+      commitment: {
+        title: "OUR DEVOTION",
+        subtitle: "Secure patient care standard.",
+        points: ["Meta Compliance", "GDPR & HIPAA Data Safety", "Transparent Integration Reports"],
+        closing: "We treat your clinical reputational safety as our priority number one."
+      },
+      cta: {
+        title: "Ready to Fill Your Surgical Calendar?",
+        btn1: "Schedule Free Demo",
+        btn2: "Back to Home",
+        urgency: "Highly limited setup slots for clinical campaigns."
+      }
     },
     contact: {
-      audit: 'STRATEGY AUDIT',
-      title: 'LET\'S MAP YOUR',
-      titleHighlight: 'SALES SYSTEM',
-      desc: 'Select a time on the calendar to book your free 30-minute Strategy Audit. We\'ll look at your current process and show you exactly where AI and automation can add revenue.',
+      audit: 'CLINICAL ESTRATEGY AUDIT',
+      title: 'MAP YOUR AUTOMATED',
+      titleHighlight: 'CLINIC AGENDA',
+      desc: 'Pick an open slot on our calendar to book your complimentary 20-minute Clinical WhatsApp Audit. We\'ll evaluate your current response times, show you your GHL native AI capability, and design your patient auto-qualification pipeline.',
       nextSteps: {
         title: 'WHAT HAPPENS NEXT?',
-        step1: 'You will receive a calendar confirmation with a Zoom link.',
-        step2: 'We\'ll send you a brief questionnaire to prepare for the call so we don\'t waste time.'
+        step1: 'You will receive an automated clinic zoom invite directly on email/SMS.',
+        step2: 'We\'ll ask for a brief 2-minute questionnaire about your clinic\'s treatments and marketing.'
       },
-      trusted: 'Trusted by 50+ businesses this year.'
+      trusted: 'Empowering premier aesthetic and dental medical groups.'
     }
   },
   es: {
     nav: {
-      platform: 'Plataforma',
+      platform: 'Cerrana OS',
       services: 'Servicios',
       pricing: 'Precios',
       about: 'Nosotros',
-      contact: 'Contacto',
-      bookCall: 'Agendar Llamada'
+      contact: 'Agenda Demo',
+      bookCall: 'Agenda una demo de 20 minutos'
     },
     footer: {
-      tagline: 'Construyendo los sistemas nerviosos digitales para negocios modernos. Fundamentos sobre exageración. Sistemas sobre ruido.',
-      serving: 'Sirviendo clientes en EE.UU. y Latinoamérica.',
+      tagline: 'Agentes de IA en WhatsApp para clínicas estéticas y odontológicas. Responden 24/7, califican pacientes y llenan la agenda de tu doctor.',
+      serving: 'Sirviendo a clínicas premium en EE.UU. y Latinoamérica.',
       company: 'EMPRESA',
       connect: 'CONECTAR',
       rights: 'Todos los derechos reservados.',
@@ -497,463 +508,472 @@ export const translations = {
     },
     home: {
       hero: {
-        pill: 'ESTADO DEL SISTEMA: OPERATIVO',
-        titleLine1: 'Automatiza tus ventas hoy.',
-        titleLine2: 'CERRANA trabaja 24/7 para ti.',
-        subtitle: 'IA + CRM + Funnels trabajando juntos para que ninguna oportunidad se pierda.',
-        ctaPrimary: 'Agendar Estrategia Gratis',
-        ctaSecondary: 'Ver Demo Interactiva',
-        urgency: '⚠️ Sistema detecta alta demanda: solo 4 implementaciones disponibles esta semana.'
+        pill: 'ESTADO DEL AGENTE: ACTIVO 24/7',
+        titleLine1: 'Tu clínica responde cada',
+        titleLine2: 'WhatsApp en segundos. Incluso de noche.',
+        subtitle: 'Implementamos un agente de IA en WhatsApp para clínicas estéticas y odontológicas que responde 24/7, califica a cada paciente y llena tu agenda solo con valoraciones que valen la pena.',
+        ctaPrimary: 'Agenda una demo de 20 minutos',
+        ctaSecondary: 'Cómo funciona',
+        urgency: '⚠️ Alta demanda: Solo quedando 3 cupos disponibles de implementación de clínica para el ciclo de esta semana.'
       },
       impact: {
-        title: 'EL IMPACTO',
-        before: 'CAOS',
-        after: 'SISTEMA CERRANA',
-        beforeList: ['Mensajes sin responder', 'Leads fríos', 'Nada agendado', 'Seguimiento manual'],
-        afterList: ['Respuestas en segundos', 'Lead filtrado', 'Cita agendada', 'Ingresos en piloto'],
-        cta: 'Activar CERRANA Ahora',
-        urgency: '⏳ Los cupos de activación rápida se asignan por orden de llegada.'
+        title: 'El dinero se te va en los mensajes que no alcanzas a contestar',
+        before: 'SIN AGENTE IA',
+        after: 'CON AGENTE CERRANA',
+        beforeList: [
+          'Pagas pauta para atraer pacientes, pero los mensajes se acumulan y el que tarda en responder pierde.',
+          'El paciente agenda con la clínica que contestó primero. Si demoras, perdiste la inversión.',
+          'El tiempo del doctor, tu recurso más caro, se gasta atendiendo curiosos que solo preguntan precio.',
+          'La recepcionista pasa horas respondiendo lo mismo una y otra vez en lugar de atender pacientes presenciales.'
+        ],
+        afterList: [
+          'Respuesta instantánea en WhatsApp 24/7 en menos de 5 segundos.',
+          'Calificación automática: separa al paciente real del curioso antes de ocupar tu costosa agenda.',
+          'La cita de valoración queda agendada automáticamente y se guarda en el CRM.',
+          'El médico se enfoca únicamente en valoraciones y tratamientos que de verdad valen la pena.'
+        ],
+        cta: 'Agenda una demo de 20 minutos',
+        urgency: '⏳ Deja de perder pacientes por responder tarde.'
       },
       services: {
-        title: 'ELIGE TU MOTOR',
-        subtitle: 'Tres sistemas potentes. Un resultado: Crecimiento.',
+        title: 'Cómo trabaja tu agente de WhatsApp',
+        subtitle: '4 pasos sencillos para calificar pacientes y automatizar la agenda de tu clínica.',
         core: {
-            title: 'CERRANA CORE',
-            subtitle: 'OS de Ventas y CRM',
-            desc: 'La base. Pipeline de Ventas completo, CRM, SMS/Email bidireccional e integración de Calendario para organizar tu negocio.',
-            cta: 'Explorar Core',
-            urgency: '🔒 Límite 10 negocios/mes.'
+          title: '1. Responde en segundos, 24/7',
+          subtitle: 'TONO Y PRECISIÓN DE TU CLÍNICA',
+          desc: 'Responde de inmediato con el tono, información de procedimientos, horarios y precios específicos de tu clínica, sin importar la hora.',
+          cta: 'Agenda Demo',
+          urgency: '⚡ Respuesta inmediata'
         },
         growth: {
-            title: 'CERRANA GROWTH',
-            subtitle: 'Core + Agente IA',
-            desc: 'Acelera. Todo lo de Core, más un Asistente de Reservas IA 24/7 que califica leads y agenda citas automáticamente.',
-            cta: 'Explorar Growth',
-            urgency: '⚡ Opción más popular.'
+          title: '2. Califica al paciente',
+          subtitle: 'FILTRA CURIOSOS',
+          desc: 'Separa al paciente real del curioso que solo busca el precio más barato antes de que ocupe espacio en la agenda del doctor.',
+          cta: 'Agenda Demo',
+          urgency: '🎯 Prioriza leads valiosos'
         },
         full: {
-            title: 'FULL FUNNEL',
-            subtitle: 'Core + IA + Web',
-            desc: 'Domina. El motor completo. Añade un Sitio Web y Embudo Inteligente de Alta Conversión para capturar, nutrir y cerrar tráfico a escala.',
-            cta: 'Explorar Full Funnel',
-            urgency: '⚠️ Alta demanda de desarrollo.'
+          title: '3. Agenda automáticamente',
+          subtitle: 'COMPACTA TU AGENDA Y CRM',
+          desc: 'Reserva la valoración médica de forma totalmente automatizada en el calendario del doctor, guardando cada detalle en el CRM GoHighLevel.',
+          cta: 'Agenda Demo',
+          urgency: '📅 Sincronización transparente'
         }
       },
       engineSection: {
-        tag: "INCLUIDO EN CADA PLAN",
-        title: "CONOCE CERRANA OS",
-        subtitle: "El sistema nervioso digital de tu negocio. No es solo software; es tu centro de comando. Centraliza cada conversación, automatiza cada tarea y visualiza cada dólar.",
+        tag: "PARA CLÍNICAS EN CRECIMIENTO",
+        title: "Para clínicas estéticas y odontológicas que ya invierten en marketing",
+        subtitle: "Si recibes muchos mensajes por WhatsApp y no alcanzas a responderlos a tiempo, y cada paciente vale cientos o miles de dólares, este sistema se paga solo con 1 o 2 pacientes recuperados al mes.",
         features: [
-            { title: "Comando Unificado", desc: "WhatsApp, IG, SMS y Email en un solo flujo." },
-            { title: "Claridad Visual", desc: "Pipelines Kanban que te muestran exactamente dónde está el dinero." },
-            { title: "24/7 Activo", desc: "Automatizaciones que trabajan mientras duermes." }
+          { title: "Integración 100% Nativa", desc: "Configurado dentro de la Conversation AI de GoHighLevel. Seguro comercial total." },
+          { title: "Seguimiento Inteligente", desc: "Hace seguimiento estratégico a quien no agendó inicialmente, evitando que se enfríe." },
+          { title: "Liberación de Personal", desc: "Libera a tu recepcionista del trabajo repetitivo para que dé una atención excelente en sala." }
         ],
-        ctaMain: "Entrar a la Plataforma",
-        ctaSub: "Ver Especificaciones Técnicas"
+        ctaMain: "Agenda una demo",
+        ctaSub: "Ver especificaciones"
       },
       results: {
-        title: 'VISUALIZA LA VELOCIDAD',
-        desc: 'Verás impacto en menos de 72 horas.',
-        step1: 'Conexión',
-        step2: 'Config',
-        step3: 'Resultados',
-        cta: 'Empezar Ahora',
-        urgency: '⏳ El inicio rápido se cierra al llenar los cupos actuales.'
+        title: 'Seguro para tu número de WhatsApp',
+        desc: 'Usamos la IA nativa de GoHighLevel, que cumple con los términos de WhatsApp Business de Meta. No montamos integraciones de terceros que pongan en riesgo de suspensión el número de tu clínica.',
+        step1: 'Meta API',
+        step2: 'GHL Nativo',
+        step3: 'Seguridad',
+        cta: 'Agenda una demo',
+        urgency: '🔒 Cumplimiento total con los términos oficiales de Meta.'
       },
       social: {
-        title: 'ÚNETE A LA ÉLITE',
-        cta: 'Unirme a los negocios que usan CERRANA',
-        urgency: '⚡ Implementaciones por ciclos semanales.'
+        title: 'CONFIADO EN EL SECTOR MÉDICO',
+        cta: 'Automatiza tu clínica hoy',
+        urgency: '⚡ Puesta en marcha rápida en 7-14 días.'
       },
       process: {
-        title: 'CÓMO FUNCIONA',
+        title: 'LÍNEA DE TIEMPO SIMPLE',
         steps: [
-            { title: 'Estrategia', desc: 'Agendamos y mapeamos.' },
-            { title: 'Construcción', desc: 'Conectamos y configuramos.' },
-            { title: 'Lanzamiento', desc: 'Automatizas y vendes.' }
+          { title: 'Entrenamiento', desc: 'Entrenamos al agente con tus tratamientos, procedimientos y precios de la clínica.' },
+          { title: 'Conexión', desc: 'Conectamos la IA nativa sobre tu GoHighLevel sin scripts de terceros.' },
+          { title: 'Lanzamiento', desc: 'Tu clínica empieza a pre-calificar y agendar pacientes automáticamente.' }
         ],
-        readyTitle: '¿Listo para automatizar?',
-        cta: 'Agendar Estrategia (Últimos Cupos)',
-        urgency: '🟡 Quedan 3 espacios antes del cierre del ciclo actual.'
+        readyTitle: '¿Listo para automatizar la agenda de tu clínica?',
+        cta: 'Agenda una demo de 20 minutos',
+        urgency: '🟡 Solo 3 cupos de integración disponibles esta semana.'
       },
       realStories: {
-        title: 'HISTORIAS REALES DE NEGOCIOS',
-        subtitle: 'Lo que dicen quienes ya usan CERRANA.',
+        title: 'HISTORIAS DE ÉXITO CLÍNICO',
+        subtitle: 'Lo que dicen directores de clínicas que ya eliminaron el cuello de botella de WhatsApp.',
         capture: {
-            title: 'CERRANA Capture – IA 24/7',
-            testimonials: [
-                { quote: "Pensé que una IA no iba a funcionar para mi negocio, pero desde el primer día empezó a responder leads que yo dejaba perder. En la primera semana agendó 14 citas sin que yo moviera un dedo.", author: "María R.", role: "Dueña de Clínica Estética" },
-                { quote: "Antes tardábamos horas en contestar. Ahora la IA responde en segundos y los clientes creen que es una persona real. Nuestras citas se duplicaron.", author: "Carlos A.", role: "Servicios de Limpieza Residencial" }
-            ],
-            cta: "Quiero probar la IA de CERRANA en vivo"
+          title: 'Agente de WhatsApp IA Nativo GHL',
+          testimonials: [
+            { quote: "Antes perdíamos decenas de leads los fines de semana y por las noches. Ahora el agente IA en WhatsApp responde en segundos, pre-califica si buscan bichectomía o bótox, y nos agendó 18 consultas la primera semana.", author: "Dra. Laura M.", role: "Directora Clínica, MedSpa" },
+            { quote: "La IA resuelve dudas sobre implantes dentales en segundos y separa a pacientes reales de curiosos de precio de forma impecable. Un cambio total para nuestra recepcionista.", author: "Dr. Sebastian V.", role: "Ortodoncista y Fundador" }
+          ],
+          cta: "Agendar Demo"
         },
         core: {
-            title: 'CERRANA Core – CRM + Automatizaciones',
-            testimonials: [
-                { quote: "Nunca había tenido mi proceso comercial tan organizado. Ahora sé exactamente cuántos leads entran, quién respondió y qué sigue. Pasamos de 12% a 31% de conversiones.", author: "Luis F.", role: "Bufete de Abogados Migratorios" },
-                { quote: "El CRM de CERRANA es como tener un gerente comercial que no se equivoca. No se pierde nada, no se olvida nada. Seguimiento automático = más ventas.", author: "Andrea P.", role: "Academia de Entrenamiento Personal" }
-            ],
-            cta: "Quiero organizar mi proceso como ellos"
+          title: 'CRM y Calendarios Integrados GHL',
+          testimonials: [
+            { quote: "Cada consulta agendada queda registrada con etiquetas en GoHighLevel de manera perfecta. La conversión de WhatsApp a consulta presencial aumentó un 38%.", author: "Dr. Adrian R.", role: "Cirujano Plástico y Estético" },
+            { quote: "Habíamos probado chatbots piratas y sufrimos suspensiones de número de Meta. La integración nativa de GoHighLevel por Cerrana es segura, estable y profesional.", author: "Mónica G.", role: "Administradora de Clínica Dental" }
+          ],
+          cta: "Agendar Demo"
         },
         web: {
-            title: 'CERRANA Web – Smart Websites & Funnels',
-            testimonials: [
-                { quote: "Mi página anterior era bonita pero no vendía. La web de CERRANA empezó a generar leads el mismo día del lanzamiento.", author: "Jorge M.", role: "Entrenador Personal Online" },
-                { quote: "La web está diseñada para convertir. No tuve que adivinar nada. Pasamos de 3 leads por semana a 24.", author: "Carolina T.", role: "Estudio de Belleza" }
-            ],
-            cta: "Quiero una web que convierta como estas"
+          title: 'Sitios Web y Embudos de Conversión',
+          testimonials: [
+            { quote: "Cerrana construyó las páginas de aterrizaje de nuestros implantes dentales. Junto con el agente de WhatsApp, pasamos de 4 leads semanales a 32 conversiones consistentes.", author: "Dra. Camila T.", role: "Clínica de Odontología Estética" },
+            { quote: "Súper rápido y adaptado a móviles. Los pacientes entran buscando diseño de sonrisa, hacen clic a WhatsApp y la IA agenda su cita automáticamente.", author: "Gabriel D.", role: "Propietario de MedEsthetic Group" }
+          ],
+          cta: "Agendar Demo"
         },
         growth: {
-            title: 'CERRANA Growth – Core + Capture',
-            badge: 'MÁS VENDIDO',
-            testimonials: [
-                { quote: "Esta combinación fue brutal. La IA responde, el CRM sigue y yo solo llego cuando el cliente ya está caliente. En 30 días aumentamos los ingresos 47%.", author: "Daniel S.", role: "Agencia Digital" },
-                { quote: "Nunca pensé que mi negocio pudiera operar solo mientras yo dormía. Growth cambió todo.", author: "Fernanda L.", role: "Servicios de Reformas Hogar" }
-            ],
-            cta: "Quiero el sistema completo de crecimiento"
+          title: 'Sistema Clínico Completo - WhatsApp AI + CRM',
+          badge: 'MÁS RECOMENDADO',
+          testimonials: [
+            { quote: "Funciona como un reloj. El paciente ve el anuncio, escribe por WhatsApp 24/7, pasa el filtro de pre-calificación y agenda la cita de valoración. El ROI clínico es espectacular.", author: "Dr. Felipe C.", role: "Director de Centro Estético" },
+            { quote: "Me despierto cada lunes con la agenda de citas de valoración llena de pacientes verdaderos comprometidos. Excelente sistema.", author: "Patricia L.", role: "Fundadora de Clínica Láser Dérmica" }
+          ],
+          cta: "Obtener Sistema de Crecimiento Clínico"
         },
         scarcity: {
-            line1: "⚠️ Los cupos de onboarding para esta semana están casi llenos.",
-            line2: "🟣 CERRANA prioriza a los negocios que aplican primero.",
-            line3: "🔒 Una vez completado el ciclo, se abre lista de espera."
+          line1: "⚠️ Los cupos de configuración semanal se asignan por estricto orden de llegada.",
+          line2: "🟣 Cerrana prioriza a clínicas que ya invierten activamente en pauta.",
+          line3: "🔒 Una vez completada la capacidad, se abre la lista de espera."
         }
       },
       extraFunnel: {
-        title: "¿QUÉ PASA DESPUÉS DE CONTRATAR CERRANA?",
+        title: "¿CÓMO ES EL PROCESO DE IMPLEMENTACIÓN?",
         steps: [
-            { day: "Día 1", text: "Conectamos tus canales y CRM" },
-            { day: "Día 2", text: "Tu IA empieza a responder leads" },
-            { day: "Día 3", text: "Tu web/funnel empieza a convertir" },
-            { day: "Día 7", text: "Ajustamos y optimizamos para más ventas" },
-            { day: "Día 30", text: "Tu negocio opera con precisión automática" }
+          { day: "Día 1", text: "Registramos tus tratamientos, precios y preguntas frecuentes" },
+          { day: "Día 3", text: "Configuramos tu Conversation AI nativa dentro de GoHighLevel" },
+          { day: "Día 5", text: "Entrenamos al agente de WhatsApp con simulaciones de pacientes" },
+          { day: "Día 7", text: "Hacemos pruebas finales y lanzamos sobre tu línea oficial de Meta" },
+          { day: "Día 14", text: "La IA responde, filtra y agenda pacientes reales 24/7 sin errores" }
         ],
-        cta: "Quiero empezar mi proceso",
-        scarcity: "⏳ Ciclo de onboarding a punto de cerrarse."
+        cta: "Agenda una demo",
+        scarcity: "⏳ Cupos de onboarding corriendo."
       },
       final: {
-        title: 'NEGOCIO DORMIDO VS NEGOCIO TRABAJANDO',
-        subtitle: 'CERRANA no es solo tecnología. Es la diferencia entre perder clientes… y convertirlos.',
-        cta: 'Activar CERRANA Ahora',
-        urgency: '⏳ Últimos cupos antes de abrir lista de espera.'
+        title: 'Deja de perder pacientes por responder tarde',
+        subtitle: 'Cerrana implementa el agente de IA de WhatsApp nativo en GHL que responde, califica y agenda pacientes en segundos, dejando solo valoraciones reales y calificadas en el escritorio del doctor.',
+        cta: 'Agenda una demo',
+        urgency: '⏳ Solo 3 cupos de onboarding abiertos para este ciclo mensual.'
       }
     },
-    // ... [Previous Translations kept as is] ...
     cerra: {
-        intro: "INICIANDO ESCANEO... 👁️",
-        greetings: [
-            "Espera... humano detectado.",
-            "Escaneé tu embudo...",
-            "Se ve... deshidratado.",
-            "¿Lo arreglamos? 💧"
-        ],
-        btnYes: "Sí, hidrata mi negocio",
-        btnNo: "No, me gusta perder dinero",
-        responseYes: "Sabia elección, humano. Construyamos la máquina.",
-        responseNo: "Error 404: Lógica no encontrada. ¡Pero vale, adiós! 👋",
-        cta: "TRANSMISIÓN ENTRANTE"
+      intro: "INICIANDO ESCANEO DE EMBUDO CLÍNICO... 👁️",
+      greetings: [
+        "Espera... Director de Clínica detectado.",
+        "Escaneando tiempos de respuesta de tu WhatsApp...",
+        "Se ven... lentos. Tus leads se van con la competencia.",
+        "¿Quieres que lo solucionemos? ⚡"
+      ],
+      btnYes: "Sí, incrementa las citas agendadas de mi clínica",
+      btnNo: "No, prefiero perder prospectos de pacientes",
+      responseYes: "Excelente decisión. Vamos a llenar la agenda de tus doctores.",
+      responseNo: "Error 404: Lógica de marketing directo no encontrada. ¡Hasta luego! 👋",
+      cta: "Demo de Agendamiento WhatsApp"
     },
     os_page: {
-        hero: {
-            title: "CERRANA OS",
-            subtitle: "El Sistema Operativo de Ventas",
-            desc: "El sistema operativo completo para convertir clics en ventas 24/7. Organiza, automatiza y escala.",
-            cta1: "Ver Demo",
-            cta2: "Empezar con CERRANA OS"
+      hero: {
+        title: "CERRANA CLINIC OS",
+        subtitle: "El Sistema Operativo de Ventas para Clínicas Estéticas y Dentales",
+        desc: "Automatiza consultas médicas, califica prospectos de tratamiento y agenda citas de valoración de forma 100% nativa en Meta WhatsApp.",
+        cta1: "Ver Demo Gratis",
+        cta2: "Obtener Clinic OS"
+      },
+      definition: {
+        title: "¿QUÉ ES CERRANA CLINIC OS?",
+        desc: "No es un simple CRM. Es un motor de ventas clínico especializado que combina:",
+        modules: ["CRM Médico", "Agente Agendador WhatsApp", "Filtros de Tratamientos", "Automaciones", "Inbox Clínico Unificado", "Pre-pagos de Cita", "Reseñas de Pacientes", "App Móvil"]
+      },
+      features: [
+        { title: "Bandeja Unificada de Mensajería", desc: "WhatsApp, Instagram Direct, Facebook y Webchat integrados en una misma bandeja.", benefit: "Nunca más pierdas un prospecto de tratamiento." },
+        { title: "Pipelines de Tratamientos", desc: "Pipelines visuales de valoraciones de ortodoncia, cirugía plástica o estética.", benefit: "Visualiza de inmediato el valor latente de tu embudo clínico." },
+        { title: "CRM Clínico GoHighLevel", desc: "Fichas completas con campos personalizados médicos, etiquetas y notas.", benefit: "Acceso instantáneo al historial del prospecto." },
+        { title: "Agente de WhatsApp de Conversation AI", desc: "IA oficial conectada a Meta para resolver dudas y agendar las valoraciones.", benefit: "Más citas agendadas con cero trabajo manual y sin arriesgar tu número." },
+        { title: "Flujos de Recordatorios Automáticos", desc: "Recordatorios de citas, confirmaciones vía WhatsApp y videos explicativos pre-consulta.", benefit: "Reduce el promedio de no-shows clínicos a menos de un 5%." },
+        { title: "Calendario de Doctor Automatizado", desc: "Sincronización directa, cobros automáticos de depósitos y asignación de doctores.", benefit: "Asegura el compromiso de asistencia de tus pacientes automáticamente." },
+        { title: "Sitios Web Clínicos CRO", desc: "Páginas súper veloces diseñadas para convertir clics en chats o citas.", benefit: "Transforma tus visitas pagadas en pacientes reales." },
+        { title: "Campañas de Correo de Autoridad", desc: "Secuencias con galerías de antes/después, credenciales y testimonios.", benefit: "Establece tu autoridad médica en la ciudad." },
+        { title: "Envío Masivo Recomendado", desc: "Envío segmentado de promociones de temporada (tratamientos de invierno, estética dental).", benefit: "Tasa de lectura máxima de tu base de pacientes inactivos." },
+        { title: "Generador de Reseñas de Google Maps", desc: "Envío automático de solicitud de reseñas excelentes de 5 estrellas a pacientes satisfechos.", benefit: "Posiciona tu clínica por encima de tus competidores locales." },
+        { title: "Pasarela de Pago de Depósitos", desc: "Integración segura de depósitos con Stripe o pasarelas locales para confirmación de cita.", benefit: "Garantiza valoraciones con depósitos reales." },
+        { title: "Zona de Pacientes Privada", desc: "Plataforma de protocolos de cuidados post-tratamiento, videos y guías.", benefit: "Ofrece una experiencia de paciente verdaderamente premium." },
+        { title: "Recuperación Automática de Llamadas", desc: "Sistemas inmediatos de respuesta de texto en WhatsApp a llamadas médicas perdidas.", benefit: "Convierte llamadas perdidas en consultas de WhatsApp activas." },
+        { title: "Métricas y Analíticas Clínicas", desc: "Costo por paciente agendado y retorno de inversión en Marketing en tiempo real.", benefit: "Invierte y escala los anuncios de tu clínica con seguridad." },
+        { title: "App Móvil de GoHighLevel", desc: "Todas las conversaciones y alertas clínicas en los bolsillos de la recepcionista y médicos.", benefit: "Toma el control humano de la conversación cuando desees con un clic." }
+      ],
+      midFeatureCta: {
+        text: "¿Listo para automatizar la pre-calificación médica?",
+        button: "Agendar Demo de Clínica"
+      },
+      plans: {
+        title: "ELIGE TU MOTOR CLÍNICO",
+        core: {
+          title: "CERRANA CORE",
+          subtitle: "CRM Y CONTROL PATRONAL",
+          price: "$147/mes",
+          setup: "+ $497 Setup",
+          features: ["Embudo Personalizado de Tratamientos", "CRM Completo de Contactos", "Mensajería SMS/Email", "Calendario de Doctores", "Recordatorios de No-Show", "App Móvil"],
+          cta: "Obtener Core OS"
         },
-        definition: {
-            title: "¿QUÉ ES CERRANA OS?",
-            desc: "No es solo un CRM. Es un sistema operativo de ventas que combina:",
-            modules: ["CRM Pro", "IA 24/7", "Funnels", "Automations", "Inbox Unificado", "Pagos", "Reputación", "App Móvil"]
+        growth: {
+          title: "CERRANA GROWTH",
+          subtitle: "CRM + AGENTE WHATSAPP IA",
+          price: "$347/mes",
+          setup: "+ $997 Setup",
+          badge: "Ahorra $200",
+          features: ["Todo en CORE", "Agente de WhatsApp de IA 24/7", "Filtro de Pre-calificación", "Entrenamiento de Procedimientos y Tarifas", "Recuperación de Llamadas", "Reactivaciones de Pacientes"],
+          cta: "Obtener Plan Growth"
         },
-        features: [
-            { title: "Centro de Conversaciones", desc: "WhatsApp, SMS, Email, IG, FB y Webchat en un solo lugar.", benefit: "Nunca pierdes conversaciones." },
-            { title: "Pipeline de Ventas Inteligente", desc: "Kanban interactivo. Arrastrar y soltar leads.", benefit: "Control total del proceso comercial." },
-            { title: "CRM Completo", desc: "Todos los contactos organizados con etiquetas, notas, tareas.", benefit: "Claridad total del historial del cliente." },
-            { title: "IA Conversacional", desc: "Responde 24/7, califica, agenda, nutre.", benefit: "Más citas, menos trabajo humano." },
-            { title: "Workflows Automáticos", desc: "Secuencias de Email, SMS, WhatsApp, llamadas, tareas.", benefit: "Seguimiento perfecto sin esfuerzo." },
-            { title: "Calendario y Reservas", desc: "Reservas automáticas, recordatorios, confirmaciones.", benefit: "Más citas, menos no-shows." },
-            { title: "Sitios Web y Embudos", desc: "Constructor visual de páginas de alta conversión.", benefit: "Convierte clics en clientes." },
-            { title: "Email Marketing", desc: "Plantillas, programaciones, newsletters.", benefit: "Comunicación profesional sin complicación." },
-            { title: "SMS Marketing", desc: "Mensajes masivos y automatizados.", benefit: "Tasas de apertura altísimas." },
-            { title: "Gestión de Reputación", desc: "Solicitud automática de reseñas en Google.", benefit: "Más confianza = más ventas." },
-            { title: "Pagos & Facturas", desc: "Cobros online, envíos de facturas, suscripciones.", benefit: "Cobras más rápido y más fácil." },
-            { title: "Membresías y Cursos", desc: "Plataformas de cursos y áreas privadas.", benefit: "Ingresos recurrentes." },
-            { title: "Seguimiento de Llamadas", desc: "Grabación, seguimiento e IVR de llamadas.", benefit: "Más cierre, menos fricción." },
-            { title: "Panel de Analíticas", desc: "Métricas en tiempo real: leads, citas, ventas.", benefit: "Decisiones basadas en datos." },
-            { title: "App Móvil", desc: "Todo el sistema en tu bolsillo.", benefit: "Controla tu negocio desde donde estés." }
-        ],
-        midFeatureCta: {
-            text: "¿Listo para centralizar todo tu negocio?",
-            button: "Construir Mi Sistema"
-        },
-        plans: {
-            title: "ELIGE TU MOTOR",
-            core: {
-                title: "CERRANA CORE",
-                subtitle: "LA BASE DE CERRANA OS",
-                price: "$147/mes",
-                setup: "+ $497 Setup",
-                features: ["Pipeline de Ventas", "CRM Completo", "Email y SMS Bidireccional", "Calendario Integrado", "Automatizaciones Básicas", "App Móvil"],
-                cta: "Empezar con Core"
-            },
-            growth: {
-                title: "CERRANA GROWTH",
-                subtitle: "CORE + CAPTURE (MÁS POPULAR)",
-                price: "$347/mes",
-                setup: "+ $997 Setup",
-                badge: "Ahorra $200",
-                features: ["Todo en CORE", "Agente IA 24/7", "Auto-Reserva", "Calificación de Leads", "Recuperación de Llamadas", "Reactivación Inteligente"],
-                cta: "Obtener Growth"
-            },
-            full: {
-                title: "FULL FUNNEL",
-                subtitle: "CORE + CAPTURE + WEB",
-                price: "$397/mes",
-                setup: "+ $1,497 Setup",
-                badge: "Ahorra $700",
-                features: ["Todo en GROWTH", "Web / Funnel Inteligente", "Optimización SEO", "Estructura CRO", "Soporte Prioritario"],
-                cta: "Obtener Full Funnel"
-            }
-        },
-        difference: {
-            title: "POR QUÉ CERRANA OS ES DIFERENTE",
-            points: ["No es un CRM.", "No es solo IA.", "No es solo una web.", "Es un sistema operativo completo de ventas."]
-        },
-        testimonials: [
-            { quote: "Duplicamos citas en 30 días.", author: "Director Clínico", role: "Salud" },
-            { quote: "La IA responde mejor que mi equipo.", author: "Dueño de Agencia", role: "Marketing" },
-            { quote: "Mi web ahora convierte de verdad.", author: "Consultor", role: "Coaching" }
-        ],
-        finalCta: {
-            title: "Tu negocio puede tener un sistema de ventas funcionando en 72 horas.",
-            subtitle: "Todo empieza con CERRANA OS.",
-            btn1: "Ver Demo",
-            btn2: "Empezar con CERRANA OS",
-            urgency: "⏳ Cupos de onboarding semanal limitados."
+        full: {
+          title: "FULL CLINICA ENG",
+          subtitle: "CRM + AI + PAGINAS CRO ADAPTADAS",
+          price: "$397/mes",
+          setup: "+ $1,497 Setup",
+          badge: "Ahorra $700",
+          features: ["Todo en GROWTH", "Páginas Web / Funnels CRO Clínicos", "Soporte de SEO Local Google Maps", "Redacción Médica Premium", "Atención Técnica Prioritaria"],
+          cta: "Obtener Full Funnel"
         }
+      },
+      difference: {
+        title: "POR QUÉ CERRANA ES EL SOCIO IDÓNEO",
+        points: ["No implementamos chatbots genéricos.", "Agente nativo de Meta WhatsApp.", "Total cumplimiento gubernamental y normativo.", "Adaptado con precisión matemática a tu centro odontológico o médico."]
+      },
+      testimonials: [
+        { quote: "Llenamos la agenda médica en menos de 2 semanas.", author: "Directora General de MedSpa", role: "Medicina Estética" },
+        { quote: "La IA resuelve dudas de ortodoncia mejor que una recepcionista agotada.", author: "Jefe de Operaciones", role: "Grupo Odontológico" },
+        { quote: "El callback de WhatsApp a llamadas perdidas nos recuperó múltiples consultas estéticas de miles de dólares.", author: "Cirujano Maxilofacial", role: "Cirugía Odontológica" }
+      ],
+      finalCta: {
+        title: "Tu clínica puede tener al agente de WhatsApp agendando tratamientos en 1-2 semanas.",
+        subtitle: "Configuración profesional sobre Conversation AI nativa de GoHighLevel.",
+        btn1: "Ver Demo Clínica",
+        btn2: "Agendar Demo",
+        urgency: "⏳ Cupos médicos mensuales de onboarding limitados."
+      }
     },
     services_page: {
-        hero: {
-            title: 'SOLUCIONES QUE VENDEN',
-            subtitle: 'Herramientas simples y efectivas para convertir extraños en clientes.'
+      hero: {
+        title: 'AUTOMATIZACIÓN DIRIGIDA A LA CONVERSIÓN',
+        subtitle: 'Soluciones nativas y seguras para capturar y agendar pacientes estéticos y odontológicos.'
+      },
+      web: {
+        title: 'Sitios y Páginas CRO de Tratamientos',
+        explanation: {
+          what: 'Landing pages de estética y odontología ultrarrápidas y optimizadas para Google Maps local.',
+          who: 'Clínicas gastando en Google/Facebook Ads pero convirtiendo menos del 10% de visitas.',
+          problem: 'Páginas web tradicionales sobrecargadas que aburren y pierden al paciente caliente.',
+          result: '2-3x más clics continuos que activan el chat con tu agendador de WhatsApp.'
         },
-        web: {
-            title: 'Embudos y Webs Inteligentes',
-            explanation: {
-                what: 'Un sitio web de alta velocidad diseñado para convertir.',
-                who: 'Negocios con visitas pero sin leads.',
-                problem: 'Sitios bonitos que solo acumulan polvo.',
-                result: '2-3x más leads de tu tráfico actual.'
-            },
-            cta: 'CONSTRUIR MI EMBUDO'
+        cta: 'Agenda una demo'
+      },
+      crm: {
+        title: 'CRM y Pipelines Médicos',
+        explanation: {
+          what: 'CRM GoHighLevel configurado con pipelines específicos de tratamientos quirúrgicos y dentales.',
+          who: 'Clínicas operando con cuadernos físicos o Google Sheets vulnerables.',
+          problem: 'Seguimiento nulo y datos de pacientes extraviados en el desorden diario.',
+          result: 'Control integral del valor de consultas y flujos automatizados de post-operatorio.'
         },
-        crm: {
-            title: 'CRM y Automatización',
-            explanation: {
-                what: 'Un cerebro central para tus datos de clientes.',
-                who: 'Equipos usando hojas de cálculo o notas.',
-                problem: 'Leads perdiéndose en el caos.',
-                result: 'Cero oportunidades perdidas. Claridad total.'
-            },
-            cta: 'ORGANIZAR MIS VENTAS'
+        cta: 'Agenda una demo'
+      },
+      ai: {
+        title: 'Agente Agendador WhatsApp GHL',
+        explanation: {
+          what: 'Especialista WhatsApp entrenado en tus procedimientos, horarios y precios sobre Meta API oficial.',
+          who: 'Clínicas desbordadas de chats nocturnos que mueren por falta de respuesta rápida.',
+          problem: 'Tardar más de 5 minutos en responder = El paciente agenda con el competidor.',
+          result: 'Calificación automática instantánea en WhatsApp 24/7 y agendamiento de citas de valoración.'
         },
-        ai: {
-            title: 'Agentes de Reserva IA',
-            explanation: {
-                what: 'Un asistente inteligente que trabaja 24/7.',
-                who: 'Dueños muy ocupados para contestar el teléfono.',
-                problem: 'Llamadas perdidas = Dinero perdido.',
-                result: 'Despierta con citas agendadas.'
-            },
-            cta: 'DESPLEGAR MI AGENTE'
-        }
+        cta: 'Agenda una demo'
+      }
     },
     pricing: {
       hero: {
-        title: 'INVIERTE EN',
-        titleHighlight: 'CRECIMIENTO',
-        subtitle: 'Elige tu sistema. Mira tu hoja de ruta. Lanza en 7 días.'
+        title: 'INVIERTE EN CRECIMIENTO',
+        titleHighlight: 'CLÍNICO',
+        subtitle: 'Activa tu WhatsApp Booker nativo. Incrementa tus valoraciones médicas efectivas en 7-14 días.'
       },
       steps: {
-        step1: 'PASO 1: ELIGE TU MOTOR',
-        step2: 'PASO 2: REVISA TU MAPA',
+        step1: 'PASO 1: SELECCIONA TU NIVEL',
+        step2: 'PASO 2: MAPEO DE TRATAMIENTOS',
         step3: 'PASO 3: LANZAMIENTO'
       },
       journey: {
-        title: 'MAPA DE ACTIVACIÓN PARA:',
+        title: 'FASE DE MAPEAMIENTO DE CLÍNICA:',
         step1: {
-            title: 'Acceso Inmediato',
-            desc: 'Credenciales enviadas a tu correo. Acceso instantáneo al panel y materiales de entrenamiento.'
+          title: 'Credencial y Setup GHL',
+          desc: 'Entrada y configuración de tu espacio dentro de GoHighLevel, sincronizando alertas y apps móviles.'
         },
         step2: {
-            title: 'Sesión de Estrategia',
-            desc: 'Nos reunimos 60 min para mapear tu proceso de ventas y definir la personalidad de tu IA.'
+          title: 'Mapeo de Procedimientos',
+          desc: 'Recopilación de tratamientos, honorarios, preguntas frecuentes y calendarios de los doctores.'
         },
         step3: {
-            title: 'Construcción del Sistema',
-            core: 'Configuramos pipelines, importamos contactos y automatizaciones básicas.',
-            growth: 'Entrenamos tu Agente IA, configuramos calendarios y activamos la respuesta a llamadas perdidas.',
-            full: 'Diseñamos tu embudo de alta conversión, redactamos textos e integramos estructura SEO.'
+          title: 'Configuración Física del Sistema',
+          core: 'Estructuración de tus pipelines médicos de tratamientos y automatizaciones de ausencias no-show.',
+          growth: 'Entrenamiento del agente agendador conversacional Meta WhatsApp sobre GHL natively.',
+          full: 'Puesta en marcha de landing pages de alta velocidad con re-ruteo directo inteligente a WhatsApp.'
         },
         step4: {
-            title: 'Lanzamiento y Entrega',
-            desc: 'Pruebas finales. Te entregamos las llaves, entrenamos a tu equipo y abrimos el flujo de tráfico.'
+          title: 'Meta Security Review & Go',
+          desc: 'Pruebas rigurosas sobre tu línea oficial, entrenamiento básico al personal administrativo y encendido oficial 24/7.'
         }
       },
       common: {
-        setupFee: 'Tarifa de Setup',
+        setupFee: 'Setup Único',
         month: 'mes',
         save: 'AHORRA',
-        viewDetails: 'VER DETALLES',
+        viewDetails: 'DETALLES',
         get: 'Obtener',
-        startWith: 'Empezar con',
+        startWith: 'Aplicar para',
         selected: 'SELECCIONADO',
-        startJourney: 'EMPEZAR'
+        startJourney: 'INICIAR ACTIVACIÓN'
       },
       tiers: {
         core: {
           title: 'CERRANA CORE',
-          subtitle: 'SISTEMA DE VENTAS Y CRM',
-          desc: 'Organiza tu proceso de ventas y CRM para dejar de perder leads.',
-          features: ['Arquitectura de Pipeline de Ventas', 'Configuración Completa de CRM', 'SMS y Email Bidireccional', 'Integración de Calendario'],
-          cta: 'Seleccionar Core'
+          subtitle: 'CRM CLÍNICO Y PIPELINES',
+          desc: 'El primer paso para organizar contactos estéticos, evitar no-shows y estandarizar recordatorios.',
+          features: ['Pipelines Especializados médicos', 'Configuración de CRM de Pacientes', 'Inbox de GHL unificado de WhatsApp/Meta', 'Calendarios Sincronizados de Doctores'],
+          cta: 'Agendar Demo'
         },
         growth: {
-          title: 'CORE + CAPTURE',
-          subtitle: 'CORE + CAPTURE',
-          badge: 'PAQUETE GROWTH',
-          badgePopular: 'MÁS POPULAR',
-          desc: 'El sistema de ventas completo más un Asistente de IA 24/7 para manejar leads.',
-          features: ['Todo en Core', 'Asistente de IA (24/7)', 'Auto-Reserva y Calificación', 'Respuesta a Llamadas Perdidas', 'Campañas de Reactivación Inteligentes'],
-          cta: 'Seleccionar Growth'
+          title: 'CORE + WHATSAPP IA',
+          subtitle: 'PAQUETE CLINIC BOOKER',
+          badge: 'MÁS ADQUIRIDO MEDSPAS',
+          badgePopular: 'RECOMENDADO PARA CLÍNICAS',
+          desc: 'Central CRM clínico sumado al WhatsApp AI Booker natively adaptado sobre Meta Cloud API.',
+          features: ['Todo en CRM Core Clínico', 'WhatsApp AI Booker (24/7)', 'Filtros automáticos de Pre-calificación', 'Entrenamiento clínico de FAQS quirúrgicas', 'Callback a llamadas perdidas vía WhatsApp'],
+          cta: 'Agendar Demo'
         },
         full: {
-          title: 'FULL FUNNEL',
-          subtitle: 'CORE + CAPTURE + WEB',
-          desc: 'El motor definitivo. CRM, Asistente de IA y un sitio web de alta conversión.',
-          features: ['Todo en Paquete Growth', 'Sitio Web / Embudo Inteligente', 'Estructura Lista para SEO', 'Optimización de Tasa de Conversión', 'Soporte Prioritario'],
-          cta: 'Seleccionar Full Funnel'
+          title: 'SISTEMA CLÍNICO COMPLETO',
+          subtitle: 'CRM + AGENTE IA + LANDING CRO',
+          desc: 'El motor absoluto de crecimiento: CRM, agendamiento nativo WhatsApp IA y embudo optimizado.',
+          features: ['Todo en Clinic Booker Growth', 'Páginas web / Embudo de tratamientos premium', 'Alojamiento cloud integrado GHL', 'Redacción publicitaria médica CRO', 'Soporte técnico preferencial'],
+          cta: 'Agendar Demo'
         }
       },
       alaCarte: {
-        title: 'PRODUCTOS A LA CARTA',
+        title: 'PRODUCTOS INDEPENDIENTES',
         capture: {
-          title: 'Cerrana Capture',
-          desc: 'Asistente de IA 24/7 (Independiente)',
-          cta: 'Obtener Solo Capture'
+          title: 'Agente Agendador WhatsApp',
+          desc: 'Setup individual del agente IA nativo sobre Meta WhatsApp',
+          cta: 'Agendar Demo'
         },
         web: {
-          title: 'Cerrana Web',
-          desc: 'Sitios y Embudos Inteligentes (Independiente)',
-          cta: 'Obtener Solo Web'
+          title: 'Páginas de Aterrizaje CRO',
+          desc: 'Hospedaje y construcción de landings médicas de alta velocidad',
+          cta: 'Agendar Demo'
         }
       },
       comparison: {
-        title: 'COMPARACIÓN DE CARACTERÍSTICAS',
-        headers: ['Características', 'CORE', 'PAQUETE GROWTH', 'FULL FUNNEL'],
+        title: 'MATRIZ DE CARACTERÍSTICAS DE CLÍNICA',
+        headers: ['Características Clave', 'CRM CORE', 'PLAN AGENDADOR', 'MOTOR COMPLETO'],
         sections: {
-          crm: 'Ventas y CRM',
-          ai: 'Asistente de IA (Capture)',
-          web: 'Sitio Web (Web)',
-          investment: 'Inversión'
+          crm: 'Seguimiento y CRM de Pacientes',
+          ai: 'Agente Agendador WhatsApp IA',
+          web: 'Páginas Web CRO de Tratamientos',
+          investment: 'Inversiones'
         },
         features: {
-          pipeline: 'Pipeline de Ventas',
-          contact: 'Gestión de Contactos CRM',
-          leadResponse: 'Respuesta de IA 24/7',
-          booking: 'Auto-Reserva',
-          website: 'Sitio Web de Alta Conversión',
-          setup: 'Setup Único',
-          monthly: 'Mensual'
+          pipeline: 'Pipelines Médicos Visuales',
+          contact: 'Ficha e Historial Clínico de Pacientes (CRM)',
+          leadResponse: 'Agente WhatsApp IA GHL Meta 24/7',
+          booking: 'Auto-Calificación y Agendamiento Automatizado',
+          website: 'Landing Pages de Especialidad CRO (Web)',
+          setup: 'Tarifa única de Setup y Entrenamiento',
+          monthly: 'Mensualidad de Gestión'
         }
       },
       faq: {
-        title: 'PREGUNTAS COMUNES',
-        q1: { q: '¿Por qué hay una tarifa de setup?', a: 'La tarifa cubre la construcción personalizada de tu sistema. A diferencia del software genérico, adaptamos los pipelines, automatizaciones y personalidad de IA a TU negocio.' },
-        q2: { q: '¿Puedo comprar solo el Asistente de IA?', a: '¡Sí! Puedes comprar Cerrana Capture por separado por $247/mes + $697 setup. Sin embargo, el Paquete Growth ofrece el mejor valor al incluir la base del CRM Core.' },
-        q3: { q: '¿El costo del CRM está incluido?', a: 'Sí. Tu suscripción mensual cubre la licencia tecnológica para el CRM y herramientas de IA. Sin facturas de software extra.' }
+        title: 'PREGUNTAS FRECUENTES CLÍNICAS',
+        q1: { q: '¿Por qué hay una tarifa de setup?', a: 'Porque no instalamos plantillas genéricas de chatbot. Redactamos y entrenamos la IA con tus tratamientos concretos, tarifas autorizadas, FAQS clínicas y agendas de los médicos, configurándola limpiamente sobre los servidores oficiales de Meta.' },
+        q2: { q: '¿Cómo funciona la pre-calificación médica?', a: 'El agente de WhatsApp hace preguntas precisas (ej. tratamiento que busca, urgencia, presupuesto aproximado) para filtrar y calificar al prospecto antes de darle acceso al calendario.' },
+        q3: { q: '¿Es seguro para mi número de WhatsApp?', a: 'Sí. Desarrollamos 100% sobre la API oficial en la nube de Meta dentro de GoHighLevel, lo que garantiza el cumplimiento total de sus políticas contra Spam.' }
       }
     },
     about: {
-        whoWeAre: {
-            title: "QUIÉNES SOMOS",
-            desc1: "Somos los arquitectos de la economía automatizada.",
-            desc2: "Cerrana nació de una verdad simple: los negocios no mueren de hambre, mueren de indigestión. Demasiados leads, demasiado caos, muy poco tiempo.",
-            desc3: "No solo vendemos software. Construimos la infraestructura digital que permite a 1 persona hacer el trabajo de 10."
-        },
-        mission: {
-            title: "NUESTRA MISIÓN",
-            subtitle: "Eliminando las Suposiciones",
-            desc: "Creemos que las ventas no deberían ser un misterio. Deberían ser una ciencia. Predecible. Escalable. Aburridamente efectiva.",
-            points: [
-                "Automatización sobre trabajo manual.",
-                "Datos sobre intuición.",
-                "Sistemas sobre ajetreo."
-            ],
-            closing: "Ayudamos a los negocios a dormir mejor sabiendo que su máquina de ventas nunca se apaga."
-        },
-        problem: {
-            title: "LA REALIDAD",
-            subtitle: "Por qué la mayoría de los negocios se quedan pequeños.",
-            points: [
-                "Los leads se pierden.",
-                "El seguimiento es inconsistente.",
-                "La tecnología está fragmentada.",
-                "El agotamiento es inevitable."
-            ],
-            closing: "Cerrana resuelve esto unificando todo el stack en un sistema operativo."
-        },
-        difference: {
-            title: "LO QUE NOS HACE DIFERENTES",
-            points: [
-                { title: "Ingeniería Primero", desc: "Somos constructores, no solo marketeros. Nuestros sistemas son robustos." },
-                { title: "Velocidad", desc: "Desplegamos en días, no meses." },
-                { title: "Enfoque", desc: "Solo resolvemos problemas de ventas y operaciones. Sin relleno." },
-                { title: "Alianza", desc: "No solo te damos un login. Lo construimos contigo." }
-            ]
-        },
-        industries: {
-            title: "A QUIÉN SERVIMOS",
-            list: ["Salud", "Legal", "Bienes Raíces", "Servicios del Hogar", "Agencias", "Coaching", "SaaS"],
-            closing: "Cualquier negocio donde una llamada perdida signifique ingresos perdidos."
-        },
-        team: {
-            title: "NUESTRA FILOSOFÍA",
-            desc: "Somos un equipo pequeño y de élite de ingenieros y estrategas.",
-            values: ["Verdad Radical", "Propiedad Extrema", "Velocidad como Hábito"],
-            closing: "CONSTRUIMOS SISTEMAS QUE FUNCIONAN."
-        },
-        impact: {
-            title: "EL IMPACTO",
-            testimonials: [
-                { quote: "Recablearon completamente el cerebro de nuestro negocio.", author: "CEO, TechFlow" },
-                { quote: "Finalmente, un sistema que realmente hace lo que dice.", author: "Fundador, Apex Solar" }
-            ]
-        },
-        commitment: {
-            title: "NUESTRO COMPROMISO",
-            subtitle: "Con nuestros clientes y socios.",
-            points: ["Transparencia", "Fiabilidad", "Resultados"],
-            closing: "Tratamos tu negocio como si fuera el nuestro."
-        },
-        cta: {
-            title: "¿Listo para Automatizar?",
-            btn1: "Agendar Llamada",
-            btn2: "Volver al Inicio",
-            urgency: "Disponibilidad limitada para nuevos socios."
-        }
+      whoWeAre: {
+        title: "QUIÉNES SOMOS",
+        desc1: "Somos los ingenieros de la automatización clínica.",
+        desc2: "Cerrana AI nació con una verdad de marketing médico ineludible: las clínicas pierden miles en pauta publicitaria simplemente por tardar más de 5 minutos en responder a un lead por WhatsApp.",
+        desc3: "No vendemos simples programas de computación. Diseñamos sistemas nerviosos digitales estables para que centros odontológicos y médicos prosperen predictivamente eliminando el agotamiento de su personal."
+      },
+      mission: {
+        title: "NUESTRA MISIÓN",
+        subtitle: "Acabar con la sobrecarga administrativa clínica",
+        desc: "Las conversaciones estáticas por WhatsApp no deberían definir el éxito de una clínica. Las ventas médicas son una ciencia exacta.",
+        points: [
+          "Respuestas instantáneas automatizadas en vez de bandejas de WhatsApp desbordadas.",
+          "Filtros de pre-calificación en vez de leads curiosos que saturan agendas.",
+          "Pipelines visuales de tratamientos médicos en vez de hojas Excel manuales."
+        ],
+        closing: "Ayudamos a médicos y odontólogos a descansar sabiendo que su canal de WhatsApp agenda pacientes reales de manera ininterrumpida."
+      },
+      problem: {
+        title: "LA REALIDAD CLÍNICA",
+        subtitle: "Por qué los centros médicos locales tocan un techo de facturación.",
+        points: [
+          "La pauta genera mensajes nocturnos que mueren esperando respuesta hasta el día siguiente.",
+          "Doctores con alto costo de horas dedican tiempo a responder dudas básicas sobre tarifas.",
+          "Las recepcionistas pierden llamadas llamando de vuelta a contactos de curiosos sin filtro.",
+          "Las ausencias o no-show persisten altas ante la falta de flujos automáticos de confirmación."
+        ],
+        closing: "Cerrana resuelve estos problemas instalando agentes Meta WhatsApp inteligentes directamente en las líneas de tu clínica."
+      },
+      difference: {
+        title: "LO QUE NOS DIFERENCIA",
+        points: [
+          { title: "Meta Compliance Oficial", desc: "Instalación directa en la api de Meta. Seguridad absoluta de la línea." },
+          { title: "Redacción Publicitaria Clínica", desc: "IA entrenada para conversar con vocabulario médico cálido y oportuno." },
+          { title: "Soporte de Personal de Recepción", desc: "Preparamos a tu personal para retomar la conversación en GHL de inmediato cuando el paciente esté calificado." },
+          { title: "Citas Agendadas Reales", desc: "No te entregamos clics vacíos. Optimizamos puramente para valoraciones confirmadas." }
+        ]
+      },
+      industries: {
+        title: "ESPECIALIDADES QUE APOYAMOS",
+        list: ["Clínicas Médicas Estéticas", "Centros de Ortodoncia y Odontología", "Clínicas de Cirugía Plástica y Reconstructiva", "MedSpas Dermaláser", "Estudios Dentales de Diseño de Sonrisa", "Clínicas de Implantología"],
+        closing: "Cualquier clínica con volumen de mensajes donde retrasar la respuesta signifique perder un tratamiento valioso."
+      },
+      team: {
+        title: "NUESTRO EQUIPO",
+        desc: "Un equipo boutique de constructores certificados en GoHighLevel, diseñadores CRO y redactores médicos.",
+        values: ["Cumplimiento Total de Meta", "Estructuración de Datos Médicos Seguros", "Experiencia de Paciente IMPECABLE"],
+        closing: "CONSTRUIMOS DISPOSITIVOS QUE CONVIERTEN."
+      },
+      impact: {
+        title: "MÉTRICAS MÉDICAS RECONOCIDAS",
+        testimonials: [
+          { quote: "Nuestra clínica dermatológica aumentó las valoraciones quirúrgicas en un 45% en un mes gracias al WhatsApp Booker de Cerrana.", author: "Dr. Raul H., Director Clínico" },
+          { quote: "La consistencia de respuesta de la IA es admirable. Cumple rigurosamente las metas que trazamos.", author: "Mónica F., Administradora de MedSpa" }
+        ]
+      },
+      commitment: {
+        title: "NUESTRO COMPROMISO",
+        subtitle: "Estándar de seguridad de datos del paciente.",
+        points: ["Privacidad y Tratamiento de Información Médica", "Estricto cumplimiento anti-spam", "Auditoría mensual de rendimiento del Agente"],
+        closing: "Proteger tu línea comercial y tu reputación médica es nuestro mandato supremo."
+      },
+      cta: {
+        title: "¿Listo para llenar tu agenda clínica?",
+        btn1: "Programar Demo Gratuita",
+        btn2: "Volver al Inicio",
+        urgency: "Suscripciones de configuración mensual limitadas."
+      }
     },
     contact: {
-      audit: 'AUDITORÍA DE ESTRATEGIA',
-      title: 'MAPEMOS TU',
-      titleHighlight: 'SISTEMA DE VENTAS',
-      desc: 'Selecciona una hora en el calendario para reservar tu Auditoría de Estrategia gratuita de 30 minutos. Revisaremos tu proceso actual y te mostraremos exactamente dónde la IA y la automatización pueden agregar ingresos.',
+      audit: 'AUDITORÍA ESTRATÉGICA CLÍNICA',
+      title: 'DIBUJEMOS LA AGENDA de tu',
+      titleHighlight: 'CLÍNICA EN PILOTO',
+      desc: 'Selecciona una hora en nuestro calendario digital para concertar tu Auditoría Clínica de 20 minutos sin cargo. Evaluaremos tus velocidades actuales de respuesta, te mostraremos las posibilidades nativas de GHL Conversation AI y estructuraremos tu filtro automático de WhatsApp.',
       nextSteps: {
-        title: '¿QUÉ PASA DESPUÉS?',
-        step1: 'Recibirás una confirmación de calendario con un enlace de Zoom.',
-        step2: 'Te enviaremos un breve cuestionario para prepararnos para la llamada y no perder tiempo.'
+        title: '¿QUÉ SUCEDE LUEGO?',
+        step1: 'Recibirás un correo y WhatsApp automatizado directo con el enlace de Zoom.',
+        step2: 'Te pediremos un breve formulario de 2 minutos sobre tus tratamientos activos para no perder tiempo.'
       },
-      trusted: 'Confiado por más de 50 negocios este año.'
+      trusted: 'Potenciando a grupos médicos, estéticos y odontológicos destacados.'
     }
   }
 };

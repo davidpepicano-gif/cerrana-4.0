@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cerrana.com/sitemap.xml

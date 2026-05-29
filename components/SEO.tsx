@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
 interface SEOProps {
@@ -10,59 +11,37 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({ title, description, keywords, schema }) => {
   const location = useLocation();
+  const logicalUrl = `https://cerrana.com${location.pathname === '/' ? '' : location.pathname}`;
 
-  useEffect(() => {
-    // Update Title
-    document.title = title;
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords || 'Cerrana AI, WhatsApp AI, GHL, GoHighLevel, Agente de IA, Clínica Estética, Clínica Odontológica, CRM, Automatización'} />
+      
+      {/* Open Graph */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={logicalUrl} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content="https://cerrana.com/og-image.jpg" />
 
-    // Update Meta Tags
-    const updateMeta = (name: string, content: string, attribute: 'name' | 'property' = 'name') => {
-      let element = document.querySelector(`meta[${attribute}="${name}"]`);
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute(attribute, name);
-        document.head.appendChild(element);
-      }
-      element.setAttribute('content', content);
-    };
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={logicalUrl} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content="https://cerrana.com/og-image.jpg" />
 
-    updateMeta('description', description);
-    updateMeta('keywords', keywords || 'Cerrana AI, Sales Automation, CRM, AI Agents');
-    
-    // Open Graph
-    updateMeta('og:title', title, 'property');
-    updateMeta('og:description', description, 'property');
-    // Note: With HashRouter, the canonical URL is often just the root, 
-    // but we construct a logical representation for crawlers.
-    const logicalUrl = `https://cerrana.com${location.pathname === '/' ? '' : location.pathname}`;
-    updateMeta('og:url', logicalUrl, 'property');
-    
-    // Twitter
-    updateMeta('twitter:title', title, 'property');
-    updateMeta('twitter:description', description, 'property');
-    updateMeta('twitter:url', logicalUrl, 'property');
+      {/* Canonical Link */}
+      <link rel="canonical" href={logicalUrl} />
 
-    // Canonical Link
-    let link = document.querySelector('link[rel="canonical"]');
-    if (!link) {
-      link = document.createElement('link');
-      link.setAttribute('rel', 'canonical');
-      document.head.appendChild(link);
-    }
-    link.setAttribute('href', logicalUrl);
-
-    // Inject JSON-LD Schema
-    if (schema) {
-        let script = document.querySelector('script[type="application/ld+json"]');
-        if (!script) {
-            script = document.createElement('script');
-            script.setAttribute('type', 'application/ld+json');
-            document.head.appendChild(script);
-        }
-        script.textContent = schema;
-    }
-
-  }, [title, description, keywords, schema, location]);
-
-  return null;
+      {/* Inject JSON-LD Schema */}
+      {schema && (
+        <script type="application/ld+json">
+          {schema}
+        </script>
+      )}
+    </Helmet>
+  );
 };

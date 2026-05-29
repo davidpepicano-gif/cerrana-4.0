@@ -24,7 +24,7 @@ export const Contact: React.FC = () => {
   const contactSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "description": "Book a strategy audit with Cerrana AI to discuss automation and CRM solutions.",
+    "description": "Agenda tu Auditoría Clínica de 20 Minutos con Cerrana AI para diseñar tu filtro automático de WhatsApp.",
     "mainEntity": {
         "@type": "LocalBusiness",
         "name": "Cerrana AI",
@@ -40,8 +40,8 @@ export const Contact: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen pb-24 md:pb-0 text-slate-200">
       <SEO 
-        title="Contact Us | Book Your Strategy Audit - Cerrana AI" 
-        description="Schedule a free strategy audit. We'll map your sales process and identify where AI and automation can add immediate revenue."
+        title={language === 'es' ? "Agenda tu Auditoría Clínica de 20 Minutos | Cerrana AI" : "Schedule Your 20-Min Clinic Audit | Cerrana AI"} 
+        description={language === 'es' ? "Agenda una demo para diseñar el filtro automático de tu WhatsApp, sincronizar el CRM GoHighLevel y activar las reservas en piloto automático." : "Schedule a free demo to map your clinic's WhatsApp auto-qualification filter, GHL CRM, and calendar automation on autopilot."}
         schema={contactSchema}
       />
 

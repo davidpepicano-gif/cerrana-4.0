@@ -471,6 +471,44 @@ const PostPurchaseTimeline: React.FC<{ t: any }> = ({ t }) => {
     );
 };
 
+const VisibleFAQ: React.FC = () => {
+    const [openIdx, setOpenIdx] = useState<number | null>(null);
+    const questions = [
+        { q: '¿Qué hace exactamente el agente de WhatsApp de Cerrana?', a: 'Responde automáticamente cada mensaje entrante en segundos, contesta dudas frecuentes, califica al paciente y agenda valoraciones, dejando el registro en tu CRM.' },
+        { q: '¿Es seguro para el número de WhatsApp de mi clínica?', a: 'Sí. Usamos la Conversation AI nativa de GoHighLevel, compatible con los términos de Meta, sin integraciones de terceros que arriesgan la suspensión del número.' },
+        { q: '¿Reemplaza a mi recepcionista?', a: 'No. La libera del trabajo repetitivo de responder lo mismo cien veces; cualquier conversación puede ser tomada por una persona en cualquier momento desde GoHighLevel.' },
+        { q: '¿En cuánto tiempo queda funcionando?', a: 'La implementación toma entre 1 y 2 semanas, incluyendo el entrenamiento del agente con los procedimientos, tratamientos y precios de tu clínica.' },
+        { q: '¿Cuánto cuesta?', a: 'Hay una implementación inicial y una mensualidad de gestión. El monto exacto depende del volumen de llamadas o mensajes de tu clínica, lo que definiremos en la demo.' }
+    ];
+
+    return (
+        <section className="py-24 bg-dark-950/80 border-t border-white/5 relative">
+            <div className="container mx-auto px-4 max-w-4xl relative z-10">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-display font-bold text-white mb-4">Preguntas Frecuentes</h2>
+                    <p className="text-slate-400 text-lg font-light">Todo lo que necesitas saber antes de automatizar tu agenda clínica.</p>
+                </div>
+                <div className="space-y-4">
+                    {questions.map((faq, idx) => (
+                        <div key={idx} className="bg-dark-900 border border-white/5 rounded-xl transition-all duration-300 overflow-hidden">
+                            <button 
+                                onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                                className="w-full text-left p-6 flex justify-between items-center text-white hover:text-brand-400 font-semibold"
+                            >
+                                <span className="pr-4">{faq.q}</span>
+                                <span className="text-brand-400 self-end text-xl">{openIdx === idx ? '−' : '+'}</span>
+                            </button>
+                            <div className={`transition-all duration-300 ${openIdx === idx ? 'max-h-56 p-6 pt-0 border-t border-white/5 text-slate-300 text-sm font-light' : 'max-h-0 text-transparent opacity-0 pointer-events-none'}`}>
+                                {faq.a}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
 /* ------------------------------------------------------------
    MAIN PAGE COMPONENT
    ------------------------------------------------------------ */
@@ -479,32 +517,99 @@ export const Home: React.FC = () => {
     const { language } = useLanguage();
     const t = translations[language].home;
 
-    const organizationSchema = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Cerrana AI",
-        "url": "https://cerrana.com",
-        "logo": "https://cerrana.com/logo.png",
-        "description": "Cerrana AI builds digital infrastructure, AI Sales Agents, and CRM systems for service businesses.",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+1-919-918-0505",
-            "contactType": "sales",
-            "areaServed": ["US", "LATAM"],
-            "availableLanguage": ["English", "Spanish"]
+    const combinedSchema = JSON.stringify([
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Cerrana AI",
+            "url": "https://cerrana.com",
+            "logo": "https://cerrana.com/logo.png",
+            "description": "Cerrana AI implementa agentes de IA en WhatsApp sobre GoHighLevel para clínicas estéticas y odontológicas para calificar y agendar pacientes 24/7.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-919-918-0505",
+                "contactType": "sales",
+                "areaServed": ["ES", "US", "MX", "CO"],
+                "availableLanguage": ["Spanish", "English"]
+            },
+            "sameAs": [
+                "https://twitter.com/cerranaai",
+                "https://linkedin.com/company/cerrana-ai"
+            ]
         },
-        "sameAs": [
-            "https://twitter.com/cerranaai",
-            "https://linkedin.com/company/cerrana-ai"
-        ]
-    });
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Agentes de Inteligencia Artificial para WhatsApp sobre GoHighLevel",
+            "provider": {
+                "@type": "Organization",
+                "name": "Cerrana AI"
+            },
+            "description": "Implementación de agentes conversacionales inteligentes oficiales de Meta para pre-calificar y agendar citas de valoración en clínicas de estética u odontología.",
+            "areaServed": {
+                "@type": "Country",
+                "name": "Spain"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@id": "https://cerrana.com/#faq1",
+                    "@type": "Question",
+                    "name": "¿Qué hace exactamente el agente de WhatsApp de Cerrana?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Responde automáticamente cada mensaje entrante en segundos, contesta dudas frecuentes, califica al paciente y agenda valoraciones, dejando el registro en tu CRM."
+                    }
+                },
+                {
+                    "@id": "https://cerrana.com/#faq2",
+                    "@type": "Question",
+                    "name": "¿Es seguro para el número de WhatsApp de mi clínica?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Sí. Usamos la Conversation AI nativa de GoHighLevel, compatible con los términos de Meta, no integraciones de terceros que arriesgan suspensión del número de la clínica."
+                    }
+                },
+                {
+                    "@id": "https://cerrana.com/#faq3",
+                    "@type": "Question",
+                    "name": "¿Reemplaza a mi recepcionista?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. La libera del trabajo repetitivo de responder lo mismo cien veces; cualquier conversación puede ser tomada por una persona en cualquier momento desde GHL."
+                    }
+                },
+                {
+                    "@id": "https://cerrana.com/#faq4",
+                    "@type": "Question",
+                    "name": "¿En cuánto tiempo queda funcionando?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "La implementación toma entre 1 y 2 semanas, incluyendo el entrenamiento del agente con los procedimientos, FAQS y precios de tu clínica."
+                    }
+                },
+                {
+                    "@id": "https://cerrana.com/#faq5",
+                    "@type": "Question",
+                    "name": "¿Cuánto cuesta?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Hay una implementación inicial y una mensualidad de gestión. El monto exacto depende del volumen de tu clínica; lo definimos en la demo."
+                    }
+                }
+            ]
+        }
+    ]);
 
     return (
         <div className="bg-dark-950 overflow-x-hidden pb-24">
             <SEO 
-                title="Cerrana AI | Sales Systems, CRM & AI Automation" 
-                description="Cerrana builds digital infrastructure for service businesses. We implement AI Sales Agents, CRM systems, and high-converting funnels to automate your growth."
-                schema={organizationSchema}
+                title={language === 'es' ? 'Agente de IA en WhatsApp para Clínicas Estéticas y Odontológicas | Cerrana AI' : 'WhatsApp AI Booker for Aesthetic and Dental Clinics | Cerrana AI'} 
+                description={language === 'es' ? 'Tu clínica responde cada WhatsApp en segundos. Implementamos agentes de IA para WhatsApp nativos en GoHighLevel para pre-calificar y agendar pacientes 24/7.' : 'Your dental/aesthetic clinic answers every WhatsApp instantly. Native GHL WhatsApp AI Booker to pre-qualify and schedule patients 24/7.'}
+                schema={combinedSchema}
             />
             
             {/* 1. HERO SECTION (Interactive Chat) */}
@@ -716,6 +821,9 @@ export const Home: React.FC = () => {
             
             {/* NEW: 8. POST-PURCHASE TIMELINE */}
             <PostPurchaseTimeline t={t.extraFunnel} />
+
+            {/* NEW: 8.5. VISIBLE ACCORDION FAQ */}
+            <VisibleFAQ />
 
             {/* 9. FINAL IMPACT (Split Screen) */}
             <section className="min-h-[60vh] flex flex-col md:flex-row">

@@ -34,22 +34,34 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     { label: t.nav.contact, path: '/contact' },
   ];
 
-  // Custom Logo Component - Tech Circuit Design
+  // Custom Logo Component - Abstract Tech 'C'
   const Logo = () => (
-    <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Top Line & Dot */}
-      <path d="M10 25 H 55 C 65 25 70 25 70 25" stroke="white" strokeWidth="12" strokeLinecap="round" />
-      <circle cx="70" cy="25" r="14" fill="#8b5cf6" />
+    <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+      <defs>
+        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#8b5cf6" />
+          <stop offset="100%" stopColor="#22d3ee" />
+        </linearGradient>
+      </defs>
       
-      {/* Middle Line & Dot */}
-      <path d="M10 50 H 35 C 45 50 50 50 50 50" stroke="white" strokeWidth="12" strokeLinecap="round" />
-      <circle cx="50" cy="50" r="14" fill="#8b5cf6" />
+      {/* Stylized 'C' Base */}
+      <path 
+        d="M82 28C76 18 64 12 50 12C28 12 12 28 12 50C12 72 28 88 50 88C68 88 82 78 88 62" 
+        stroke="white" 
+        strokeWidth="10" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
       
-      {/* Bottom Line & Dot */}
-      <path d="M10 75 H 55 C 65 75 70 75 70 75" stroke="white" strokeWidth="12" strokeLinecap="round" />
-      <circle cx="70" cy="75" r="14" fill="#8b5cf6" />
+      {/* Central Neural Node */}
+      <circle cx="50" cy="50" r="10" fill="url(#logo-gradient)" />
       
-      {/* Connecting Curve (The 'C' shape backing) - Optional, keeping it clean lines for now based on abstract description */}
+      {/* Connection Lines */}
+      <path d="M50 50L82 28" stroke="url(#logo-gradient)" strokeWidth="4" strokeLinecap="round" opacity="0.8" />
+      
+      {/* Accent Terminals */}
+      <circle cx="82" cy="28" r="5" fill="#8b5cf6" />
+      <circle cx="88" cy="62" r="5" fill="#22d3ee" />
     </svg>
   );
 
