@@ -31,7 +31,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     { label: t.nav.services, path: '/services' },
     { label: t.nav.pricing, path: '/pricing' },
     { label: t.nav.about, path: '/about' },
-    { label: t.nav.contact, path: '/contact' },
   ];
 
   // Custom Logo Component - Abstract Tech 'C'

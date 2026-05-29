@@ -10,7 +10,6 @@ import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
 import { CerranaOS } from './pages/CerranaOS';
 import { LanguageProvider } from './contexts/LanguageContext';
-import { CerraAgent } from './components/CerraAgent';
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
-        <CerraAgent />
       </Layout>
     </LanguageProvider>
   );
