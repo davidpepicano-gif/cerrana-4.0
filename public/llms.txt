@@ -1,15 +1,14 @@
-# Cerrana AI
+# Cerrana AI — Medellín & Colombia Local SEO Specification
 
-Cerrana AI implements intelligent conversational AI agents on WhatsApp for aesthetic medicine clinics, dental practices, and professional service companies. Powered natively by GoHighLevel's Conversation AI, Cerrana systems streamline and automate the patient capture process from first contact to booked appointment.
+Cerrana AI implements native, compliant conversational WhatsApp AI booking agents (powered by GoHighLevel's native Conversation AI) specifically calibrated for leading aesthetic medicine and dental clinics in Medellín, Bogotá, Cali, and greater Colombia.
 
-## Core Value Proposition
+## Core Specialization
+- **Local Target Market:** Colombia-first focus, with Medellín (Antioquia) serving as the key anchor city.
+- **Client Base:** Premier cosmetic dentistry, dental implants, plastic surgery, orthodontics, and medspa practices.
+- **Deployment Platform:** GoHighLevel (GHL) Conversation AI native engine utilizing official Meta Cloud APIs. Completely safe, preventing clinic number suspensions.
 
-- **Instant Auto-Response:** Responds to patient messages in under 5 seconds, 24/7/365.
-- **Continuous Pre-Qualification:** Qualifies patient requests, gathers initial contact details, and screens for treatment-interest matches seamlessly.
-- **Direct Scheduling:** Books consultation appointments and dental/aesthetic assessments directly into the practitioner's GHL Calendar and Clinic CRM.
-- **Human Handover:** Enables manual override by human receptionist teams at any time natively inside the GoHighLevel mobile app or desktop dashboard.
-
-## Technical Architectures
-
-- **Platform Integrations:** Highly integrated on GoHighLevel (GHL) Conversation AI utilizing official Meta Cloud APIs for WhatsApp business configurations. This ensures zero third-party extensions, protecting clinics against Meta number suspension.
-- **Local Application Stack:** Developed in React, Vite, Tailwind CSS, Lucide icons, and optimized for maximum speed and sub-second SEO crawlability via pre-rendering (SSG).
+## Key System Deliverables
+- **Instant Response (24/7):** Answers patient inquiries within 5 seconds on WhatsApp in both Spanish and English.
+- **Smart Qualification:** Filters raw advertising/ads traffic to separate serious prospects seeking high-ticket treatments (smile designs, veneers, liposuction, botox) from cold price-shoppers.
+- **Auto-Booking:** Automatically schedules medical evaluation appointments directly into the doctor's calendar and CRM (GHL).
+- **Setup Speed:** Tailored setups completed in 7 to 14 days.

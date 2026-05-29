@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, ChevronRight, Check, Zap, Globe, MessageSquare, Activity, Calendar, Clock, Star, TrendingUp, Users, MousePointer2, MoveRight, Bot, Layout, Send, Database, Layers, Monitor, Cpu } from 'lucide-react';
+import { ArrowRight, ChevronRight, Check, Zap, Globe, MessageSquare, Activity, Calendar, Clock, Star, TrendingUp, Users, MousePointer2, MoveRight, Bot, Layout, Send, Database, Layers, Monitor, Cpu, Lock } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
 import { Testimonial } from '../types';
@@ -11,7 +11,7 @@ import { SEO } from '../components/SEO';
    ------------------------------------------------------------ */
 const HeroChat: React.FC = () => {
     const [messages, setMessages] = useState<{role: 'ai' | 'user', text: string}[]>([
-        { role: 'ai', text: 'Hola, ¿te gustaría agendar una cita para aumentar tus ventas hoy?' }
+        { role: 'user', text: '¡Hola! Vi su anuncio sobre implantes dentales. ¿Qué precio tienen?' }
     ]);
     const [step, setStep] = useState(0);
 
@@ -19,24 +19,28 @@ const HeroChat: React.FC = () => {
         const sequence = async () => {
             if (step === 0) {
                 await new Promise(r => setTimeout(r, 2000));
-                setMessages(prev => [...prev, { role: 'user', text: 'Sí, me interesa.' }]);
+                setMessages(prev => [...prev, { role: 'ai', text: 'Hola, con gusto. Para darte el precio exacto, ¿el implante es para la zona de arriba o abajo?' }]);
                 setStep(1);
             } else if (step === 1) {
                 await new Promise(r => setTimeout(r, 1000));
-                setMessages(prev => [...prev, { role: 'ai', text: 'Perfecto. Tengo un espacio a las 4pm. ¿Te lo reservo?' }]);
+                setMessages(prev => [...prev, { role: 'user', text: 'Es para un diente de arriba.' }]);
                 setStep(2);
             } else if (step === 2) {
                 await new Promise(r => setTimeout(r, 1500));
-                setMessages(prev => [...prev, { role: 'user', text: 'Claro, 4pm está bien.' }]);
+                setMessages(prev => [...prev, { role: 'ai', text: 'Perfecto. El doctor tiene citas de valoración disponibles este jueves. ¿Te reservo un espacio de 20 minutos sin costo para que te revise?' }]);
                 setStep(3);
             } else if (step === 3) {
                 await new Promise(r => setTimeout(r, 1000));
-                setMessages(prev => [...prev, { role: 'ai', text: '¡Listo! Cita confirmada para las 4pm. ✅' }]);
+                setMessages(prev => [...prev, { role: 'user', text: '¡Sí, por favor! El jueves me queda perfecto.' }]);
                 setStep(4);
             } else if (step === 4) {
-                 await new Promise(r => setTimeout(r, 5000)); // Reset
-                 setMessages([{ role: 'ai', text: 'Hola, ¿te gustaría agendar una cita para aumentar tus ventas hoy?' }]);
-                 setStep(0);
+                await new Promise(r => setTimeout(r, 1500));
+                setMessages(prev => [...prev, { role: 'ai', text: '¡Listo! Agendado para el jueves. Te enviamos la confirmación por SMS. ✅' }]);
+                setStep(5);
+            } else if (step === 5) {
+                await new Promise(r => setTimeout(r, 6000)); // Reset
+                setMessages([{ role: 'user', text: '¡Hola! Vi su anuncio sobre implantes dentales. ¿Qué precio tienen?' }]);
+                setStep(0);
             }
         };
         sequence();
@@ -298,129 +302,64 @@ const EnginePromo: React.FC<{ t: any }> = ({ t }) => {
 /* ------------------------------------------------------------
    COMPONENT: Real Stories (Testimonials)
    ------------------------------------------------------------ */
-const RealStories: React.FC<{ t: any }> = ({ t }) => {
+const RealStories: React.FC<{ t?: any }> = () => {
     const navigate = useNavigate();
     
-    // Group colors for branding each category
-    const colors = {
-        capture: 'border-cyan-500/30 bg-cyan-900/10 text-cyan-400',
-        core: 'border-purple-500/30 bg-purple-900/10 text-purple-400',
-        web: 'border-brand-500/30 bg-brand-900/10 text-brand-400',
-        growth: 'border-yellow-500/30 bg-yellow-900/10 text-yellow-400'
-    };
-
     return (
         <section className="py-24 bg-dark-950 border-t border-white/5 relative overflow-hidden">
              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,#2e1065_0%,transparent_70%)] opacity-30"></div>
              
-             <div className="container mx-auto px-4 relative z-10">
-                 <div className="text-center mb-16">
-                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 text-white text-xs font-bold border border-white/10 mb-4 backdrop-blur-sm">
-                        <Star size={12} className="text-yellow-400" fill="currentColor" /> SOCIAL PROOF
+             <div className="container mx-auto px-4 max-w-5xl relative z-10 text-center">
+                 <div className="mb-16">
+                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold border border-brand-500/20 mb-4 backdrop-blur-sm">
+                        <Users size={12} /> EARLY ACCESS
                      </div>
-                     <h2 className="text-4xl font-display font-bold text-white mb-4">{t.title}</h2>
-                     <p className="text-slate-400 text-lg">{t.subtitle}</p>
+                     <h2 className="text-4xl font-display font-bold text-white mb-4">Programa de Clínicas Fundadoras — Medellín y Colombia</h2>
+                     <p className="text-slate-400 text-lg max-w-3xl mx-auto font-light">
+                        Estamos incorporando las primeras clínicas estéticas y odontológicas en Medellín, Bogotá y Cali. Las clínicas fundadoras obtienen precio bloqueado, implementación prioritaria y acceso directo al equipo.
+                     </p>
                  </div>
 
-                 <div className="space-y-12 max-w-5xl mx-auto">
-                     {/* Capture */}
-                     <div className={`rounded-2xl border ${colors.capture} p-6 md:p-8 backdrop-blur-md relative group hover:bg-white/5 transition-colors`}>
-                         <div className="absolute -top-3 left-8 px-3 py-1 bg-dark-950 border border-cyan-500/50 rounded-full text-xs font-bold text-cyan-400 uppercase tracking-widest">{t.capture.title}</div>
-                         <div className="grid md:grid-cols-2 gap-8 mt-4">
-                             {t.capture.testimonials.map((item: any, i: number) => (
-                                 <div key={i} className="flex gap-4">
-                                     <div className="mt-1 text-cyan-500/50"><MessageSquare size={24} /></div>
-                                     <div>
-                                         <p className="text-slate-300 italic mb-3 text-sm leading-relaxed">"{item.quote}"</p>
-                                         <div className="text-xs font-bold text-white">— {item.author}</div>
-                                         <div className="text-[10px] text-slate-500 uppercase">{item.role}</div>
-                                     </div>
-                                 </div>
-                             ))}
+                 {/* Three Cards Layout */}
+                 <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12 text-left">
+                     {/* Card 1: Lock */}
+                     <div className="bg-dark-900 border border-white/5 rounded-2xl p-8 hover:border-brand-500/30 transition-all group flex flex-col items-center">
+                         <div className="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                             <Lock size={24} />
                          </div>
-                         <div className="mt-8 text-center border-t border-white/5 pt-6">
-                            <button onClick={() => navigate('/contact')} className="text-cyan-400 hover:text-white font-bold text-sm uppercase tracking-wide flex items-center justify-center gap-2 transition-colors">
-                                {t.capture.cta} <ArrowRight size={16} />
-                            </button>
-                         </div>
+                         <h4 className="text-white font-bold text-lg mb-2">Precio Protegido</h4>
+                         <p className="text-slate-400 text-sm leading-relaxed text-center">Precio bloqueado por 12 meses. Nunca sube aunque escales.</p>
                      </div>
 
-                     {/* Core */}
-                     <div className={`rounded-2xl border ${colors.core} p-6 md:p-8 backdrop-blur-md relative group hover:bg-white/5 transition-colors`}>
-                         <div className="absolute -top-3 left-8 px-3 py-1 bg-dark-950 border border-purple-500/50 rounded-full text-xs font-bold text-purple-400 uppercase tracking-widest">{t.core.title}</div>
-                         <div className="grid md:grid-cols-2 gap-8 mt-4">
-                             {t.core.testimonials.map((item: any, i: number) => (
-                                 <div key={i} className="flex gap-4">
-                                     <div className="mt-1 text-purple-500/50"><Activity size={24} /></div>
-                                     <div>
-                                         <p className="text-slate-300 italic mb-3 text-sm leading-relaxed">"{item.quote}"</p>
-                                         <div className="text-xs font-bold text-white">— {item.author}</div>
-                                         <div className="text-[10px] text-slate-500 uppercase">{item.role}</div>
-                                     </div>
-                                 </div>
-                             ))}
+                     {/* Card 2: Zap */}
+                     <div className="bg-dark-900 border border-white/5 rounded-2xl p-8 hover:border-brand-500/30 transition-all group flex flex-col items-center">
+                         <div className="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                             <Zap size={24} />
                          </div>
-                         <div className="mt-8 text-center border-t border-white/5 pt-6">
-                            <button onClick={() => navigate('/contact')} className="text-purple-400 hover:text-white font-bold text-sm uppercase tracking-wide flex items-center justify-center gap-2 transition-colors">
-                                {t.core.cta} <ArrowRight size={16} />
-                            </button>
-                         </div>
+                         <h4 className="text-white font-bold text-lg mb-2">Setup Prioritario</h4>
+                         <p className="text-slate-400 text-sm leading-relaxed text-center">Implementación prioritaria en 7 días, no en semanas.</p>
                      </div>
 
-                     {/* Web */}
-                     <div className={`rounded-2xl border ${colors.web} p-6 md:p-8 backdrop-blur-md relative group hover:bg-white/5 transition-colors`}>
-                         <div className="absolute -top-3 left-8 px-3 py-1 bg-dark-950 border border-brand-500/50 rounded-full text-xs font-bold text-brand-400 uppercase tracking-widest">{t.web.title}</div>
-                         <div className="grid md:grid-cols-2 gap-8 mt-4">
-                             {t.web.testimonials.map((item: any, i: number) => (
-                                 <div key={i} className="flex gap-4">
-                                     <div className="mt-1 text-brand-500/50"><Globe size={24} /></div>
-                                     <div>
-                                         <p className="text-slate-300 italic mb-3 text-sm leading-relaxed">"{item.quote}"</p>
-                                         <div className="text-xs font-bold text-white">— {item.author}</div>
-                                         <div className="text-[10px] text-slate-500 uppercase">{item.role}</div>
-                                     </div>
-                                 </div>
-                             ))}
+                     {/* Card 3: Users */}
+                     <div className="bg-dark-900 border border-white/5 rounded-2xl p-8 hover:border-brand-500/30 transition-all group flex flex-col items-center">
+                         <div className="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                             <Users size={24} />
                          </div>
-                         <div className="mt-8 text-center border-t border-white/5 pt-6">
-                            <button onClick={() => navigate('/contact')} className="text-brand-400 hover:text-white font-bold text-sm uppercase tracking-wide flex items-center justify-center gap-2 transition-colors">
-                                {t.web.cta} <ArrowRight size={16} />
-                            </button>
-                         </div>
-                     </div>
-
-                     {/* Growth */}
-                     <div className={`rounded-2xl border ${colors.growth} p-6 md:p-8 backdrop-blur-md relative group hover:bg-white/5 transition-colors shadow-[0_0_30px_rgba(234,179,8,0.1)]`}>
-                         <div className="absolute -top-3 left-8 flex gap-2">
-                             <div className="px-3 py-1 bg-dark-950 border border-yellow-500/50 rounded-full text-xs font-bold text-yellow-400 uppercase tracking-widest">{t.growth.title}</div>
-                             <div className="px-3 py-1 bg-yellow-500 text-dark-950 rounded-full text-xs font-bold uppercase tracking-widest animate-pulse">{t.growth.badge}</div>
-                         </div>
-                         <div className="grid md:grid-cols-2 gap-8 mt-4">
-                             {t.growth.testimonials.map((item: any, i: number) => (
-                                 <div key={i} className="flex gap-4">
-                                     <div className="mt-1 text-yellow-500/50"><TrendingUp size={24} /></div>
-                                     <div>
-                                         <p className="text-slate-300 italic mb-3 text-sm leading-relaxed">"{item.quote}"</p>
-                                         <div className="text-xs font-bold text-white">— {item.author}</div>
-                                         <div className="text-[10px] text-slate-500 uppercase">{item.role}</div>
-                                     </div>
-                                 </div>
-                             ))}
-                         </div>
-                         <div className="mt-8 text-center border-t border-white/5 pt-6">
-                            <button onClick={() => navigate('/contact')} className="text-yellow-400 hover:text-white font-bold text-sm uppercase tracking-wide flex items-center justify-center gap-2 transition-colors">
-                                {t.growth.cta} <ArrowRight size={16} />
-                            </button>
-                         </div>
+                         <h4 className="text-white font-bold text-lg mb-2">Soporte Directo</h4>
+                         <p className="text-slate-400 text-sm leading-relaxed text-center">Acceso directo al equipo fundador durante todo el setup.</p>
                      </div>
                  </div>
 
-                 {/* Scarcity */}
-                 <div className="mt-12 text-center space-y-2">
-                     <p className="text-yellow-400 text-sm font-medium animate-pulse">{t.scarcity.line1}</p>
-                     <p className="text-brand-300 text-xs">{t.scarcity.line2}</p>
-                     <p className="text-slate-500 text-xs">{t.scarcity.line3}</p>
+                 {/* CTA */}
+                 <div className="mb-4">
+                     <button 
+                         onClick={() => navigate('/contact')}
+                         className="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] tracking-wide transition-all hover:scale-105"
+                     >
+                         Aplicar como Clínica Fundadora
+                     </button>
                  </div>
+                 <p className="text-slate-500 text-xs text-center">Cupos limitados para clínicas en Medellín con campañas activas de pauta.</p>
              </div>
         </section>
     );
@@ -463,7 +402,7 @@ const PostPurchaseTimeline: React.FC<{ t: any }> = ({ t }) => {
                           <button onClick={() => navigate('/contact')} className="w-full px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-lg shadow-lg uppercase tracking-wide transition-transform hover:scale-105 mb-4 hover:shadow-brand-500/20">
                               {t.cta}
                           </button>
-                          <p className="text-xs text-yellow-500 font-mono animate-pulse">{t.scarcity}</p>
+                          {t.scarcity && <p className="text-xs text-yellow-500 font-mono animate-pulse">{t.scarcity}</p>}
                       </div>
                  </div>
              </div>
@@ -475,6 +414,7 @@ const VisibleFAQ: React.FC = () => {
     const [openIdx, setOpenIdx] = useState<number | null>(null);
     const questions = [
         { q: '¿Qué hace exactamente el agente de WhatsApp de Cerrana?', a: 'Responde automáticamente cada mensaje entrante en segundos, contesta dudas frecuentes, califica al paciente y agenda valoraciones, dejando el registro en tu CRM.' },
+        { q: '¿Funciona para clínicas en Medellín que atienden pacientes internacionales?', a: 'Sí. El agente puede responder en español e inglés según el idioma del mensaje entrante, lo que lo hace ideal para clínicas en Medellín que reciben consultas de pacientes de Estados Unidos, Canadá y otros países hispanohablantes.' },
         { q: '¿Es seguro para el número de WhatsApp de mi clínica?', a: 'Sí. Usamos la Conversation AI nativa de GoHighLevel, compatible con los términos de Meta, sin integraciones de terceros que arriesgan la suspensión del número.' },
         { q: '¿Reemplaza a mi recepcionista?', a: 'No. La libera del trabajo repetitivo de responder lo mismo cien veces; cualquier conversación puede ser tomada por una persona en cualquier momento desde GoHighLevel.' },
         { q: '¿En cuánto tiempo queda funcionando?', a: 'La implementación toma entre 1 y 2 semanas, incluyendo el entrenamiento del agente con los procedimientos, tratamientos y precios de tu clínica.' },
@@ -520,16 +460,26 @@ export const Home: React.FC = () => {
     const combinedSchema = JSON.stringify([
         {
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "name": "Cerrana AI",
             "url": "https://cerrana.com",
             "logo": "https://cerrana.com/logo.png",
-            "description": "Cerrana AI implementa agentes de IA en WhatsApp sobre GoHighLevel para clínicas estéticas y odontológicas para calificar y agendar pacientes 24/7.",
+            "image": "https://cerrana.com/og-image.jpg",
+            "description": "Cerrana AI implementa agentes de IA en WhatsApp sobre GoHighLevel para clínicas estéticas y odontológicas en Medellín y Colombia. El agente responde 24/7, califica pacientes y agenda valoraciones automáticamente.",
+            "serviceArea": {
+                "@type": "City",
+                "name": "Medellín"
+            },
+            "areaServed": [
+                {"@type": "City", "name": "Medellín"},
+                {"@type": "City", "name": "Bogotá"},
+                {"@type": "City", "name": "Cali"},
+                {"@type": "Country", "name": "Colombia"}
+            ],
             "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1-919-918-0505",
                 "contactType": "sales",
-                "areaServed": ["ES", "US", "MX", "CO"],
                 "availableLanguage": ["Spanish", "English"]
             },
             "sameAs": [
@@ -540,15 +490,20 @@ export const Home: React.FC = () => {
         {
             "@context": "https://schema.org",
             "@type": "Service",
-            "serviceType": "Agentes de Inteligencia Artificial para WhatsApp sobre GoHighLevel",
-            "provider": {
-                "@type": "Organization",
-                "name": "Cerrana AI"
-            },
-            "description": "Implementación de agentes conversacionales inteligentes oficiales de Meta para pre-calificar y agendar citas de valoración en clínicas de estética u odontología.",
-            "areaServed": {
-                "@type": "Country",
-                "name": "Spain"
+            "name": "Agente de IA en WhatsApp para Clínicas",
+            "serviceType": "Automatización con IA para WhatsApp — GoHighLevel Conversation AI",
+            "provider": {"@type": "LocalBusiness", "name": "Cerrana AI"},
+            "description": "Implementación de agente conversacional de IA en WhatsApp para clínicas estéticas y odontológicas en Medellín. Responde 24/7, califica pacientes y agenda valoraciones automáticamente sobre GoHighLevel nativo.",
+            "areaServed": [
+                {"@type": "City", "name": "Medellín"},
+                {"@type": "City", "name": "Bogotá"},
+                {"@type": "City", "name": "Cali"},
+                {"@type": "Country", "name": "Colombia"}
+            ],
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "description": "Implementación inicial + mensualidad de gestión. Precio definido según volumen de la clínica."
             }
         },
         {
@@ -556,49 +511,34 @@ export const Home: React.FC = () => {
             "@type": "FAQPage",
             "mainEntity": [
                 {
-                    "@id": "https://cerrana.com/#faq1",
                     "@type": "Question",
                     "name": "¿Qué hace exactamente el agente de WhatsApp de Cerrana?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Responde automáticamente cada mensaje entrante en segundos, contesta dudas frecuentes, califica al paciente y agenda valoraciones, dejando el registro en tu CRM."
-                    }
+                    "acceptedAnswer": {"@type": "Answer", "text": "Responde automáticamente cada mensaje entrante en segundos, contesta dudas frecuentes, califica al paciente y agenda valoraciones, dejando el registro en tu CRM de GoHighLevel."}
                 },
                 {
-                    "@id": "https://cerrana.com/#faq2",
+                    "@type": "Question",
+                    "name": "¿Funciona para clínicas en Medellín que atienden pacientes internacionales?",
+                    "acceptedAnswer": {"@type": "Answer", "text": "Sí. El agente puede responder en español e inglés según el idioma del mensaje entrante, ideal para clínicas en Medellín que reciben consultas de pacientes de Estados Unidos, Canadá y otros países."}
+                },
+                {
                     "@type": "Question",
                     "name": "¿Es seguro para el número de WhatsApp de mi clínica?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Sí. Usamos la Conversation AI nativa de GoHighLevel, compatible con los términos de Meta, no integraciones de terceros que arriesgan suspensión del número de la clínica."
-                    }
+                    "acceptedAnswer": {"@type": "Answer", "text": "Sí. Usamos la Conversation AI nativa de GoHighLevel, compatible con los términos de Meta, sin integraciones de terceros que arriesgan la suspensión del número de la clínica."}
                 },
                 {
-                    "@id": "https://cerrana.com/#faq3",
                     "@type": "Question",
                     "name": "¿Reemplaza a mi recepcionista?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "No. La libera del trabajo repetitivo de responder lo mismo cien veces; cualquier conversación puede ser tomada por una persona en cualquier momento desde GHL."
-                    }
+                    "acceptedAnswer": {"@type": "Answer", "text": "No. La libera del trabajo repetitivo de responder lo mismo cien veces; cualquier conversación puede ser tomada por una persona en cualquier momento desde GoHighLevel."}
                 },
                 {
-                    "@id": "https://cerrana.com/#faq4",
                     "@type": "Question",
                     "name": "¿En cuánto tiempo queda funcionando?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "La implementación toma entre 1 y 2 semanas, incluyendo el entrenamiento del agente con los procedimientos, FAQS y precios de tu clínica."
-                    }
+                    "acceptedAnswer": {"@type": "Answer", "text": "La implementación toma entre 7 y 14 días, incluyendo el entrenamiento del agente con los procedimientos, tratamientos y precios de tu clínica en Medellín."}
                 },
                 {
-                    "@id": "https://cerrana.com/#faq5",
                     "@type": "Question",
                     "name": "¿Cuánto cuesta?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Hay una implementación inicial y una mensualidad de gestión. El monto exacto depende del volumen de tu clínica; lo definimos en la demo."
-                    }
+                    "acceptedAnswer": {"@type": "Answer", "text": "Hay una implementación inicial y una mensualidad de gestión. El monto exacto depende del volumen de mensajes de tu clínica; lo definimos en la demo de 20 minutos."}
                 }
             ]
         }
@@ -607,8 +547,9 @@ export const Home: React.FC = () => {
     return (
         <div className="bg-dark-950 overflow-x-hidden pb-24">
             <SEO 
-                title={language === 'es' ? 'Agente de IA en WhatsApp para Clínicas Estéticas y Odontológicas | Cerrana AI' : 'WhatsApp AI Booker for Aesthetic and Dental Clinics | Cerrana AI'} 
-                description={language === 'es' ? 'Tu clínica responde cada WhatsApp en segundos. Implementamos agentes de IA para WhatsApp nativos en GoHighLevel para pre-calificar y agendar pacientes 24/7.' : 'Your dental/aesthetic clinic answers every WhatsApp instantly. Native GHL WhatsApp AI Booker to pre-qualify and schedule patients 24/7.'}
+                title="Agente IA en WhatsApp para Clínicas en Medellín | Cerrana AI" 
+                description="Cerrana AI implementa agentes de IA en WhatsApp para clínicas estéticas y odontológicas en Medellín. Responde cada mensaje en segundos, califica pacientes y llena tu agenda 24/7. Implementación en 7 días."
+                keywords="agente IA WhatsApp Medellín, automatización clínica estética Medellín, chatbot WhatsApp odontología Colombia, CRM clínicas Medellín, GoHighLevel Medellín, agendamiento automático clínica Medellín, inteligencia artificial clínica estética Colombia, WhatsApp bot clínica dental Medellín"
                 schema={combinedSchema}
             />
             
@@ -642,10 +583,10 @@ export const Home: React.FC = () => {
                              </button>
                          </div>
                          
-                         <div className="flex items-center gap-3 bg-red-500/10 p-3 rounded-lg border border-red-500/20 max-w-md backdrop-blur-sm">
+                         {t.hero.urgency && <div className="flex items-center gap-3 bg-red-500/10 p-3 rounded-lg border border-red-500/20 max-w-md backdrop-blur-sm">
                              <div className="text-red-400 text-lg">⚠️</div>
                              <p className="text-red-300 text-xs font-medium">{t.hero.urgency}</p>
-                         </div>
+                         </div>}
                     </div>
 
                     {/* Right: Interactive Chat Mockup */}
@@ -682,7 +623,7 @@ export const Home: React.FC = () => {
                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                          </button>
                          <p className="mt-4 text-xs text-slate-500 flex items-center justify-center gap-2">
-                             <Clock size={12} className="text-brand-500" /> {t.impact.urgency}
+                             {t.impact.urgency && <><Clock size={12} className="text-brand-500" /> {t.impact.urgency}</>}
                          </p>
                     </div>
                 </div>
@@ -726,7 +667,7 @@ export const Home: React.FC = () => {
                                                 {content.cta} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity -ml-4 group-hover:ml-0" />
                                             </button>
                                             <div className="flex items-center gap-2 text-[10px] text-yellow-500/80 bg-yellow-500/5 p-2 rounded border border-yellow-500/10">
-                                                <span>⚠️</span> {content.urgency}
+                                                {content.urgency}
                                             </div>
                                         </div>
                                     </div>
@@ -796,26 +737,13 @@ export const Home: React.FC = () => {
                              <button onClick={() => navigate('/contact')} className="relative z-10 px-8 py-3 bg-white text-dark-950 font-bold rounded-lg hover:scale-105 transition-transform shadow-lg">
                                  {t.process.cta}
                              </button>
-                             <p className="relative z-10 mt-4 text-xs text-brand-300 font-mono">{t.process.urgency}</p>
+                             {t.process.urgency && <p className="relative z-10 mt-4 text-xs text-brand-300 font-mono">{t.process.urgency}</p>}
                          </div>
                      </div>
                  </div>
              </section>
 
-            {/* 6. SOCIAL PROOF (Glowing Logos) */}
-            <section className="py-12 bg-black border-t border-white/10">
-                <div className="container mx-auto px-4 text-center">
-                    <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-8">{t.social.title}</p>
-                    <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                         {['APEX SOLAR', 'LUXE LEGAL', 'JENKINS HVAC', 'TECHFLOW'].map((name, i) => (
-                             <div key={i} className="font-display font-bold text-xl text-white hover:text-brand-400 hover:drop-shadow-[0_0_10px_rgba(139,92,246,0.8)] cursor-default transition-all">
-                                 {name}
-                             </div>
-                         ))}
-                    </div>
-                </div>
-            </section>
-            
+
             {/* NEW: 7. REAL STORIES (Testimonials) */}
             <RealStories t={t.realStories} />
             
@@ -828,21 +756,21 @@ export const Home: React.FC = () => {
             {/* 9. FINAL IMPACT (Split Screen) */}
             <section className="min-h-[60vh] flex flex-col md:flex-row">
                 <div className="md:w-1/2 bg-dark-900 flex flex-col justify-center p-12 md:p-24 border-r border-white/5">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-600 mb-6">SLEEPING BUSINESS</h2>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-600 mb-6">CLÍNICA SIN AGENTE IA</h2>
                     <ul className="space-y-4 text-slate-500 text-lg">
-                        <li className="flex gap-3"><span className="text-red-900">✖</span> Missed calls</li>
-                        <li className="flex gap-3"><span className="text-red-900">✖</span> Unanswered leads</li>
-                        <li className="flex gap-3"><span className="text-red-900">✖</span> Zero growth</li>
+                        <li className="flex gap-3"><span className="text-red-900">✖</span> Llamadas perdidas sin responder</li>
+                        <li className="flex gap-3"><span className="text-red-900">✖</span> Prospectos que mueren en la bandeja</li>
+                        <li className="flex gap-3"><span className="text-red-900">✖</span> Pérdida diaria de nuevos pacientes</li>
                     </ul>
                 </div>
                 <div className="md:w-1/2 bg-brand-900 relative overflow-hidden flex flex-col justify-center p-12 md:p-24">
                      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
                      <div className="relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-lg">WORKING BUSINESS</h2>
+                        <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-lg">CLÍNICA CON AGENTE CERRANA</h2>
                         <ul className="space-y-4 text-white text-lg mb-12">
-                            <li className="flex gap-3"><Check className="text-green-400"/> Auto-booked</li>
-                            <li className="flex gap-3"><Check className="text-green-400"/> Instant replies</li>
-                            <li className="flex gap-3"><Check className="text-green-400"/> Scaling daily</li>
+                            <li className="flex gap-3"><Check className="text-green-400"/> Agendamiento 100% automático</li>
+                            <li className="flex gap-3"><Check className="text-green-400"/> Respuestas en menos de 5 segundos 24/7</li>
+                            <li className="flex gap-3"><Check className="text-green-400"/> Doctor ocupado solo con pacientes calificados</li>
                         </ul>
                         <button onClick={() => navigate('/contact')} className="px-10 py-4 bg-white/90 backdrop-blur text-brand-900 rounded-lg font-bold shadow-2xl hover:bg-white transition-colors uppercase tracking-wider">
                             {t.final.cta}

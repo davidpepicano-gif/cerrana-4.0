@@ -115,10 +115,12 @@ export const Services: React.FC = () => {
         "@type": "Organization",
         "name": "Cerrana AI"
     },
-    "areaServed": {
-        "@type": "Country",
-        "name": "Spain"
-    },
+    "areaServed": [
+      {"@type": "City", "name": "Medellín"},
+      {"@type": "City", "name": "Bogotá"},
+      {"@type": "City", "name": "Cali"},
+      {"@type": "Country", "name": "Colombia"}
+    ],
     "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios Clínicos de Cerrana",

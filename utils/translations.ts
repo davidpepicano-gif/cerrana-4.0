@@ -10,7 +10,7 @@ export const translations = {
     },
     footer: {
       tagline: 'Native WhatsApp AI agents for dental and aesthetic clinics. Respond 24/7, qualify patients, and fill your doctor\'s calendar.',
-      serving: 'Serving premier clinics in the US and Latin America.',
+      serving: 'Trabajando con clínicas estéticas y odontológicas en Medellín y Colombia.',
       company: 'COMPANY',
       connect: 'CONNECT',
       rights: 'All rights reserved.',
@@ -19,13 +19,13 @@ export const translations = {
     },
     home: {
       hero: {
-        pill: 'AGENT STATUS: ACTIVE 24/7',
-        titleLine1: 'Your clinic responds to every',
-        titleLine2: 'WhatsApp in seconds. Even at night.',
-        subtitle: 'We implement an AI Agent on WhatsApp for aesthetic and dental clinics that answers 24/7, qualifies every patient, and fills your calendar only with high-value consultations.',
+        pill: 'AGENT STATUS: ACTIVE 24/7 · MEDELLÍN, COLOMBIA',
+        titleLine1: 'Your clinic in Medellín responds',
+        titleLine2: 'to every WhatsApp in seconds. Even at night.',
+        subtitle: 'We implement an AI Agent on WhatsApp for aesthetic and dental clinics in Medellín that answers 24/7, qualifies every patient, and fills the doctor\'s calendar only with high-value consultations.',
         ctaPrimary: 'Book a 20-Min Demo',
         ctaSecondary: 'How It Works',
-        urgency: '⚠️ High demand: Only 3 clinic onboarding slots available for this week\'s cycle.'
+        urgency: ''
       },
       impact: {
         title: 'Money is slipping away in the messages you don\'t answer',
@@ -44,7 +44,7 @@ export const translations = {
           'Medical staff focuses only on qualified, high-ticket procedures.'
         ],
         cta: 'Book a 20-Min Demo',
-        urgency: '⏳ Stop losing patients to faster competitors.'
+        urgency: ''
       },
       services: {
         title: 'How Your WhatsApp Agent Works',
@@ -73,8 +73,8 @@ export const translations = {
       },
       engineSection: {
         tag: "FOR HIGH-GROWTH CLINICS",
-        title: "For aesthetic and dental clinics that already invest in marketing",
-        subtitle: "If you receive high message volume on WhatsApp and struggle to reply on time, and every patient represents hundreds or thousands in value, this system pays for itself with just 1 or 2 recovered patients per month.",
+        title: "For aesthetic and dental clinics in Medellín that already invest in marketing",
+        subtitle: "Medellín is one of the most active aesthetic medicine and dental hubs in Latin America. If your clinic receives a high volume of WhatsApp messages and cannot answer on time — especially at night and on weekends — you are losing patients you already paid to attract. With high average ticket sizes (orthodontics, implants, smile design, aesthetic procedures), just one recovered patient pays for the system for months.",
         features: [
           { title: "Native Meta Integration", desc: "Built inside GoHighLevel's native engine, fully compliant with Meta's terms." },
           { title: "Smart Auto-Followup", desc: "Follows up automatically with patients who inquired but didn't book." },
@@ -106,7 +106,7 @@ export const translations = {
         ],
         readyTitle: 'Ready to fill your clinic calendar?',
         cta: 'Schedule 20-Min Demo',
-        urgency: '🟡 Only 3 clinic integration slots left for this week.'
+        urgency: ''
       },
       realStories: {
         title: 'REAL IMPACT & REPUTATION',
@@ -160,7 +160,7 @@ export const translations = {
           { day: "Day 14", text: "AI runs smoothly, qualifying patients and booking appointments 24/7" }
         ],
         cta: "Agenda una demo",
-        scarcity: "⏳ Onboarding slots are running out."
+        scarcity: ""
       },
       final: {
         title: 'Stop losing patients by responding late',
@@ -494,12 +494,12 @@ export const translations = {
       services: 'Servicios',
       pricing: 'Precios',
       about: 'Nosotros',
-      contact: 'Agenda Demo',
-      bookCall: 'Agenda una demo de 20 minutos'
+      contact: 'Agenda una demo de 20 min',
+      bookCall: 'Agenda una demo de 20 min'
     },
     footer: {
       tagline: 'Agentes de IA en WhatsApp para clínicas estéticas y odontológicas. Responden 24/7, califican pacientes y llenan la agenda de tu doctor.',
-      serving: 'Sirviendo a clínicas premium en EE.UU. y Latinoamérica.',
+      serving: 'Trabajando con clínicas estéticas y odontológicas en Medellín y Colombia.',
       company: 'EMPRESA',
       connect: 'CONECTAR',
       rights: 'Todos los derechos reservados.',
@@ -508,13 +508,13 @@ export const translations = {
     },
     home: {
       hero: {
-        pill: 'ESTADO DEL AGENTE: ACTIVO 24/7',
-        titleLine1: 'Tu clínica responde cada',
-        titleLine2: 'WhatsApp en segundos. Incluso de noche.',
-        subtitle: 'Implementamos un agente de IA en WhatsApp para clínicas estéticas y odontológicas que responde 24/7, califica a cada paciente y llena tu agenda solo con valoraciones que valen la pena.',
-        ctaPrimary: 'Agenda una demo de 20 minutos',
+        pill: 'AGENTE ACTIVO 24/7 · MEDELLÍN, COLOMBIA',
+        titleLine1: 'Tu clínica en Medellín responde',
+        titleLine2: 'cada WhatsApp en segundos. Incluso de noche.',
+        subtitle: 'Implementamos un agente de IA en WhatsApp para clínicas estéticas y odontológicas en Medellín que responde 24/7, califica cada paciente y llena la agenda del doctor solo con valoraciones que valen la pena.',
+        ctaPrimary: 'Agenda una demo de 20 min',
         ctaSecondary: 'Cómo funciona',
-        urgency: '⚠️ Alta demanda: Solo quedando 3 cupos disponibles de implementación de clínica para el ciclo de esta semana.'
+        urgency: ''
       },
       impact: {
         title: 'El dinero se te va en los mensajes que no alcanzas a contestar',
@@ -532,44 +532,44 @@ export const translations = {
           'La cita de valoración queda agendada automáticamente y se guarda en el CRM.',
           'El médico se enfoca únicamente en valoraciones y tratamientos que de verdad valen la pena.'
         ],
-        cta: 'Agenda una demo de 20 minutos',
-        urgency: '⏳ Deja de perder pacientes por responder tarde.'
+        cta: 'Agenda una demo de 20 min',
+        urgency: ''
       },
       services: {
         title: 'Cómo trabaja tu agente de WhatsApp',
-        subtitle: '4 pasos sencillos para calificar pacientes y automatizar la agenda de tu clínica.',
+        subtitle: '3 pasos sencillos para calificar pacientes y automatizar la agenda de tu clínica.',
         core: {
           title: '1. Responde en segundos, 24/7',
           subtitle: 'TONO Y PRECISIÓN DE TU CLÍNICA',
           desc: 'Responde de inmediato con el tono, información de procedimientos, horarios y precios específicos de tu clínica, sin importar la hora.',
-          cta: 'Agenda Demo',
+          cta: 'Agenda una demo de 20 min',
           urgency: '⚡ Respuesta inmediata'
         },
         growth: {
           title: '2. Califica al paciente',
           subtitle: 'FILTRA CURIOSOS',
           desc: 'Separa al paciente real del curioso que solo busca el precio más barato antes de que ocupe espacio en la agenda del doctor.',
-          cta: 'Agenda Demo',
+          cta: 'Agenda una demo de 20 min',
           urgency: '🎯 Prioriza leads valiosos'
         },
         full: {
           title: '3. Agenda automáticamente',
           subtitle: 'COMPACTA TU AGENDA Y CRM',
           desc: 'Reserva la valoración médica de forma totalmente automatizada en el calendario del doctor, guardando cada detalle en el CRM GoHighLevel.',
-          cta: 'Agenda Demo',
+          cta: 'Agenda una demo de 20 min',
           urgency: '📅 Sincronización transparente'
         }
       },
       engineSection: {
         tag: "PARA CLÍNICAS EN CRECIMIENTO",
-        title: "Para clínicas estéticas y odontológicas que ya invierten en marketing",
-        subtitle: "Si recibes muchos mensajes por WhatsApp y no alcanzas a responderlos a tiempo, y cada paciente vale cientos o miles de dólares, este sistema se paga solo con 1 o 2 pacientes recuperados al mes.",
+        title: "Para clínicas estéticas y odontológicas en Medellín que ya invierten en marketing",
+        subtitle: "Medellín es uno de los polos de medicina estética y odontología más activos de Latinoamérica. Si tu clínica recibe alto volumen de mensajes por WhatsApp y no alcanza a responderlos a tiempo — especialmente de noche y los fines de semana — estás perdiendo pacientes que ya pagaste por atraer. Con ticket promedio alto (ortodoncia, implantes, diseño de sonrisa, procedimientos estéticos), un solo paciente recuperado paga el sistema por meses.",
         features: [
           { title: "Integración 100% Nativa", desc: "Configurado dentro de la Conversation AI de GoHighLevel. Seguro comercial total." },
           { title: "Seguimiento Inteligente", desc: "Hace seguimiento estratégico a quien no agendó inicialmente, evitando que se enfríe." },
           { title: "Liberación de Personal", desc: "Libera a tu recepcionista del trabajo repetitivo para que dé una atención excelente en sala." }
         ],
-        ctaMain: "Agenda una demo",
+        ctaMain: "Agenda una demo de 20 min",
         ctaSub: "Ver especificaciones"
       },
       results: {
@@ -578,12 +578,12 @@ export const translations = {
         step1: 'Meta API',
         step2: 'GHL Nativo',
         step3: 'Seguridad',
-        cta: 'Agenda una demo',
+        cta: 'Agenda una demo de 20 min',
         urgency: '🔒 Cumplimiento total con los términos oficiales de Meta.'
       },
       social: {
         title: 'CONFIADO EN EL SECTOR MÉDICO',
-        cta: 'Automatiza tu clínica hoy',
+        cta: 'Agenda una demo de 20 min',
         urgency: '⚡ Puesta en marcha rápida en 7-14 días.'
       },
       process: {
@@ -594,8 +594,8 @@ export const translations = {
           { title: 'Lanzamiento', desc: 'Tu clínica empieza a pre-calificar y agendar pacientes automáticamente.' }
         ],
         readyTitle: '¿Listo para automatizar la agenda de tu clínica?',
-        cta: 'Agenda una demo de 20 minutos',
-        urgency: '🟡 Solo 3 cupos de integración disponibles esta semana.'
+        cta: 'Agenda una demo de 20 min',
+        urgency: ''
       },
       realStories: {
         title: 'HISTORIAS DE ÉXITO CLÍNICO',
@@ -648,13 +648,13 @@ export const translations = {
           { day: "Día 7", text: "Hacemos pruebas finales y lanzamos sobre tu línea oficial de Meta" },
           { day: "Día 14", text: "La IA responde, filtra y agenda pacientes reales 24/7 sin errores" }
         ],
-        cta: "Agenda una demo",
-        scarcity: "⏳ Cupos de onboarding corriendo."
+        cta: "Agenda una demo de 20 min",
+        scarcity: ""
       },
       final: {
         title: 'Deja de perder pacientes por responder tarde',
         subtitle: 'Cerrana implementa el agente de IA de WhatsApp nativo en GHL que responde, califica y agenda pacientes en segundos, dejando solo valoraciones reales y calificadas en el escritorio del doctor.',
-        cta: 'Agenda una demo',
+        cta: 'Agenda una demo de 20 min',
         urgency: '⏳ Solo 3 cupos de onboarding abiertos para este ciclo mensual.'
       }
     },
@@ -765,7 +765,7 @@ export const translations = {
           problem: 'Páginas web tradicionales sobrecargadas que aburren y pierden al paciente caliente.',
           result: '2-3x más clics continuos que activan el chat con tu agendador de WhatsApp.'
         },
-        cta: 'Agenda una demo'
+        cta: 'Agenda una demo de 20 min'
       },
       crm: {
         title: 'CRM y Pipelines Médicos',
@@ -775,7 +775,7 @@ export const translations = {
           problem: 'Seguimiento nulo y datos de pacientes extraviados en el desorden diario.',
           result: 'Control integral del valor de consultas y flujos automatizados de post-operatorio.'
         },
-        cta: 'Agenda una demo'
+        cta: 'Agenda una demo de 20 min'
       },
       ai: {
         title: 'Agente Agendador WhatsApp GHL',
@@ -785,7 +785,7 @@ export const translations = {
           problem: 'Tardar más de 5 minutos en responder = El paciente agenda con el competidor.',
           result: 'Calificación automática instantánea en WhatsApp 24/7 y agendamiento de citas de valoración.'
         },
-        cta: 'Agenda una demo'
+        cta: 'Agenda una demo de 20 min'
       }
     },
     pricing: {
@@ -836,7 +836,7 @@ export const translations = {
           subtitle: 'CRM CLÍNICO Y PIPELINES',
           desc: 'El primer paso para organizar contactos estéticos, evitar no-shows y estandarizar recordatorios.',
           features: ['Pipelines Especializados médicos', 'Configuración de CRM de Pacientes', 'Inbox de GHL unificado de WhatsApp/Meta', 'Calendarios Sincronizados de Doctores'],
-          cta: 'Agendar Demo'
+          cta: 'Agenda una demo de 20 min'
         },
         growth: {
           title: 'CORE + WHATSAPP IA',
@@ -845,14 +845,14 @@ export const translations = {
           badgePopular: 'RECOMENDADO PARA CLÍNICAS',
           desc: 'Central CRM clínico sumado al WhatsApp AI Booker natively adaptado sobre Meta Cloud API.',
           features: ['Todo en CRM Core Clínico', 'WhatsApp AI Booker (24/7)', 'Filtros automáticos de Pre-calificación', 'Entrenamiento clínico de FAQS quirúrgicas', 'Callback a llamadas perdidas vía WhatsApp'],
-          cta: 'Agendar Demo'
+          cta: 'Agenda una demo de 20 min'
         },
         full: {
           title: 'SISTEMA CLÍNICO COMPLETO',
           subtitle: 'CRM + AGENTE IA + LANDING CRO',
           desc: 'El motor absoluto de crecimiento: CRM, agendamiento nativo WhatsApp IA y embudo optimizado.',
           features: ['Todo en Clinic Booker Growth', 'Páginas web / Embudo de tratamientos premium', 'Alojamiento cloud integrado GHL', 'Redacción publicitaria médica CRO', 'Soporte técnico preferencial'],
-          cta: 'Agendar Demo'
+          cta: 'Agenda una demo de 20 min'
         }
       },
       alaCarte: {
@@ -860,12 +860,12 @@ export const translations = {
         capture: {
           title: 'Agente Agendador WhatsApp',
           desc: 'Setup individual del agente IA nativo sobre Meta WhatsApp',
-          cta: 'Agendar Demo'
+          cta: 'Agenda una demo de 20 min'
         },
         web: {
           title: 'Páginas de Aterrizaje CRO',
           desc: 'Hospedaje y construcción de landings médicas de alta velocidad',
-          cta: 'Agendar Demo'
+          cta: 'Agenda una demo de 20 min'
         }
       },
       comparison: {
@@ -958,7 +958,7 @@ export const translations = {
       },
       cta: {
         title: "¿Listo para llenar tu agenda clínica?",
-        btn1: "Programar Demo Gratuita",
+        btn1: "Agenda una demo de 20 min",
         btn2: "Volver al Inicio",
         urgency: "Suscripciones de configuración mensual limitadas."
       }
