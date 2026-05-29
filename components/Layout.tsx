@@ -33,34 +33,49 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     { label: t.nav.about, path: '/about' },
   ];
 
-  // Custom Logo Component - Abstract Tech 'C'
+  // Custom Logo Component - Abstract Tech 'C' with speed trails and node terminals
   const Logo = () => (
     <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
-      <defs>
-        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#8b5cf6" />
-          <stop offset="100%" stopColor="#22d3ee" />
-        </linearGradient>
-      </defs>
-      
-      {/* Stylized 'C' Base */}
+      {/* Speed trails/Rods (White) */}
+      <line x1="26" y1="30" x2="65" y2="30" stroke="white" strokeWidth="10" strokeLinecap="round" />
+      <line x1="16" y1="50" x2="81" y2="50" stroke="white" strokeWidth="10" strokeLinecap="round" />
+      <line x1="26" y1="70" x2="65" y2="70" stroke="white" strokeWidth="10" strokeLinecap="round" />
+
+      {/* The 'C' curve connecting top, middle, and bottom on the right */}
       <path 
-        d="M82 28C76 18 64 12 50 12C28 12 12 28 12 50C12 72 28 88 50 88C68 88 82 78 88 62" 
+        d="M 65 30 C 80 30, 81 40, 81 50 C 81 60, 80 70, 65 70" 
         stroke="white" 
         strokeWidth="10" 
         strokeLinecap="round" 
-        strokeLinejoin="round"
+        strokeLinejoin="round" 
+        fill="none" 
       />
       
-      {/* Central Neural Node */}
-      <circle cx="50" cy="50" r="10" fill="url(#logo-gradient)" />
+      {/* Bottom hook curving down and left, exactly like the logo */}
+      <path 
+        d="M 65 70 C 65 82, 50 84, 30 84" 
+        stroke="white" 
+        strokeWidth="10" 
+        strokeLinecap="round" 
+        fill="none" 
+      />
       
-      {/* Connection Lines */}
-      <path d="M50 50L82 28" stroke="url(#logo-gradient)" strokeWidth="4" strokeLinecap="round" opacity="0.8" />
+      {/* Nodes with purple dots inside */}
+      {/* Top node */}
+      <circle cx="65" cy="30" r="10" fill="white" />
+      <circle cx="65" cy="30" r="4.5" fill="#7c3aed" />
       
-      {/* Accent Terminals */}
-      <circle cx="82" cy="28" r="5" fill="#8b5cf6" />
-      <circle cx="88" cy="62" r="5" fill="#22d3ee" />
+      {/* Middle node */}
+      <circle cx="81" cy="50" r="10" fill="white" />
+      <circle cx="81" cy="50" r="4.5" fill="#7c3aed" />
+      
+      {/* Bottom node */}
+      <circle cx="65" cy="70" r="10" fill="white" />
+      <circle cx="65" cy="70" r="4.5" fill="#7c3aed" />
+
+      {/* Floating dots on the left */}
+      <circle cx="12" cy="22" r="4.5" fill="white" />
+      <circle cx="5" cy="60" r="6" fill="white" />
     </svg>
   );
 
