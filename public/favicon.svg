@@ -1,0 +1,47 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded background canvas for superb high-contrast visibility on any browser tab theme -->
+  <rect width="100" height="100" rx="30" fill="#0f0a1e" />
+  
+  <g transform="translate(6, 6) scale(0.88)">
+    <!-- Speed trails/Rods (White) -->
+    <line x1="26" y1="30" x2="65" y2="30" stroke="white" stroke-width="10" stroke-linecap="round" />
+    <line x1="16" y1="50" x2="81" y2="50" stroke="white" stroke-width="10" stroke-linecap="round" />
+    <line x1="26" y1="70" x2="65" y2="70" stroke="white" stroke-width="10" stroke-linecap="round" />
+
+    <!-- The 'C' curve connecting top, middle, and bottom on the right -->
+    <path 
+      d="M 65 30 C 80 30, 81 40, 81 50 C 81 60, 80 70, 65 70" 
+      stroke="white" 
+      stroke-width="10" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      fill="none" 
+    />
+    
+    <!-- Bottom hook curving down and left -->
+    <path 
+      d="M 65 70 C 65 82, 50 84, 30 84" 
+      stroke="white" 
+      stroke-width="10" 
+      stroke-linecap="round" 
+      fill="none" 
+    />
+    
+    <!-- Nodes with purple dots inside -->
+    <!-- Top node -->
+    <circle cx="65" cy="30" r="10" fill="white" />
+    <circle cx="65" cy="30" r="4.5" fill="#7c3aed" />
+    
+    <!-- Middle node -->
+    <circle cx="81" cy="50" r="10" fill="white" />
+    <circle cx="81" cy="50" r="4.5" fill="#7c3aed" />
+    
+    <!-- Bottom node -->
+    <circle cx="65" cy="70" r="10" fill="white" />
+    <circle cx="65" cy="70" r="4.5" fill="#7c3aed" />
+
+    <!-- Floating dots on the left -->
+    <circle cx="12" cy="22" r="4.5" fill="white" />
+    <circle cx="5" cy="60" r="6" fill="white" />
+  </g>
+</svg>
