@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { generateSitemap } from './generate-sitemap.js';
 
 // Define paths
 const __filename = fileURLToPath(import.meta.url);
@@ -73,6 +74,13 @@ async function run() {
   // Remove the temporary server SSR build directory to keep build artifact footprint clean
   fs.rmSync(distSsrPath, { recursive: true, force: true });
   console.log('Pre-rendering SSG execution finished with success!');
+
+  // Generate the sitemap dynamically
+  try {
+    generateSitemap();
+  } catch (error) {
+    console.error('Failed to automatically generate sitemap during build:', error);
+  }
 }
 
 run().catch((error) => {
