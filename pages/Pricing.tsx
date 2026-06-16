@@ -93,7 +93,7 @@ export const Pricing: React.FC = () => {
     <div className="bg-dark-950 min-h-screen pb-24 text-slate-200">
       <SEO 
         title={language === 'es' ? "Precios | Cerrana AI — Sistema de Ventas con IA" : "Pricing | Cerrana AI — AI Sales System"} 
-        description={language === 'es' ? "Planes de Cerrana AI: CRM, agente de ventas con IA 24/7 y landing pages, montados y operados por nosotros. Desde $147/mes. Implementación en 7 días." : "Cerrana AI Plans: CRM, 24/7 AI sales agent, and landing pages, built and operated by us. From $147/mo. Implemented in 7 days."}
+        description={language === 'es' ? "Planes de Cerrana AI: CRM, agente de ventas con IA 24/7 y landing pages, montados y operados por nosotros. Desde $147/mes. Implementación en 7 días." : "Cerrana AI plans: CRM, 24/7 AI sales agent, and landing pages, set up and run for you. From $147/mo. Live in 7 days."}
         schema={pricingSchema}
       />
 
@@ -403,7 +403,7 @@ export const Pricing: React.FC = () => {
                     <div className="text-slate-300 font-medium pl-4">{t.comparison.features.monthly}</div>
                     <div className="text-center text-sm text-slate-400">$147/{t.common.month}</div>
                     <div className="text-center text-sm text-white font-bold text-brand-400">$347/{t.common.month}</div>
-                    <div className="text-center text-sm text-slate-400">$397/{t.common.month}</div>
+                    <div className="text-center text-sm text-slate-400">$497/{t.common.month}</div>
                 </div>
             </div>
         </div>

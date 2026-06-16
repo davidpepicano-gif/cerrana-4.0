@@ -13,8 +13,26 @@ export const About: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen text-slate-200">
       <SEO 
-        title={language === 'es' ? "Arquitectos de la Automatización de Ventas B2C | Cerrana AI" : "Architects of B2C Sales Automation | Cerrana AI"} 
-        description={language === 'es' ? "Nuestra misión es eliminar el ajetreo administrativo de tu negocio respondiendo en segundos y pre-calificando prospectos." : "Our mission is to eliminate B2C business admin workload, responding to inquiry leads in seconds and pre-qualifying them on auto-pilot."}
+        title={language === 'es' ? "Nosotros | Cerrana AI — Hecho por Vendedores" : "About Us | Cerrana AI — Built by Salespeople"} 
+        description={language === 'es' ? "Cerrana es un sistema de ventas con IA construido por gente que vende, no por programadores. Ayudamos a negocios hispanos en EE. UU. a convertir más leads." : "Cerrana is an AI sales system built by salespeople, not programmers. We help U.S. Hispanic B2C businesses convert more leads."}
+        schema={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://cerrana.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": language === 'es' ? "Nosotros" : "About Us",
+              "item": "https://cerrana.com/about"
+            }
+          ]
+        })}
       />
       
       {/* 1. HERO: WHO WE ARE */}

@@ -107,54 +107,71 @@ export const Services: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language].services_page;
 
-  const serviceSchema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Agentes de IA en WhatsApp & Implementación CRM para Clínicas",
-    "provider": {
-        "@type": "Organization",
-        "name": "Cerrana AI"
+  const serviceSchema = JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": language === 'es' ? "Implementación Done-For-You de Ventas con IA" : "Done-For-You AI Sales Implementation & CRM Setup",
+      "provider": {
+          "@type": "Organization",
+          "name": "Cerrana AI"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "United States"}
+      ],
+      "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": language === 'es' ? "Servicios de Negocios Cerrana" : "Cerrana Business Services",
+          "itemListElement": [
+              {
+                  "@type": "Offer",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": language === 'es' ? "Funnels de Captación y Sitios Web CRO" : "Lead Acquisition Funnels & CRO Websites"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": language === 'es' ? "CRM y Automatización de Ventas" : "Sales CRM & Automation"
+                  }
+              },
+              {
+                  "@type": "Offer",
+                  "itemOffered": {
+                      "@type": "Service",
+                      "name": language === 'es' ? "Agente de Ventas con IA 24/7 (WhatsApp & Instagram)" : "24/7 AI Sales Conversational Booker (WhatsApp & Instagram)"
+                  }
+              }
+          ]
+      }
     },
-    "areaServed": [
-      {"@type": "City", "name": "Medellín"},
-      {"@type": "City", "name": "Bogotá"},
-      {"@type": "City", "name": "Cali"},
-      {"@type": "Country", "name": "Colombia"}
-    ],
-    "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios Clínicos de Cerrana",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Funnels de Captación y Sitios Web CRO Clínicos"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "CRM y Automatización GoHighLevel"
-                }
-            },
-            {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Agente Booker de WhatsApp Oficial Meta AI"
-                }
-            }
-        ]
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cerrana.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": language === 'es' ? "Servicios" : "Services",
+          "item": "https://cerrana.com/services"
+        }
+      ]
     }
-  });
+  ]);
 
   return (
     <div className="pb-24 md:pb-0 bg-dark-950 text-slate-200">
       <SEO 
-        title={language === 'es' ? "Servicios de Automatización y Agentes IA de Ventas B2C | Cerrana" : "B2C Automation & WhatsApp AI Agent Sales Services | Cerrana"} 
-        description={language === 'es' ? "Agentes de WhatsApp e Instagram AI, embudos CRO de alta conversión para negocios B2C de cualquier sector, e infraestructura de CRM integrado." : "Native multi-channel WhatsApp & Instagram AI Booker agent, custom high-converting B2C marketing CRO sales funnels, and enterprise-grade CRM setup."}
+        title={language === 'es' ? "Servicios | Implementación Done-For-You de Ventas con IA | Cerrana" : "Services | Done-For-You AI Sales Implementation | Cerrana"} 
+        description={language === 'es' ? "Montamos, entrenamos y optimizamos tu agente de ventas con IA y tu CRM. Servicio done-for-you para negocios B2C que quieren más ventas." : "We set up, train, and optimize your AI sales agent and CRM. Done-for-you service for B2C businesses looking to boost sales."}
         schema={serviceSchema}
       />
 

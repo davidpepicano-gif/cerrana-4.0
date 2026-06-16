@@ -237,13 +237,13 @@ export const translations = {
           cta: "Get Growth Pack"
         },
         full: {
-          title: "FULL SALES FUNNEL",
+          title: "CERRANA COMPLETE",
           subtitle: "CORE + AI + CRO WEBPAGE",
-          price: "$397/mo",
+          price: "$497/mo",
           setup: "+ $1,497 Setup",
           badge: "Save $700",
           features: ["Everything in GROWTH", "Targeted Landing Pages / Funnels", "Local SEO Structures", "CRO Custom Copywriting", "Priority Support Desk"],
-          cta: "Get Full Funnel"
+          cta: "Get Complete Plan"
         }
       },
       difference: {
@@ -742,9 +742,9 @@ export const translations = {
           cta: "Obtener Plan Growth"
         },
         full: {
-          title: "SISTEMA COMPLETO",
+          title: "CERRANA COMPLETE",
           subtitle: "CRM + AGENTE IA + LANDINGS CRO",
-          price: "$397/mes",
+          price: "$497/mes",
           setup: "+ $1,497 Setup",
           badge: "Ahorra $700",
           features: ["Todo en GROWTH", "Sitios Web / Embudos Landing CRO", "Soporte de SEO y Ubicaciones", "Redacción Publicitaria Profesional", "Atención y Soporte Técnico Prioritario"],

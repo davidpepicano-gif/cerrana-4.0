@@ -21,27 +21,49 @@ export const Contact: React.FC = () => {
     };
   }, []);
 
-  const contactSchema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "description": "Agenda tu Auditoría Clínica de 20 Minutos con Cerrana AI para diseñar tu filtro automático de WhatsApp.",
-    "mainEntity": {
-        "@type": "LocalBusiness",
-        "name": "Cerrana AI",
-        "telephone": "+19199180505",
-        "email": "support@cerrana.com",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "sales"
+  const contactSchema = JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "description": language === 'es' ? "Agenda tu demo de 20 minutos con Cerrana AI para automatizar tus ventas B2C." : "Schedule your 20-minute demo with Cerrana AI to automate your B2C sales.",
+      "mainEntity": {
+          "@type": "Organization",
+          "name": "Cerrana AI",
+          "telephone": "+1 (919) 918-0505",
+          "email": "support@cerrana.com",
+          "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "availableLanguage": ["es", "en"],
+              "areaServed": "United States"
+          }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cerrana.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": language === 'es' ? "Contacto" : "Contact",
+          "item": "https://cerrana.com/contact"
         }
+      ]
     }
-  });
+  ]);
 
   return (
     <div className="bg-dark-950 min-h-screen pb-24 md:pb-0 text-slate-200">
       <SEO 
-        title={language === 'es' ? "Agenda tu Auditoría de Ventas de 20 Minutos | Cerrana AI" : "Schedule Your 20-Min Sales Audit | Cerrana AI"} 
-        description={language === 'es' ? "Agenda una demo para diseñar el filtro automático de tu WhatsApp, sincronizar el CRM de ventas compatible con Meta y activar las reservas en piloto automático." : "Schedule a free demo to map your WhatsApp auto-qualification filter, Meta compatible CRM, and calendar automation on autopilot."}
+        title={language === 'es' ? "Agenda tu Demo | Cerrana AI" : "Schedule Your Demo | Cerrana AI"} 
+        description={language === 'es' ? "Agenda una demo de 20 minutos y te mostramos cómo Cerrana convierte en ventas los leads que ya pagas por atraer. En español e inglés." : "Schedule a 20-minute demo and we will show you how Cerrana converts the leads you already pay for into sales. In Spanish & English."}
         schema={contactSchema}
       />
 

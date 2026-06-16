@@ -274,8 +274,26 @@ export const CerranaOS: React.FC = () => {
     return (
         <div className="bg-dark-950 min-h-screen text-slate-200">
             <SEO 
-                title={language === 'es' ? "Cerrana Revenue OS | Sistema Operativo de Ventas B2C con IA" : "Cerrana Revenue OS | The All-In-One B2C Sales Engine"} 
-                description={language === 'es' ? "Centraliza tu CRM de ventas B2C y activa tus agentes de WhatsApp e Instagram AI en piloto automático con infraestructura oficial integrada." : "Centralize your B2C sales CRM and deploy your WhatsApp and Instagram AI Booker agents natively on autopilot."}
+                title={language === 'es' ? "Cerrana OS | CRM y Agente de Ventas IA Todo en Uno" : "Cerrana OS | All-In-One CRM and AI Sales Agent"} 
+                description={language === 'es' ? "Cerrana OS centraliza tus leads, conversaciones, seguimiento y ventas en un solo sistema con IA. Para negocios B2C hispanos en EE. UU." : "Cerrana OS centralizes your leads, conversations, follow-ups, and sales in a single AI-powered system. For Hispanic B2C U.S. businesses."}
+                schema={JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "BreadcrumbList",
+                  "itemListElement": [
+                    {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Home",
+                      "item": "https://cerrana.com"
+                    },
+                    {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Cerrana OS",
+                      "item": "https://cerrana.com/platform"
+                    }
+                  ]
+                })}
             />
             
             {/* 1. HERO SECTION */}
