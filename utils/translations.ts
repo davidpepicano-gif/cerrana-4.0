@@ -301,34 +301,35 @@ export const translations = {
     },
     pricing: {
       hero: {
-        title: 'INVEST IN BUSINESS',
-        titleHighlight: 'GROWTH',
-        subtitle: 'Deploy a native AI Sales Agent. Secure customer bookings. Sync CRM in 7-14 days.'
+        title: 'Your AI sales system,',
+        titleHighlight: 'built and operated by us.',
+        subtitle: 'Choose your plan, we train the agent with your offer, and launch in 7 days. In Spanish and English.'
       },
       steps: {
-        step1: 'STEP 1: CHOOSE YOUR LEVEL',
+        step1: 'STEP 1: CHOOSE YOUR SYSTEM',
         step2: 'STEP 2: CUSTOM CONVERSION TRAINING',
-        step3: 'STEP 3: DEPLOYMENTMAP'
+        step3: 'STEP 3: DEPLOYMENT MAP'
       },
       journey: {
         title: 'SALES PROTOCOL INTEGRATION MAP:',
+        subtitle: 'Here\'s what happens right after you click the button:',
         step1: {
-          title: 'CRM Setup & Login',
-          desc: 'Instant access setup inside Cerrana CRM, syncing pipelines, notification workflows, and staff mobile apps.'
+          title: 'CRM Configuration',
+          desc: 'We create and configure your space in Cerrana, linking calendars, alerts, and mobile app.'
         },
         step2: {
-          title: 'Offer & Price Mapping',
-          desc: 'We map your custom B2C services, packages, pricing rules, FAQs, and active calendars.'
+          title: 'Offer Mapping',
+          desc: 'We gather your services, catalogs, rates, FAQ, and team schedules.'
         },
         step3: {
-          title: 'Ecosystem Deployment',
+          title: 'System Deployment',
           core: 'We build your custom sales pipelines, organize lead history feeds, and establish automated follow-ups.',
           growth: 'We train and deploy your custom 24/7 AI Sales Booker across your selected messaging channels.',
           full: 'We design and launch your high-speed CRO landing pages with smart chat-redirection.'
         },
         step4: {
-          title: 'Security Review & Launch',
-          desc: 'Testing on your official active lines, staff coordination handover, and system ignition.'
+          title: 'Review & Go-Live',
+          desc: 'We test with real customer simulations, train your team, and turn on the system on your official channels.'
         }
       },
       common: {
@@ -343,45 +344,61 @@ export const translations = {
       },
       tiers: {
         core: {
-          title: 'CERRANA CORE',
-          subtitle: 'CRM & CUSTOM SALES PIPELINE',
+          title: 'Cerrana Core',
+          subtitle: 'Sales CRM',
           desc: 'Perfect for standardizing lead tracking, avoiding dropped deals, and sending automated reminders.',
-          features: ['Custom Sales Pipeline Structure', 'Full Contacts CRM Setup', '2-Way Unified Team Messaging Inbox', 'Calendar Sync & Scheduling Rules'],
+          features: [
+            'Custom sales pipeline',
+            'Comprehensive contacts CRM',
+            'Unified inbox (all your channels in one place)',
+            'Mobile app for your team'
+          ],
           cta: 'Book a 20-Min Demo'
         },
         growth: {
-          title: 'CORE + AI SALES BOOKER',
-          subtitle: 'THE ULTIMATE BOOKER BUNDLE',
-          badge: 'BEST SELLER',
+          title: 'Cerrana Growth',
+          subtitle: 'CRM + AI Sales Agent',
+          badge: 'MOST POPULAR',
           badgePopular: 'RECOMMENDED',
           desc: 'Central conversion CRM plus the 24/7 multichannel AI Sales Agent, fully Meta-compliant.',
-          features: ['Everything in CRM Core', '24/7 AI Sales Booker', 'Lead Pre-qualification Filters', 'Offer & Price FAQ Custom Training', 'Missed Call Automated Textback'],
+          features: [
+            'Everything in Core',
+            '24/7 AI sales agent (responds, qualifies, and books)',
+            'Automatic pre-qualification filters',
+            'Agent training with your products, offers, and FAQs',
+            'Automated follow-up for leads who didn\'t buy right away'
+          ],
           cta: 'Book a 20-Min Demo'
         },
         full: {
-          title: 'COMPLETE SYSTEM',
-          subtitle: 'CRM + AI BOOKER + CRO WEB',
+          title: 'Cerrana Complete',
+          subtitle: 'Complete commercial system',
           desc: 'Ultimate automation: Enterprise sales CRM, conversational AI agent, and high-conversions landing pages.',
-          features: ['Everything in Growth Bundle', 'Targeted CRO Landing Pages', 'Cloud Web Hosting Included', 'Expert Sales Copywriting Content', 'Priority Support Desk Access'],
+          features: [
+            'Everything in Growth',
+            'Landing pages / conversion funnels optimized for your ads',
+            'Continuous CRO optimization',
+            'Premium cloud hosting'
+          ],
           cta: 'Book a 20-Min Demo'
         }
       },
       alaCarte: {
-        title: 'ADD-ON PRODUCTS',
+        title: 'Only need a single piece?',
         capture: {
-          title: 'AI Sales Booker',
-          desc: 'Stand-alone setup of the conversational AI agent',
+          title: 'Standalone AI Sales Agent',
+          desc: 'If you already have a CRM and only want the AI agent.',
           cta: 'Book a 20-Min Demo'
         },
         web: {
-          title: 'CRO Landing Pages',
-          desc: 'Super-fast, high-converting digital landing page hosting',
+          title: 'Standalone CRO Landing Pages',
+          desc: 'Design, copywriting, and hosting of landing pages optimized for ads or local traffic.',
           cta: 'Book a 20-Min Demo'
         }
       },
       comparison: {
         title: 'SALES ENGINE PLAN MATRIX',
-        headers: ['Feature Highlights', 'CORE CRM', 'GROWTH BUNDLE', 'COMPLETE ENGINE'],
+        headers: ['Feature Highlights', 'Cerrana Core', 'Cerrana Growth', 'Cerrana Complete'],
         sections: {
           crm: 'CRM & Lead Tracking',
           ai: 'Multichannel AI Booker',
@@ -789,87 +806,104 @@ export const translations = {
     },
     pricing: {
       hero: {
-        title: 'INVIERTE EN CRECIMIENTO',
-        titleHighlight: 'COMERCIAL',
-        subtitle: 'Activa tu agente de ventas IA. Agenda más llamadas o citas y organiza tu CRM de forma definitiva en 7-14 días.'
+        title: 'Tu sistema de ventas con IA,',
+        titleHighlight: 'montado y operado por nosotros.',
+        subtitle: 'Elige tu plan, entrenamos el agente con tu oferta, y lo lanzamos en 7 días. En español e inglés.'
       },
       steps: {
-        step1: 'PASO 1: ELIGE EL MODELO',
-        step2: 'PASO 2: ENTRENAMIENTO DE OFERTA',
-        step3: 'PASO 3: LANZAMIENTO'
+        step1: 'PASO 1: ELIGE TU SISTEMA',
+        step2: 'PASO 2: ENTRENAMOS TU OFERTA',
+        step3: 'PASO 3: LANZAMOS'
       },
       journey: {
-        title: 'MAPA DE INTEGRACIÓN SISTÉMICA:',
+        title: 'MAPA DE INTEGRACIÓN:',
+        subtitle: 'Esto es lo que pasa apenas le das al botón:',
         step1: {
-          title: 'Configuración y Setup de CRM',
-          desc: 'Creación y configuración de tu espacio dentro de Cerrana CRM, enlazando calendarios, alertas y apps móviles.'
+          title: 'Configuración del CRM',
+          desc: 'Creamos y configuramos tu espacio en Cerrana, enlazando calendarios, alertas y app móvil.'
         },
         step2: {
-          title: 'Mapeo de tu Oferta comercial',
-          desc: 'Recopilación de servicios, catálogos, tarifas, preguntas frecuentes y horarios del equipo.'
+          title: 'Mapeo de tu oferta',
+          desc: 'Recopilamos tus servicios, catálogos, tarifas, preguntas frecuentes y horarios del equipo.'
         },
         step3: {
-          title: 'Despliegue del Sistema',
-          core: 'Estructuración de tus pipelines comerciales personalizados y automatizaciones de seguimiento y alertas.',
-          growth: 'Entrenamiento y despliegue del agente agendador conversacional inteligente.',
-          full: 'Lanzamiento de landing pages adaptadas a móviles de alta velocidad con redirección optimizada al chat.'
+          title: 'Despliegue del sistema',
+          core: 'Creamos tus pipelines de ventas personalizados, organizamos el historial y programamos seguimientos automáticos.',
+          growth: 'Entrenamos y lanzamos tu agente de ventas conversacional.',
+          full: 'Entrenamos tu agente de ventas conversacional y lanzamos tus landing pages optimizadas.'
         },
         step4: {
-          title: 'Revisión técnica y Go-Live',
-          desc: 'Pruebas directas de simulaciones de clientes, capacitación al equipo comercial si desean retomar hilos, y encendido oficial.'
+          title: 'Revisión y go-live',
+          desc: 'Probamos con simulaciones de clientes reales, capacitamos a tu equipo y encendemos el sistema sobre tus canales oficiales.'
         }
       },
       common: {
-        setupFee: 'Setup Único',
+        setupFee: 'setup único',
         month: 'mes',
         save: 'AHORRA',
         viewDetails: 'DETALLES',
         get: 'Obtener',
         startWith: 'Aplicar para',
         selected: 'SELECCIONADO',
-        startJourney: 'INICIAR ENLACE DE VENTAS'
+        startJourney: 'Iniciar mi sistema Cerrana'
       },
       tiers: {
         core: {
-          title: 'CERRANA CORE',
-          subtitle: 'CRM DE VENTAS Y PIPELINES',
+          title: 'Cerrana Core',
+          subtitle: 'CRM de ventas',
           desc: 'El primer paso indispensable para centralizar leads, automatizar recordatorios y evitar fugas de prospectos.',
-          features: ['Pipeline de Ventas Personalizado', 'CRM de Contactos Integral', 'Bandeja de Entrada de Equipo unificada', 'Calendarios Sincronizados y Reservas'],
+          features: [
+            'Pipeline de ventas personalizado',
+            'CRM de contactos integral',
+            'Bandeja de entrada unificada (todos tus canales en un solo lugar)',
+            'App móvil para tu equipo'
+          ],
           cta: 'Agenda una demo de 20 min'
         },
         growth: {
-          title: 'CORE + AGENTE DE VENTAS IA',
-          subtitle: 'PAQUETE COMPLETO DE VENTAS',
+          title: 'Cerrana Growth',
+          subtitle: 'CRM + Agente de Ventas IA',
           badge: 'MÁS ADQUIRIDO',
           badgePopular: 'RECOMENDADO',
           desc: 'Central CRM sumado al agente inteligente conversacional multicanal activo 24/7.',
-          features: ['Todo en CRM Core Comercial', 'Agente de Ventas IA (24/7)', 'Filtros automáticos de Pre-Calificación', 'Entrenamiento de FAQs de tus productos/ofertas', 'Callback y recuperación de llamadas perdidas'],
+          features: [
+            'Todo lo de Core',
+            'Agente de ventas IA 24/7 (responde, califica y agenda)',
+            'Filtros automáticos de pre-calificación',
+            'Entrenamiento del agente con tus productos, ofertas y FAQs',
+            'Seguimiento automático a los leads que no compraron de una'
+          ],
           cta: 'Agenda una demo de 20 min'
         },
         full: {
-          title: 'SISTEMA COMERCIAL COMPLETO',
-          subtitle: 'CRM + AGENTE IA + LANDING CRO',
+          title: 'Cerrana Complete',
+          subtitle: 'Sistema comercial completo',
           desc: 'El motor definitivo para escalar conversiones: CRM, agente IA y páginas de aterrizaje CRO de alta velocidad.',
-          features: ['Todo en Cerrana Growth', 'Landing Pages / Embudos de conversión de servicios', 'Alojamiento cloud premium', 'Redacción publicitaria experta orientada a ventas', 'Soporte técnico preferencial'],
+          features: [
+            'Todo lo de Growth',
+            'Landing pages / embudos de conversión optimizados para tus ads',
+            'Optimización CRO continua',
+            'Hosting cloud premium'
+          ],
           cta: 'Agenda una demo de 20 min'
         }
       },
       alaCarte: {
-        title: 'PRODUCTOS INDEPENDIENTES',
+        title: '¿Solo necesitas una pieza?',
         capture: {
-          title: 'Agente de Ventas Inteligente',
-          desc: 'Configuración y entrenamiento de tu agente IA en canales de comunicación',
+          title: 'Agente de Ventas IA suelto',
+          desc: 'Si ya tienes CRM y solo quieres el agente.',
           cta: 'Agenda una demo de 20 min'
         },
         web: {
-          title: 'Páginas de Aterrizaje CRO',
-          desc: 'Diseño, redacción y hosting de páginas web optimizadas para anuncios o tráfico local',
+          title: 'Landing Pages CRO sueltas',
+          desc: 'Diseño, redacción y hosting de páginas optimizadas para ads o tráfico local.',
           cta: 'Agenda una demo de 20 min'
         }
       },
       comparison: {
         title: 'MATRIZ DE CARACTERÍSTICAS COMERCIALES',
-        headers: ['Características Clave', 'CERRANA PREMIUM CORE', 'PLAN CRECIMIENTO', 'SISTEMA INTEGRAL'],
+        headers: ['Características clave', 'Cerrana Core', 'Cerrana Growth', 'Cerrana Complete'],
         sections: {
           crm: 'CRM y Seguimiento de Leads',
           ai: 'Agente de Ventas IA',

@@ -43,7 +43,7 @@ export const Pricing: React.FC = () => {
   const pricingSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": "Cerrana Revenue OS",
+    "name": "Cerrana AI — Sistema de Ventas con IA",
     "description": "Automatización de ventas, CRM B2C e infraestructura de agentes inteligentes multicanal.",
     "brand": {
       "@type": "Brand",
@@ -52,7 +52,7 @@ export const Pricing: React.FC = () => {
     "offers": [
       {
         "@type": "Offer",
-        "name": "Core CRM",
+        "name": "Cerrana Core",
         "price": "147.00",
         "priceCurrency": "USD",
         "priceSpecification": {
@@ -64,7 +64,7 @@ export const Pricing: React.FC = () => {
       },
       {
         "@type": "Offer",
-        "name": "Growth Bundle",
+        "name": "Cerrana Growth",
         "price": "347.00",
         "priceCurrency": "USD",
         "priceSpecification": {
@@ -76,12 +76,12 @@ export const Pricing: React.FC = () => {
       },
       {
         "@type": "Offer",
-        "name": "Full Funnel",
-        "price": "397.00",
+        "name": "Cerrana Complete",
+        "price": "497.00",
         "priceCurrency": "USD",
         "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "397.00",
+            "price": "497.00",
             "priceCurrency": "USD",
             "unitCode": "MON"
         }
@@ -92,8 +92,8 @@ export const Pricing: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen pb-24 text-slate-200">
       <SEO 
-        title={language === 'es' ? "Planes y Precios Recurrentes | Cerrana Revenue OS" : "Pricing Plans & Tiering | Cerrana Revenue OS"} 
-        description={language === 'es' ? "Desde pipelines y CRM optimizados hasta el WhatsApp e Instagram AI Booker oficial de Meta. Elige el motor idóneo para escalar la facturación de tu negocio." : "From integrated CRM pipeline automation to Meta WhatsApp & Instagram AI Booker. Select the perfect engine to scale your B2C sales."}
+        title={language === 'es' ? "Precios | Cerrana AI — Sistema de Ventas con IA" : "Pricing | Cerrana AI — AI Sales System"} 
+        description={language === 'es' ? "Planes de Cerrana AI: CRM, agente de ventas con IA 24/7 y landing pages, montados y operados por nosotros. Desde $147/mes. Implementación en 7 días." : "Cerrana AI Plans: CRM, 24/7 AI sales agent, and landing pages, built and operated by us. From $147/mo. Implemented in 7 days."}
         schema={pricingSchema}
       />
 
@@ -136,8 +136,8 @@ export const Pricing: React.FC = () => {
                 <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">{t.tiers.core.subtitle}</p>
                 <div className="text-3xl font-display font-bold text-white mb-1">$147<span className="text-sm font-sans font-normal text-slate-500">/{t.common.month}</span></div>
                 <div className="text-xs text-slate-500 font-mono mb-6">+ $497 {t.common.setupFee}</div>
-                <ul className="space-y-3 mb-6 flex-grow">
-                    {t.tiers.core.features.slice(0,3).map((f, i) => (
+                <ul className="space-y-3 mb-6 flex-grow font-sans">
+                    {t.tiers.core.features.map((f, i) => (
                         <li key={i} className="flex gap-2 text-sm text-slate-400"><Check size={14} className="text-brand-500 mt-0.5" /> {f}</li>
                     ))}
                 </ul>
@@ -162,8 +162,8 @@ export const Pricing: React.FC = () => {
                 <p className="text-xs font-bold text-brand-400 uppercase tracking-widest mb-4">{t.tiers.growth.subtitle}</p>
                 <div className="text-3xl font-display font-bold text-white mb-1">$347<span className="text-sm font-sans font-normal text-slate-500">/{t.common.month}</span></div>
                 <div className="text-xs text-brand-200/70 font-mono mb-6">+ $997 {t.common.setupFee}</div>
-                <ul className="space-y-3 mb-6 flex-grow">
-                    {t.tiers.growth.features.slice(0,4).map((f, i) => (
+                <ul className="space-y-3 mb-6 flex-grow font-sans">
+                    {t.tiers.growth.features.map((f, i) => (
                         <li key={i} className="flex gap-2 text-sm text-white"><Check size={14} className="text-brand-400 mt-0.5 shadow-[0_0_5px_#a78bfa]" /> {f}</li>
                     ))}
                 </ul>
@@ -183,10 +183,10 @@ export const Pricing: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-display font-bold text-white mb-1">{t.tiers.full.title}</h3>
                 <p className="text-xs font-bold text-cyan-500 uppercase tracking-widest mb-4">{t.tiers.full.subtitle}</p>
-                <div className="text-3xl font-display font-bold text-white mb-1">$397<span className="text-sm font-sans font-normal text-slate-500">/{t.common.month}</span></div>
+                <div className="text-3xl font-display font-bold text-white mb-1">$497<span className="text-sm font-sans font-normal text-slate-500">/{t.common.month}</span></div>
                 <div className="text-xs text-slate-500 font-mono mb-6">+ $1,497 {t.common.setupFee}</div>
-                <ul className="space-y-3 mb-6 flex-grow">
-                    {t.tiers.full.features.slice(0,3).map((f, i) => (
+                <ul className="space-y-3 mb-6 flex-grow font-sans">
+                    {t.tiers.full.features.map((f, i) => (
                         <li key={i} className="flex gap-2 text-sm text-slate-400"><Check size={14} className="text-cyan-400 mt-0.5" /> {f}</li>
                     ))}
                 </ul>
@@ -210,7 +210,7 @@ export const Pricing: React.FC = () => {
                 <h2 className="text-2xl font-display font-bold text-white mb-2 uppercase tracking-wide">
                     {t.journey.title} <span className="text-brand-400 underline decoration-brand-500/30 underline-offset-4">{t.tiers[selectedTier].title}</span>
                 </h2>
-                <p className="text-slate-400 text-sm">See exactly what happens when you click start.</p>
+                <p className="text-slate-400 text-sm">{t.journey.subtitle}</p>
             </div>
 
             <div className="relative z-10">
@@ -275,7 +275,14 @@ export const Pricing: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-200 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </button>
                 <div className="mt-4 text-xs text-slate-500 flex items-center justify-center gap-2">
-                    <ShieldCheck size={12} /> Secure Stripe Checkout • 14-Day Money Back Guarantee
+                    <ShieldCheck size={12} /> {language === 'es' ? 'Pago seguro con Stripe • Garantía de puesta en marcha' : 'Secure Stripe Checkout • Launch & Setup Guarantee'}
+                </div>
+                <div className="mt-6 max-w-lg mx-auto bg-brand-950/40 p-4 rounded-xl border border-brand-500/15">
+                    <p className="text-xs text-slate-400 leading-relaxed italic">
+                       {language === 'es' 
+                         ? "✨ Garantía de puesta en marcha: Dejamos tu sistema funcionando como te lo prometimos en la demo, o seguimos trabajando sin costo adicional hasta lograrlo." 
+                         : "✨ Launch Guarantee: We get your system running exactly as promised on the demo, or we continue working at no additional cost until we do."}
+                    </p>
                 </div>
             </div>
         </div>
@@ -295,7 +302,7 @@ export const Pricing: React.FC = () => {
                 <div className="text-center md:text-left">
                     <h3 className="text-xl font-display font-bold text-white mb-1">{t.alaCarte.capture.title}</h3>
                     <p className="text-sm text-slate-400 mb-2">{t.alaCarte.capture.desc}</p>
-                    <div className="text-xs text-brand-400 font-mono">Setup: $697</div>
+                    <div className="text-xs text-brand-400 font-mono">{language === 'es' ? 'Setup único: $697' : 'One-time setup: $697'}</div>
                 </div>
                 <div className="text-center md:text-right">
                     <div className="text-3xl font-bold text-white">$247<span className="text-sm font-normal text-slate-500">/{t.common.month}</span></div>
@@ -312,10 +319,10 @@ export const Pricing: React.FC = () => {
                 <div className="text-center md:text-left">
                     <h3 className="text-xl font-display font-bold text-white mb-1">{t.alaCarte.web.title}</h3>
                     <p className="text-sm text-slate-400 mb-2">{t.alaCarte.web.desc}</p>
-                     <div className="text-xs text-brand-400 font-mono">Setup: $997</div>
+                     <div className="text-xs text-brand-400 font-mono">{language === 'es' ? 'Setup único: $997' : 'One-time setup: $997'}</div>
                 </div>
                 <div className="text-center md:text-right">
-                    <div className="text-3xl font-bold text-white">$97<span className="text-sm font-normal text-slate-500">/{t.common.month}</span></div>
+                    <div className="text-3xl font-bold text-white">$147<span className="text-sm font-normal text-slate-500">/{t.common.month}</span></div>
                     <button 
                         onClick={() => window.open('https://api.orbitpenguintech.com/payment-link/6937340bbbe219324d521079', '_blank')} 
                         className="mt-2 text-sm text-brand-400 hover:text-white transition-colors underline decoration-brand-500/30 underline-offset-4"
