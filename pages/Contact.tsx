@@ -62,8 +62,8 @@ export const Contact: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen pb-24 md:pb-0 text-slate-200">
       <SEO 
-        title={language === 'es' ? "Agenda tu Demo | Cerrana AI" : "Schedule Your Demo | Cerrana AI"} 
-        description={language === 'es' ? "Agenda una demo de 20 minutos y te mostramos cómo Cerrana convierte en ventas los leads que ya pagas por atraer. En español e inglés." : "Schedule a 20-minute demo and we will show you how Cerrana converts the leads you already pay for into sales. In Spanish & English."}
+        title="Agenda tu Demo | Cerrana AI" 
+        description="Agenda una demo de 20 minutos y te mostramos cómo Cerrana convierte en ventas los leads que ya pagas por atraer. En español e inglés."
         schema={contactSchema}
       />
 

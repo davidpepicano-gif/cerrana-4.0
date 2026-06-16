@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { useLanguage } from '../contexts/LanguageContext';
 
 interface SEOProps {
   title: string;
@@ -12,22 +11,15 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({ title, description, keywords, schema }) => {
   const location = useLocation();
-  const { language } = useLanguage();
   
   const baseUrl = 'https://cerrana.com';
   const path = location.pathname === '/' ? '' : location.pathname;
   
-  // Construct URLs for localized alternate hreflangs
-  const esUrl = `${baseUrl}${path}?lang=es`;
-  const enUrl = `${baseUrl}${path}?lang=en`;
-  const defaultUrl = `${baseUrl}${path}`;
-  
-  // Canonical links point to the correct localized version
-  const canonicalUrl = language === 'en' ? enUrl : esUrl;
+  // Canonical links point to the main page without localized query parameters
+  const canonicalUrl = `${baseUrl}${path}`;
 
-  const defaultKeywordsES = 'agente de ventas IA, agente de ventas con inteligencia artificial en español, automatización de ventas B2C, CRM con IA en español, respuesta automática a leads, seguimiento automático de ventas, chatbot de ventas WhatsApp Instagram, convertir leads de anuncios, IA para negocios hispanos en Estados Unidos, asistente de ventas IA bilingüe';
-  const defaultKeywordsEN = 'AI sales agent, AI sales automation, bilingual sales AI, lead response automation, Spanish-speaking AI sales assistant, AI CRM, convert ad leads';
-  const activeKeywords = keywords || (language === 'es' ? defaultKeywordsES : defaultKeywordsEN);
+  const defaultKeywordsES = 'agente de ventas IA, automatización de ventas B2C, IA para negocios hispanos en Estados Unidos, respuesta automática a leads, CRM con IA en español, chatbot de ventas WhatsApp Instagram, convertir leads de anuncios';
+  const activeKeywords = keywords || defaultKeywordsES;
 
   return (
     <Helmet>
@@ -36,11 +28,6 @@ export const SEO: React.FC<SEOProps> = ({ title, description, keywords, schema }
       <meta name="keywords" content={activeKeywords} />
       <meta name="robots" content="index, follow" />
       
-      {/* Alternate hreflangs */}
-      <link rel="alternate" hreflang="es" href={esUrl} />
-      <link rel="alternate" hreflang="en" href={enUrl} />
-      <link rel="alternate" hreflang="x-default" href={defaultUrl} />
-
       {/* Canonical Link */}
       <link rel="canonical" href={canonicalUrl} />
       
@@ -49,14 +36,14 @@ export const SEO: React.FC<SEOProps> = ({ title, description, keywords, schema }
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content="https://cerrana.com/og-image-sales-ai.jpg" />
+      <meta property="og:image" content="https://cerrana.com/og-image.jpg" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={canonicalUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content="https://cerrana.com/og-image-sales-ai.jpg" />
+      <meta property="twitter:image" content="https://cerrana.com/og-image.jpg" />
 
       {/* Inject JSON-LD Schema */}
       {schema && (

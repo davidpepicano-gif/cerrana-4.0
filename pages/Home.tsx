@@ -571,8 +571,9 @@ export const Home: React.FC = () => {
     return (
         <div className="bg-dark-950 overflow-x-hidden pb-24">
             <SEO 
-                title={language === 'es' ? "Agente de Ventas IA 24/7 en Español e Inglés | Cerrana AI" : "24/7 AI Sales Agent in Spanish & English | Cerrana AI"} 
-                description={language === 'es' ? "Cerrana implementa agentes de ventas con IA que responden, califican y cierran cada lead en segundos, 24/7 en español e inglés. Para negocios B2C en EE. UU. que invierten en ads." : "Cerrana deploys AI sales agents that respond, qualify, and close every lead in seconds, 24/7 in Spanish and English. For U.S. B2C businesses that invest in ads."}
+                title="Agente de Ventas IA 24/7 en Español e Inglés | Cerrana AI" 
+                description="Cerrana implementa agentes de ventas con IA que responden, califican y cierran cada lead en segundos, 24/7 en español e inglés. Para negocios B2C en EE. UU. que invierten en ads."
+                keywords="agente de ventas IA, automatización de ventas B2C, IA para negocios hispanos en Estados Unidos, respuesta automática a leads, CRM con IA en español, chatbot de ventas WhatsApp Instagram, convertir leads de anuncios"
                 schema={combinedSchema}
             />
             

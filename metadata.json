@@ -1,6 +1,6 @@
 {
-  "name": "Cerrana AI",
-  "description": "Modern, conversion-focused website for Cerrana AI, specializing in Sales Systems, CRM, and AI Automation for SMBs.",
+  "name": "Cerrana AI — Sistema de Ventas con IA",
+  "description": "Cerrana implementa agentes de ventas con IA que responden, califican y cierran cada lead en segundos, 24/7 en español e inglés. Para negocios B2C en EE. UU. que invierten en ads.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

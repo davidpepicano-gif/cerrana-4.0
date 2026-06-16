@@ -13,8 +13,8 @@ export const About: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen text-slate-200">
       <SEO 
-        title={language === 'es' ? "Nosotros | Cerrana AI — Hecho por Vendedores" : "About Us | Cerrana AI — Built by Salespeople"} 
-        description={language === 'es' ? "Cerrana es un sistema de ventas con IA construido por gente que vende, no por programadores. Ayudamos a negocios hispanos en EE. UU. a convertir más leads." : "Cerrana is an AI sales system built by salespeople, not programmers. We help U.S. Hispanic B2C businesses convert more leads."}
+        title="Nosotros | Cerrana AI — Hecho por Vendedores" 
+        description="Cerrana es un sistema de ventas con IA construido por gente que vende, no por programadores. Ayudamos a negocios hispanos en EE. UU. a convertir más leads."
         schema={JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
