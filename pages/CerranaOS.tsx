@@ -274,8 +274,8 @@ export const CerranaOS: React.FC = () => {
     return (
         <div className="bg-dark-950 min-h-screen text-slate-200">
             <SEO 
-                title={language === 'es' ? "Cerrana Clinic OS | Sistema Operativo de Ventas para Clínicas" : "Cerrana Clinic OS | The All-In-One Clinic Sales Engine"} 
-                description={language === 'es' ? "Centraliza tu CRM médico y activa tu agente de Meta WhatsApp AI Booker en piloto automático sin complementos de terceros." : "Centralize your medical CRM and deploy your Meta WhatsApp AI Booker natively on autopilot with zero third-party tools."}
+                title={language === 'es' ? "Cerrana Revenue OS | Sistema Operativo de Ventas B2C con IA" : "Cerrana Revenue OS | The All-In-One B2C Sales Engine"} 
+                description={language === 'es' ? "Centraliza tu CRM de ventas B2C y activa tus agentes de WhatsApp e Instagram AI en piloto automático con infraestructura oficial integrada." : "Centralize your B2C sales CRM and deploy your WhatsApp and Instagram AI Booker agents natively on autopilot."}
             />
             
             {/* 1. HERO SECTION */}

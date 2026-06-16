@@ -11,7 +11,7 @@ import { SEO } from '../components/SEO';
    ------------------------------------------------------------ */
 const HeroChat: React.FC = () => {
     const [messages, setMessages] = useState<{role: 'ai' | 'user', text: string}[]>([
-        { role: 'user', text: '¡Hola! Vi su anuncio sobre implantes dentales. ¿Qué precio tienen?' }
+        { role: 'user', text: '¡Hola! Vi su anuncio sobre renovación de propiedades. ¿Qué precio tiene?' }
     ]);
     const [step, setStep] = useState(0);
 
@@ -19,27 +19,27 @@ const HeroChat: React.FC = () => {
         const sequence = async () => {
             if (step === 0) {
                 await new Promise(r => setTimeout(r, 2000));
-                setMessages(prev => [...prev, { role: 'ai', text: 'Hola, con gusto. Para darte el precio exacto, ¿el implante es para la zona de arriba o abajo?' }]);
+                setMessages(prev => [...prev, { role: 'ai', text: 'Hola, con gusto. Para darte un presupuesto aproximado, ¿la remodelación es residencial o comercial?' }]);
                 setStep(1);
             } else if (step === 1) {
                 await new Promise(r => setTimeout(r, 1000));
-                setMessages(prev => [...prev, { role: 'user', text: 'Es para un diente de arriba.' }]);
+                setMessages(prev => [...prev, { role: 'user', text: 'Es una casa residencial.' }]);
                 setStep(2);
             } else if (step === 2) {
                 await new Promise(r => setTimeout(r, 1500));
-                setMessages(prev => [...prev, { role: 'ai', text: 'Perfecto. El doctor tiene citas de valoración disponibles este jueves. ¿Te reservo un espacio de 20 minutos sin costo para que te revise?' }]);
+                setMessages(prev => [...prev, { role: 'ai', text: 'Perfecto. Podemos agendar una llamada de cotización de 20 minutos con el asesor este jueves. ¿Te sirve un espacio libre sin costo?' }]);
                 setStep(3);
             } else if (step === 3) {
                 await new Promise(r => setTimeout(r, 1000));
-                setMessages(prev => [...prev, { role: 'user', text: '¡Sí, por favor! El jueves me queda perfecto.' }]);
+                setMessages(prev => [...prev, { role: 'user', text: '¡Sí, me queda excelente el jueves!' }]);
                 setStep(4);
             } else if (step === 4) {
                 await new Promise(r => setTimeout(r, 1500));
-                setMessages(prev => [...prev, { role: 'ai', text: '¡Listo! Agendado para el jueves. Te enviamos la confirmación por SMS. ✅' }]);
+                setMessages(prev => [...prev, { role: 'ai', text: '¡Listo! Quedó agendado para este jueves. Acabamos de enviarte la confirmación directa por SMS. ✅' }]);
                 setStep(5);
             } else if (step === 5) {
                 await new Promise(r => setTimeout(r, 6000)); // Reset
-                setMessages([{ role: 'user', text: '¡Hola! Vi su anuncio sobre implantes dentales. ¿Qué precio tienen?' }]);
+                setMessages([{ role: 'user', text: '¡Hola! Vi su anuncio sobre renovación de propiedades. ¿Qué precio tiene?' }]);
                 setStep(0);
             }
         };
@@ -304,6 +304,7 @@ const EnginePromo: React.FC<{ t: any }> = ({ t }) => {
    ------------------------------------------------------------ */
 const RealStories: React.FC<{ t?: any }> = () => {
     const navigate = useNavigate();
+    const { language } = useLanguage();
     
     return (
         <section className="py-24 bg-dark-950 border-t border-white/5 relative overflow-hidden">
@@ -314,9 +315,13 @@ const RealStories: React.FC<{ t?: any }> = () => {
                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold border border-brand-500/20 mb-4 backdrop-blur-sm">
                         <Users size={12} /> EARLY ACCESS
                      </div>
-                     <h2 className="text-4xl font-display font-bold text-white mb-4">Programa de Clínicas Fundadoras — Medellín y Colombia</h2>
+                     <h2 className="text-4xl font-display font-bold text-white mb-4">
+                        {language === 'es' ? 'Programa de Socios Fundadores — Negocios B2C en EE. UU.' : 'Founder Partners Program — US B2C Projects'}
+                     </h2>
                      <p className="text-slate-400 text-lg max-w-3xl mx-auto font-light">
-                        Estamos incorporando las primeras clínicas estéticas y odontológicas en Medellín, Bogotá y Cali. Las clínicas fundadoras obtienen precio bloqueado, implementación prioritaria y acceso directo al equipo.
+                        {language === 'es' 
+                          ? 'Estamos incorporando el primer grupo de dueños de negocios B2C en Estados Unidos. Los socios fundadores obtienen precio bloqueado de por vida, implementación prioritaria y acceso directo al equipo.'
+                          : 'We are onboarding the first cohort of B2C business owners in the United States. Founder partners unlock lifetime locked-in pricing, priority deployment, and direct access to our core automation team.'}
                      </p>
                  </div>
 
@@ -327,8 +332,12 @@ const RealStories: React.FC<{ t?: any }> = () => {
                          <div className="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                              <Lock size={24} />
                          </div>
-                         <h4 className="text-white font-bold text-lg mb-2">Precio Protegido</h4>
-                         <p className="text-slate-400 text-sm leading-relaxed text-center">Precio bloqueado por 12 meses. Nunca sube aunque escales.</p>
+                         <h4 className="text-white font-bold text-lg mb-2">
+                             {language === 'es' ? 'Precio Protegido' : 'Locked Pricing'}
+                         </h4>
+                         <p className="text-slate-400 text-sm leading-relaxed text-center">
+                             {language === 'es' ? 'Precio bloqueado por 12 meses. Nunca sube aunque escales.' : 'Price-locked of custom setup for 12 months. Never increases as you scale.'}
+                         </p>
                      </div>
 
                      {/* Card 2: Zap */}
@@ -336,8 +345,12 @@ const RealStories: React.FC<{ t?: any }> = () => {
                          <div className="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                              <Zap size={24} />
                          </div>
-                         <h4 className="text-white font-bold text-lg mb-2">Setup Prioritario</h4>
-                         <p className="text-slate-400 text-sm leading-relaxed text-center">Implementación prioritaria en 7 días, no en semanas.</p>
+                         <h4 className="text-white font-bold text-lg mb-2">
+                             {language === 'es' ? 'Setup Prioritario' : 'Priority Setup'}
+                         </h4>
+                         <p className="text-slate-400 text-sm leading-relaxed text-center">
+                             {language === 'es' ? 'Implementación prioritaria en 7 días.' : 'Deployment and tuning of your custom agent in 7 days.'}
+                         </p>
                      </div>
 
                      {/* Card 3: Users */}
@@ -345,21 +358,27 @@ const RealStories: React.FC<{ t?: any }> = () => {
                          <div className="w-12 h-12 bg-brand-500/10 text-brand-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                              <Users size={24} />
                          </div>
-                         <h4 className="text-white font-bold text-lg mb-2">Soporte Directo</h4>
-                         <p className="text-slate-400 text-sm leading-relaxed text-center">Acceso directo al equipo fundador durante todo el setup.</p>
+                         <h4 className="text-white font-bold text-lg mb-2">
+                             {language === 'es' ? 'Soporte Directo' : 'Direct Support'}
+                         </h4>
+                         <p className="text-slate-400 text-sm leading-relaxed text-center">
+                             {language === 'es' ? 'Acceso directo al equipo fundador durante todo el setup.' : 'Direct line to our core automation engineering team during training.'}
+                         </p>
                      </div>
                  </div>
 
                  {/* CTA */}
                  <div className="mb-4">
                      <button 
-                         onClick={() => navigate('/contact')}
-                         className="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] tracking-wide transition-all hover:scale-105"
+                          onClick={() => navigate('/contact')}
+                          className="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] tracking-wide transition-all hover:scale-105"
                      >
-                         Aplicar como Clínica Fundadora
+                          {language === 'es' ? 'Aplicar como Socio Fundador' : 'Apply as a Founder Partner'}
                      </button>
                  </div>
-                 <p className="text-slate-500 text-xs text-center">Cupos limitados para clínicas en Medellín con campañas activas de pauta.</p>
+                 <p className="text-slate-500 text-xs text-center">
+                     {language === 'es' ? 'Cupos limitados para negocios con campañas activas de pauta.' : 'Highly limited onboarding slots for businesses with active ad campaigns.'}
+                 </p>
              </div>
         </section>
     );
@@ -412,13 +431,22 @@ const PostPurchaseTimeline: React.FC<{ t: any }> = ({ t }) => {
 
 const VisibleFAQ: React.FC = () => {
     const [openIdx, setOpenIdx] = useState<number | null>(null);
-    const questions = [
-        { q: '¿Qué hace exactamente el agente de WhatsApp de Cerrana?', a: 'Responde automáticamente cada mensaje entrante en segundos, contesta dudas frecuentes, califica al paciente y agenda valoraciones, dejando el registro en tu CRM.' },
-        { q: '¿Funciona para clínicas en Medellín que atienden pacientes internacionales?', a: 'Sí. El agente puede responder en español e inglés según el idioma del mensaje entrante, lo que lo hace ideal para clínicas en Medellín que reciben consultas de pacientes de Estados Unidos, Canadá y otros países hispanohablantes.' },
-        { q: '¿Es seguro para el número de WhatsApp de mi clínica?', a: 'Sí. Usamos la Conversation AI nativa de GoHighLevel, compatible con los términos de Meta, sin integraciones de terceros que arriesgan la suspensión del número.' },
-        { q: '¿Reemplaza a mi recepcionista?', a: 'No. La libera del trabajo repetitivo de responder lo mismo cien veces; cualquier conversación puede ser tomada por una persona en cualquier momento desde GoHighLevel.' },
-        { q: '¿En cuánto tiempo queda funcionando?', a: 'La implementación toma entre 1 y 2 semanas, incluyendo el entrenamiento del agente con los procedimientos, tratamientos y precios de tu clínica.' },
-        { q: '¿Cuánto cuesta?', a: 'Hay una implementación inicial y una mensualidad de gestión. El monto exacto depende del volumen de llamadas o mensajes de tu clínica, lo que definiremos en la demo.' }
+    const { language } = useLanguage();
+
+    const questions = language === 'es' ? [
+        { q: '¿Qué hace exactamente el agente de ventas de Cerrana?', a: 'Responde automáticamente cada mensaje entrante en segundos, resuelve dudas sobre tus servicios, califica a los prospectos y agenda citas o cotizaciones en tu CRM.' },
+        { q: '¿Funciona para negocios con clientes bilingües?', a: 'Sí. El agente de Cerrana detecta automáticamente el idioma de tu lead y responde con fluidez en español o inglés, ideal para captar todo el mercado hispano y anglosajón en EE. UU.' },
+        { q: '¿Es seguro para mis líneas de WhatsApp e Instagram?', a: 'Totalmente. Conectamos directamente a través de API oficial compatible con los lineamientos de Meta, sin exploits o complementos de terceros que pongan en riesgo tus cuentas.' },
+        { q: '¿Reemplaza a mi equipo actual?', a: 'No. Libera a tu equipo del trabajo mecánico de responder lo mismo todo el día, permitiéndoles enfocarse en atender llamadas calientes y cerrar tratos valiosos.' },
+        { q: '¿En cuánto tiempo se implementa?', a: 'La puesta en marcha completa y calibración toma entre 7 y 14 días. Te entregamos el sistema optimizado y listo para recibir llamadas.' },
+        { q: '¿Cómo se manejan los costos?', a: 'Cobramos un setup inicial para programar el agente inteligente con tu oferta específica, junto con una mensualidad de gestión. Lo definimos exactamente en tu demo de 20 minutos.' }
+    ] : [
+        { q: 'What exactly does the Cerrana sales agent do?', a: 'It automatically answers each incoming inquiry in seconds, answers questions about your services/pricing, qualifies buyer intent, and books appointments directly on your CRM.' },
+        { q: 'Does it work for businesses with bilingual clientele?', a: 'Yes. Cerrana\'s agent auto-detects the client\'s language and interacts fluently in either Spanish or English, catching both Hispanic and English-speaking buyers.' },
+        { q: 'Is it secure for my social channels?', a: 'Absolutely. We establish connections via native official APIs in total alignment with Meta guidelines, removing any risk of account bans.' },
+        { q: 'Does it replace my current staff?', a: 'No. It removes the exhausting duty of greeting and chasing raw leads 24/7, enabling your actual team to look only at hot ready-to-buy contracts.' },
+        { q: 'How long until we go live?', a: 'Deployment takes between 7 to 14 days, with full end-to-end setups completely handled by our team.' },
+        { q: 'What are the costs?', a: 'We bill a one-time setup fee to configure the AI to your business, followed by a low monthly fee. We will show you the exact quote during your 20-minute demo.' }
     ];
 
     return (
@@ -426,7 +454,9 @@ const VisibleFAQ: React.FC = () => {
             <div className="container mx-auto px-4 max-w-4xl relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-display font-bold text-white mb-4">Preguntas Frecuentes</h2>
-                    <p className="text-slate-400 text-lg font-light">Todo lo que necesitas saber antes de automatizar tu agenda clínica.</p>
+                    <p className="text-slate-400 text-lg font-light">
+                        {language === 'es' ? 'Todo lo que necesitas saber antes de automatizar tus ventas B2C.' : 'Everything you need to know before automating your B2C sales pipeline.'}
+                    </p>
                 </div>
                 <div className="space-y-4">
                     {questions.map((faq, idx) => (
@@ -465,16 +495,13 @@ export const Home: React.FC = () => {
             "url": "https://cerrana.com",
             "logo": "https://cerrana.com/logo.png",
             "image": "https://cerrana.com/og-image.jpg",
-            "description": "Cerrana AI implementa agentes de IA en WhatsApp sobre GoHighLevel para clínicas estéticas y odontológicas en Medellín y Colombia. El agente responde 24/7, califica pacientes y agenda valoraciones automáticamente.",
+            "description": "Cerrana AI implementa agentes de ventas con IA que responden, califican y cierran cada lead en segundos, 24/7 en español e inglés. Para negocios B2C en EE. UU. que invierten en ads. Implementación en 7 días.",
             "serviceArea": {
-                "@type": "City",
-                "name": "Medellín"
+                "@type": "Country",
+                "name": "United States"
             },
             "areaServed": [
-                {"@type": "City", "name": "Medellín"},
-                {"@type": "City", "name": "Bogotá"},
-                {"@type": "City", "name": "Cali"},
-                {"@type": "Country", "name": "Colombia"}
+                {"@type": "Country", "name": "United States"}
             ],
             "contactPoint": {
                 "@type": "ContactPoint",
@@ -490,20 +517,17 @@ export const Home: React.FC = () => {
         {
             "@context": "https://schema.org",
             "@type": "Service",
-            "name": "Agente de IA en WhatsApp para Clínicas",
-            "serviceType": "Automatización con IA para WhatsApp — GoHighLevel Conversation AI",
-            "provider": {"@type": "LocalBusiness", "name": "Cerrana AI"},
-            "description": "Implementación de agente conversacional de IA en WhatsApp para clínicas estéticas y odontológicas en Medellín. Responde 24/7, califica pacientes y agenda valoraciones automáticamente sobre GoHighLevel nativo.",
+            "name": "Agente de Ventas IA en Español para Negocios B2C",
+            "serviceType": "Automatización con IA para WhatsApp e Instagram — CRM de Ventas",
+            "provider": {"@type": "ProfessionalService", "name": "Cerrana AI"},
+            "description": "Implementación de agentes conversacionales inteligentes en canales de chat para responder leads de anuncios pagados en segundos, calificar intenciones y agendar citas automáticamente.",
             "areaServed": [
-                {"@type": "City", "name": "Medellín"},
-                {"@type": "City", "name": "Bogotá"},
-                {"@type": "City", "name": "Cali"},
-                {"@type": "Country", "name": "Colombia"}
+                {"@type": "Country", "name": "United States"}
             ],
             "offers": {
                 "@type": "Offer",
                 "priceCurrency": "USD",
-                "description": "Implementación inicial + mensualidad de gestión. Precio definido según volumen de la clínica."
+                "description": "Configuración inicial más plan recurrente para la calibración del agente inteligente adaptado a la oferta comercial."
             }
         },
         {
@@ -512,33 +536,33 @@ export const Home: React.FC = () => {
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "¿Qué hace exactamente el agente de WhatsApp de Cerrana?",
-                    "acceptedAnswer": {"@type": "Answer", "text": "Responde automáticamente cada mensaje entrante en segundos, contesta dudas frecuentes, califica al paciente y agenda valoraciones, dejando el registro en tu CRM de GoHighLevel."}
+                    "name": "¿Qué hace exactamente el agente de ventas de Cerrana?",
+                    "acceptedAnswer": {"@type": "Answer", "text": "Responde automáticamente cada mensaje entrante en segundos, resuelve dudas sobre tus servicios, califica a los prospectos y agenda citas o cotizaciones en tu CRM."}
                 },
                 {
                     "@type": "Question",
-                    "name": "¿Funciona para clínicas en Medellín que atienden pacientes internacionales?",
-                    "acceptedAnswer": {"@type": "Answer", "text": "Sí. El agente puede responder en español e inglés según el idioma del mensaje entrante, ideal para clínicas en Medellín que reciben consultas de pacientes de Estados Unidos, Canadá y otros países."}
+                    "name": "¿Funciona para negocios con clientes bilingües?",
+                    "acceptedAnswer": {"@type": "Answer", "text": "Sí. El agente de Cerrana detecta automáticamente el idioma de tu lead y responde con fluidez en español o inglés, ideal para captar todo el mercado hispano y anglosajón en EE. UU."}
                 },
                 {
                     "@type": "Question",
-                    "name": "¿Es seguro para el número de WhatsApp de mi clínica?",
-                    "acceptedAnswer": {"@type": "Answer", "text": "Sí. Usamos la Conversation AI nativa de GoHighLevel, compatible con los términos de Meta, sin integraciones de terceros que arriesgan la suspensión del número de la clínica."}
+                    "name": "¿Es seguro para mis líneas de WhatsApp e Instagram?",
+                    "acceptedAnswer": {"@type": "Answer", "text": "Totalmente. Conectamos directamente a través de API oficial compatible con los lineamientos de Meta, sin exploits o complementos de terceros."}
                 },
                 {
                     "@type": "Question",
-                    "name": "¿Reemplaza a mi recepcionista?",
-                    "acceptedAnswer": {"@type": "Answer", "text": "No. La libera del trabajo repetitivo de responder lo mismo cien veces; cualquier conversación puede ser tomada por una persona en cualquier momento desde GoHighLevel."}
+                    "name": "¿Reemplaza a mi equipo actual?",
+                    "acceptedAnswer": {"@type": "Answer", "text": "No. Libera a tu equipo del trabajo mecánico de responder lo mismo todo el día, permitiéndoles enfocarse en atender llamadas calientes y cerrar tratos valiosos."}
                 },
                 {
                     "@type": "Question",
-                    "name": "¿En cuánto tiempo queda funcionando?",
-                    "acceptedAnswer": {"@type": "Answer", "text": "La implementación toma entre 7 y 14 días, incluyendo el entrenamiento del agente con los procedimientos, tratamientos y precios de tu clínica en Medellín."}
+                    "name": "¿En cuánto tiempo se implementa?",
+                    "acceptedAnswer": {"@type": "Answer", "text": "La puesta en marcha completa y calibración toma entre 7 y 14 días. Te entregamos el sistema optimizado y listo para recibir llamadas."}
                 },
                 {
                     "@type": "Question",
-                    "name": "¿Cuánto cuesta?",
-                    "acceptedAnswer": {"@type": "Answer", "text": "Hay una implementación inicial y una mensualidad de gestión. El monto exacto depende del volumen de mensajes de tu clínica; lo definimos en la demo de 20 minutos."}
+                    "name": "¿Cómo se manejan los costos?",
+                    "acceptedAnswer": {"@type": "Answer", "text": "Cobramos un setup inicial para programar el agente inteligente con tu oferta específica, junto con una mensualidad de gestión."}
                 }
             ]
         }
@@ -547,9 +571,9 @@ export const Home: React.FC = () => {
     return (
         <div className="bg-dark-950 overflow-x-hidden pb-24">
             <SEO 
-                title="Agente IA en WhatsApp para Clínicas en Medellín | Cerrana AI" 
-                description="Cerrana AI implementa agentes de IA en WhatsApp para clínicas estéticas y odontológicas en Medellín. Responde cada mensaje en segundos, califica pacientes y llena tu agenda 24/7. Implementación en 7 días."
-                keywords="agente IA WhatsApp Medellín, automatización clínica estética Medellín, chatbot WhatsApp odontología Colombia, CRM clínicas Medellín, GoHighLevel Medellín, agendamiento automático clínica Medellín, inteligencia artificial clínica estética Colombia, WhatsApp bot clínica dental Medellín"
+                title="Agente de Ventas IA en Español para Negocios B2C | Cerrana AI" 
+                description="Cerrana AI implementa agentes de ventas con IA que responden, califican y cierran cada lead en segundos, 24/7 en español e inglés. Para negocios B2C en EE. UU. que invierten en ads. Implementación en 7 días."
+                keywords="agente de ventas IA español, automatización de ventas B2C, IA para negocios hispanos Estados Unidos, respuesta instantánea a leads, seguimiento automático de ventas, CRM con IA en español, chatbot de ventas WhatsApp Instagram, convertir leads de ads"
                 schema={combinedSchema}
             />
             
@@ -756,21 +780,43 @@ export const Home: React.FC = () => {
             {/* 9. FINAL IMPACT (Split Screen) */}
             <section className="min-h-[60vh] flex flex-col md:flex-row">
                 <div className="md:w-1/2 bg-dark-900 flex flex-col justify-center p-12 md:p-24 border-r border-white/5">
-                    <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-600 mb-6">CLÍNICA SIN AGENTE IA</h2>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-600 mb-6 font-semibold">
+                        {language === 'es' ? 'NEGOCIO SIN AGENTE IA' : 'BUSINESS WITHOUT AI'}
+                    </h2>
                     <ul className="space-y-4 text-slate-500 text-lg">
-                        <li className="flex gap-3"><span className="text-red-900">✖</span> Llamadas perdidas sin responder</li>
-                        <li className="flex gap-3"><span className="text-red-900">✖</span> Prospectos que mueren en la bandeja</li>
-                        <li className="flex gap-3"><span className="text-red-900">✖</span> Pérdida diaria de nuevos pacientes</li>
+                        <li className="flex gap-3">
+                            <span className="text-red-900">✖</span> 
+                            {language === 'es' ? 'Llamadas perdidas sin responder' : 'Unanswered missed phone calls'}
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-red-900">✖</span> 
+                            {language === 'es' ? 'Prospectos que mueren en la bandeja' : 'Interested leads dying in your social inbox'}
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="text-red-900">✖</span> 
+                            {language === 'es' ? 'Pérdida diaria de nuevos clientes' : 'Daily loss of high-value closed sales'}
+                        </li>
                     </ul>
                 </div>
                 <div className="md:w-1/2 bg-brand-900 relative overflow-hidden flex flex-col justify-center p-12 md:p-24">
                      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
                      <div className="relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-lg">CLÍNICA CON AGENTE CERRANA</h2>
+                        <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-lg font-semibold animate-pulse">
+                            {language === 'es' ? 'NEGOCIO CON AGENTE CERRANA' : 'BUSINESS WITH CERRANA'}
+                        </h2>
                         <ul className="space-y-4 text-white text-lg mb-12">
-                            <li className="flex gap-3"><Check className="text-green-400"/> Agendamiento 100% automático</li>
-                            <li className="flex gap-3"><Check className="text-green-400"/> Respuestas en menos de 5 segundos 24/7</li>
-                            <li className="flex gap-3"><Check className="text-green-400"/> Doctor ocupado solo con pacientes calificados</li>
+                            <li className="flex gap-3">
+                                <Check className="text-green-400 shrink-0"/> 
+                                {language === 'es' ? 'Agendamiento 100% automático' : '100% automated booking & qualifying'}
+                            </li>
+                            <li className="flex gap-3">
+                                <Check className="text-green-400 shrink-0"/> 
+                                {language === 'es' ? 'Respuestas en menos de 5 segundos 24/7' : 'Replies in under 5 seconds, 24/7/365'}
+                            </li>
+                            <li className="flex gap-3">
+                                <Check className="text-green-400 shrink-0"/> 
+                                {language === 'es' ? 'Equipo ocupado solo con llamadas calificadas' : 'Sales staff occupied only with warm ready buyers'}
+                            </li>
                         </ul>
                         <button onClick={() => navigate('/contact')} className="px-10 py-4 bg-white/90 backdrop-blur text-brand-900 rounded-lg font-bold shadow-2xl hover:bg-white transition-colors uppercase tracking-wider">
                             {t.final.cta}

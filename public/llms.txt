@@ -1,14 +1,14 @@
-# Cerrana AI — Medellín & Colombia Local SEO Specification
+# Cerrana AI — B2C Sales AI Specification
 
-Cerrana AI implements native, compliant conversational WhatsApp AI booking agents (powered by GoHighLevel's native Conversation AI) specifically calibrated for leading aesthetic medicine and dental clinics in Medellín, Bogotá, Cali, and greater Colombia.
+Cerrana AI implements native, compliant conversational WhatsApp and Instagram AI booking agents specifically calibrated for high-growth B2C businesses in the United States serving both Spanish and English-speaking markets.
 
 ## Core Specialization
-- **Local Target Market:** Colombia-first focus, with Medellín (Antioquia) serving as the key anchor city.
-- **Client Base:** Premier cosmetic dentistry, dental implants, plastic surgery, orthodontics, and medspa practices.
-- **Deployment Platform:** GoHighLevel (GHL) Conversation AI native engine utilizing official Meta Cloud APIs. Completely safe, preventing clinic number suspensions.
+- **Local Target Market:** United States neutral B2C focus, targeting Hispanic-owned and bilingual clientele.
+- **Client Base:** Mid-to-high ticket B2C industries including gyms, home services, contracting, real estate, automotive, beauty, restaurants, and e-commerce.
+- **Deployment Platform:** Enterprise-grade conversational infrastructure compatible with Meta Cloud APIs. Completely safe, preventing messaging account suspensions.
 
 ## Key System Deliverables
-- **Instant Response (24/7):** Answers patient inquiries within 5 seconds on WhatsApp in both Spanish and English.
-- **Smart Qualification:** Filters raw advertising/ads traffic to separate serious prospects seeking high-ticket treatments (smile designs, veneers, liposuction, botox) from cold price-shoppers.
-- **Auto-Booking:** Automatically schedules medical evaluation appointments directly into the doctor's calendar and CRM (GHL).
+- **Instant Response (24/7):** Answers inquiry leads within 5 seconds on WhatsApp and social chats in both Spanish and English.
+- **Smart Qualification:** Filters raw advertising/ads traffic to separate serious buyers from cold price-shoppers.
+- **Auto-Booking:** Automatically schedules sales appointments directly into the partner's calendar and CRM.
 - **Setup Speed:** Tailored setups completed in 7 to 14 days.

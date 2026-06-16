@@ -153,8 +153,8 @@ export const Services: React.FC = () => {
   return (
     <div className="pb-24 md:pb-0 bg-dark-950 text-slate-200">
       <SEO 
-        title={language === 'es' ? "Servicios de Automatización y Agentes IA para Clínicas | Cerrana" : "Clinic Automation & WhatsApp AI Agent Services | Cerrana"} 
-        description={language === 'es' ? "Agente de WhatsApp Conversation AI nativo en GoHighLevel, embudos CRO de alta conversión para tratamientos de estética u odontología, y CRM integrado." : "Native GHL WhatsApp AI Booker agent, custom high-converting aesthetic/dental marketing CRO funnels, and integrated CRM implementation."}
+        title={language === 'es' ? "Servicios de Automatización y Agentes IA de Ventas B2C | Cerrana" : "B2C Automation & WhatsApp AI Agent Sales Services | Cerrana"} 
+        description={language === 'es' ? "Agentes de WhatsApp e Instagram AI, embudos CRO de alta conversión para negocios B2C de cualquier sector, e infraestructura de CRM integrado." : "Native multi-channel WhatsApp & Instagram AI Booker agent, custom high-converting B2C marketing CRO sales funnels, and enterprise-grade CRM setup."}
         schema={serviceSchema}
       />
 

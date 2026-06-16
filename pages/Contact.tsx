@@ -40,8 +40,8 @@ export const Contact: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen pb-24 md:pb-0 text-slate-200">
       <SEO 
-        title={language === 'es' ? "Agenda tu Auditoría Clínica de 20 Minutos | Cerrana AI" : "Schedule Your 20-Min Clinic Audit | Cerrana AI"} 
-        description={language === 'es' ? "Agenda una demo para diseñar el filtro automático de tu WhatsApp, sincronizar el CRM GoHighLevel y activar las reservas en piloto automático." : "Schedule a free demo to map your clinic's WhatsApp auto-qualification filter, GHL CRM, and calendar automation on autopilot."}
+        title={language === 'es' ? "Agenda tu Auditoría de Ventas de 20 Minutos | Cerrana AI" : "Schedule Your 20-Min Sales Audit | Cerrana AI"} 
+        description={language === 'es' ? "Agenda una demo para diseñar el filtro automático de tu WhatsApp, sincronizar el CRM de ventas compatible con Meta y activar las reservas en piloto automático." : "Schedule a free demo to map your WhatsApp auto-qualification filter, Meta compatible CRM, and calendar automation on autopilot."}
         schema={contactSchema}
       />
 
