@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Poppins', sans-serif; background:#05050A; }
+  @keyframes marqueeL { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes marqueeR { from{transform:translateX(-50%)} to{transform:translateX(0)} }
+  @keyframes vscroll { from{transform:translateY(0)} to{transform:translateY(-50%)} }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+</style>
+<template id="__bundler_thumbnail">
+<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 50% 30%, #2e1065, #05050A);">
+  <svg viewBox="0 0 100 100" width="40%" height="40%" style="filter:drop-shadow(0 0 18px rgba(124,58,237,0.7));">
+    <circle cx="50" cy="50" r="30" fill="none" stroke="#7c3aed" stroke-width="3"/>
+    <circle cx="50" cy="20" r="5" fill="#22d3ee"/><circle cx="78" cy="62" r="5" fill="#a78bfa"/><circle cx="22" cy="62" r="5" fill="#a78bfa"/>
+    <line x1="50" y1="20" x2="78" y2="62" stroke="#7c3aed" stroke-width="2"/><line x1="50" y1="20" x2="22" y2="62" stroke="#7c3aed" stroke-width="2"/><line x1="22" y1="62" x2="78" y2="62" stroke="#7c3aed" stroke-width="2"/>
+  </svg>
+</div>
+</template>
+</helmet>
+<div data-screen-label="Hero" style="position:relative; width:100%; min-height:760px; background:#05050A; overflow:hidden;">
+  <canvas ref="{{ particleCanvas }}" style="position:absolute; inset:0; width:100%; height:100%;"></canvas>
+  <div style="position:absolute; width:700px; height:480px; left:50%; top:34%; transform:translate(-50%,-50%); background:radial-gradient(ellipse, rgba(124,58,237,0.24), transparent 70%); filter:blur(50px); pointer-events:none;"></div>
+  <div style="position:absolute; width:560px; height:560px; left:50%; top:-200px; transform:translateX(-50%); background:radial-gradient(circle, rgba(124,58,237,0.32), transparent 65%); filter:blur(80px); pointer-events:none;"></div>
+
+  <!-- TOP TICKER: live activity, scrolling left -->
+  <div style="position:relative; z-index:6; border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(15,10,30,0.5); backdrop-filter:blur(6px); overflow:hidden; padding:9px 0;">
+    <div style="display:flex; gap:28px; width:max-content; animation:marqueeL 32s linear infinite;">
+      <span ref="{{ tickA }}" style="display:flex; gap:28px;"></span>
+      <span ref="{{ tickB }}" style="display:flex; gap:28px;"></span>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:5; padding:64px 64px 0; display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center; max-width:1180px; margin:0 auto;">
+    <div style="pointer-events:none;">
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 13px; border-radius:999px; background:rgba(124,58,237,0.12); border:1px solid rgba(124,58,237,0.3); color:#a78bfa; font-size:12px; font-weight:700; margin-bottom:26px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:#7c3aed; box-shadow:0 0 8px #7c3aed; animation:blink 1.6s infinite;"></span> CERRANA OS · ONLINE
+      </div>
+      <h1 style="font-family:'Orbitron',sans-serif; font-weight:800; font-size:56px; line-height:1.07; color:#fff; margin:0 0 22px; text-shadow:0 0 30px rgba(124,58,237,0.35);">Turn Every Ad Click<br><span style="background:linear-gradient(90deg,#a78bfa,#22d3ee); -webkit-background-clip:text; background-clip:text; color:transparent;">Into a Booked Call</span></h1>
+      <p style="color:#94a3b8; font-size:18px; font-weight:300; line-height:1.6; max-width:480px; margin:0 0 32px;">The autonomous sales system that captures, qualifies, and closes leads from your paid campaigns — instantly, 24/7, in Spanish &amp; English.</p>
+      <div style="display:flex; gap:14px; pointer-events:auto;">
+        <button style="font-family:'Orbitron',sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:1px; font-size:14px; padding:16px 30px; border:none; border-radius:10px; background:#7c3aed; color:#fff; box-shadow:0 0 30px rgba(124,58,237,0.55); cursor:pointer;">Book a Demo</button>
+        <button style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:16px 30px; border:1px solid rgba(255,255,255,0.12); border-radius:10px; background:rgba(255,255,255,0.05); color:#fff; cursor:pointer;">See Pricing</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: vertical auto-scrolling live conversation feed -->
+    <div style="position:relative; height:380px; border-radius:18px; border:1px solid rgba(255,255,255,0.1); background:rgba(15,10,30,0.7); backdrop-filter:blur(14px); overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.5);">
+      <div style="position:absolute; top:0; left:0; right:0; z-index:3; display:flex; align-items:center; gap:9px; padding:13px 16px; border-bottom:1px solid rgba(255,255,255,0.07); background:rgba(15,10,30,0.92);">
+        <span style="width:8px; height:8px; border-radius:50%; background:#22c55e; animation:blink 1.6s infinite;"></span>
+        <span style="font-family:'Orbitron',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.5px; color:#fff;">LIVE · INCOMING LEADS</span>
+      </div>
+      <div style="position:absolute; top:46px; bottom:0; left:0; right:0; overflow:hidden; -webkit-mask-image:linear-gradient(transparent, #000 14%, #000 86%, transparent); mask-image:linear-gradient(transparent, #000 14%, #000 86%, transparent);">
+        <div ref="{{ feedEl }}" style="display:flex; flex-direction:column; gap:10px; padding:16px; animation:vscroll 22s linear infinite;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DUAL MARQUEE BAND -->
+  <div style="position:relative; z-index:5; margin-top:40px;">
+    <div style="overflow:hidden; padding:14px 0; border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06);">
+      <div style="display:flex; gap:46px; width:max-content; animation:marqueeL 26s linear infinite;">
+        <span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">WhatsApp</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Instagram</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Messenger</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">HubSpot</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">GoHighLevel</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Calendly</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Stripe</span>
+        <span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">WhatsApp</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Instagram</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Messenger</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">HubSpot</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">GoHighLevel</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Calendly</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Stripe</span>
+      </div>
+    </div>
+    <div style="overflow:hidden; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.06);">
+      <div style="display:flex; gap:40px; width:max-content; animation:marqueeR 30s linear infinite;">
+        <span style="font-family:'Orbitron',sans-serif; color:#3b3554; font-size:15px; font-weight:600; letter-spacing:1px;">RESPONDE EN SEGUNDOS</span><span style="color:#7c3aed;">◆</span><span style="font-family:'Orbitron',sans-serif; color:#3b3554; font-size:15px; font-weight:600; letter-spacing:1px;">CALIFICA AUTOMÁTICO</span><span style="color:#7c3aed;">◆</span><span style="font-family:'Orbitron',sans-serif; color:#3b3554; font-size:15px; font-weight:600; letter-spacing:1px;">AGENDA SOLO</span><span style="color:#7c3aed;">◆</span><span style="font-family:'Orbitron',sans-serif; color:#3b3554; font-size:15px; font-weight:600; letter-spacing:1px;">BILINGÜE 24/7</span><span style="color:#7c3aed;">◆</span>
+        <span style="font-family:'Orbitron',sans-serif; color:#3b3554; font-size:15px; font-weight:600; letter-spacing:1px;">RESPONDE EN SEGUNDOS</span><span style="color:#7c3aed;">◆</span><span style="font-family:'Orbitron',sans-serif; color:#3b3554; font-size:15px; font-weight:600; letter-spacing:1px;">CALIFICA AUTOMÁTICO</span><span style="color:#7c3aed;">◆</span><span style="font-family:'Orbitron',sans-serif; color:#3b3554; font-size:15px; font-weight:600; letter-spacing:1px;">AGENDA SOLO</span><span style="color:#7c3aed;">◆</span><span style="font-family:'Orbitron',sans-serif; color:#3b3554; font-size:15px; font-weight:600; letter-spacing:1px;">BILINGÜE 24/7</span><span style="color:#7c3aed;">◆</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      particleCanvas: (el) => { if (el && el !== this._canvas) { this._canvas = el; this._initParticles(el); } },
+      tickA: (el) => { if (el) this._fillTicker(el); },
+      tickB: (el) => { if (el) this._fillTicker(el); },
+      feedEl: (el) => { if (el) this._fillFeed(el); }
+    };
+  }
+
+  _ticks() {
+    return [
+      ['🟢', 'New lead · Miami, FL — replied in 12s'],
+      ['📅', 'Demo booked · Houston, TX'],
+      ['💬', 'Qualified · "necesito cotización hoy"'],
+      ['🟢', 'New lead · Los Angeles, CA — replied in 8s'],
+      ['✅', 'Appointment confirmed via SMS'],
+      ['💬', 'Qualified · roofing — high intent'],
+      ['📅', 'Demo booked · Orlando, FL'],
+      ['🟢', 'New lead · Dallas, TX — replied in 15s']
+    ];
+  }
+
+  _fillTicker(el) {
+    el.innerHTML = '';
+    for (const [icon, txt] of this._ticks()) {
+      const s = document.createElement('span');
+      s.style.cssText = 'display:flex; align-items:center; gap:8px; font-size:13px; color:#94a3b8; white-space:nowrap;';
+      s.innerHTML = '<span style="font-size:11px">' + icon + '</span><span>' + txt + '</span><span style="color:#3b3554; margin-left:14px">•</span>';
+      el.appendChild(s);
+    }
+  }
+
+  _fillFeed(el) {
+    const msgs = [
+      { side:'in', text:'¡Hola! Vi su anuncio de remodelación 👀' },
+      { side:'ai', text:'¡Con gusto! ¿Es residencial o comercial?' },
+      { side:'in', text:'Residencial, una casa.' },
+      { side:'ai', text:'Perfecto. Tengo espacio el jueves a las 2pm para una cotización gratis. ¿Te sirve?' },
+      { side:'in', text:'¡Sí, agéndame! ✅' },
+      { side:'ai', text:'Listo, confirmado por SMS. ¡Nos vemos! 🎉' },
+      { side:'in', text:'Hi, do you do commercial too?' },
+      { side:'ai', text:'We do! Want me to book a 20-min call?' }
+    ];
+    const make = (m) => {
+      const wrap = document.createElement('div');
+      wrap.style.cssText = 'display:flex; justify-content:' + (m.side==='ai'?'flex-start':'flex-end') + ';';
+      const b = document.createElement('span');
+      const ai = m.side==='ai';
+      b.style.cssText = 'max-width:82%; padding:10px 13px; font-size:13px; line-height:1.4; border-radius:' + (ai?'13px 13px 13px 3px':'13px 13px 3px 13px') + '; background:' + (ai?'rgba(255,255,255,0.08)':'rgba(124,58,237,0.85)') + '; color:' + (ai?'#e2e8f0':'#fff') + '; border:1px solid ' + (ai?'rgba(255,255,255,0.06)':'rgba(124,58,237,0.4)') + ';';
+      b.textContent = m.text;
+      wrap.appendChild(b);
+      return wrap;
+    };
+    el.innerHTML = '';
+    // duplicate for seamless vertical loop
+    for (let k = 0; k < 2; k++) for (const m of msgs) el.appendChild(make(m));
+  }
+
+  _initParticles(canvas) {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    const resize = () => {
+      const r = canvas.getBoundingClientRect();
+      W = canvas.width = Math.max(800, r.width);
+      H = canvas.height = Math.max(600, r.height);
+    };
+    resize();
+    this._onResize = resize;
+    window.addEventListener('resize', resize);
+    const N = 75;
+    const pts = [];
+    for (let i = 0; i < N; i++) pts.push({ x: Math.random()*W, y: Math.random()*H, vx:(Math.random()-0.5)*0.4, vy:(Math.random()-0.5)*0.4, r:Math.random()*1.8+0.8 });
+    const draw = () => {
+      ctx.clearRect(0,0,W,H);
+      for (const p of pts) { p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1; }
+      for (let i=0;i<N;i++) for (let j=i+1;j<N;j++) {
+        const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.sqrt(dx*dx+dy*dy);
+        if (d<130){ ctx.strokeStyle='rgba(124,58,237,'+(0.16*(1-d/130))+')'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); }
+      }
+      for (const p of pts){ ctx.fillStyle='rgba(167,139,250,0.8)'; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill(); }
+      this._raf = requestAnimationFrame(draw);
+    };
+    draw();
+  }
+
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._onResize) window.removeEventListener('resize', this._onResize);
+  }
+}
+</script>
+</body>
+</html>

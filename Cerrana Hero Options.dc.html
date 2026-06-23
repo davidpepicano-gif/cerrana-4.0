@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Poppins', sans-serif; }
+  @keyframes auroraA { 0%{transform:translate(0,0) scale(1)} 50%{transform:translate(120px,60px) scale(1.25)} 100%{transform:translate(0,0) scale(1)} }
+  @keyframes auroraB { 0%{transform:translate(0,0) scale(1.1)} 50%{transform:translate(-100px,-40px) scale(0.9)} 100%{transform:translate(0,0) scale(1.1)} }
+  @keyframes auroraC { 0%{transform:translate(0,0)} 50%{transform:translate(60px,-70px)} 100%{transform:translate(0,0)} }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes gridMove { from{background-position:0 0} to{background-position:0 60px} }
+  @keyframes scanBeam { 0%{transform:translateY(-120%)} 100%{transform:translateY(820px)} }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+  @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+  @keyframes spinSlow { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+</style>
+<meta name="design_doc_mode" content="canvas">
+</helmet>
+
+<div style="position:absolute; left:0; top:0; width:1200px;">
+  <div data-drags-parent="1" style="font-family:'Orbitron',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; color:#7c3aed; text-transform:uppercase; margin-bottom:14px; cursor:grab;">01 · Aurora Drift</div>
+  <div data-screen-label="Aurora Hero" style="position:relative; width:1200px; height:740px; background:#05050A; border:1px solid rgba(255,255,255,0.08); border-radius:6px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+    <div style="position:absolute; width:620px; height:620px; left:-140px; top:-180px; background:radial-gradient(circle, rgba(124,58,237,0.55), transparent 65%); filter:blur(60px); animation:auroraA 16s ease-in-out infinite;"></div>
+    <div style="position:absolute; width:560px; height:560px; right:-120px; top:-100px; background:radial-gradient(circle, rgba(34,211,238,0.32), transparent 65%); filter:blur(70px); animation:auroraB 19s ease-in-out infinite;"></div>
+    <div style="position:absolute; width:520px; height:520px; left:38%; bottom:-220px; background:radial-gradient(circle, rgba(109,40,217,0.4), transparent 65%); filter:blur(70px); animation:auroraC 22s ease-in-out infinite;"></div>
+    <div style="position:absolute; inset:0; background:linear-gradient(rgba(124,58,237,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,0.05) 1px,transparent 1px); background-size:54px 54px; opacity:0.4;"></div>
+
+    <div style="position:relative; z-index:5; padding:70px 64px 0; display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 13px; border-radius:999px; background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.25); color:#4ade80; font-size:12px; font-weight:700; margin-bottom:26px;">
+          <span style="width:7px; height:7px; border-radius:50%; background:#22c55e; animation:blink 1.6s infinite;"></span> AI SALES AGENT · LIVE 24/7
+        </div>
+        <h1 style="font-family:'Orbitron',sans-serif; font-weight:800; font-size:56px; line-height:1.08; color:#fff; margin:0 0 22px;">Close Every Lead<br><span style="background:linear-gradient(90deg,#a78bfa,#22d3ee); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 22px rgba(124,58,237,0.45));">In Seconds, 24/7</span></h1>
+        <p style="color:#94a3b8; font-size:18px; font-weight:300; line-height:1.6; max-width:440px; margin:0 0 34px;">An AI agent that answers, qualifies, and books every inbound lead in Spanish &amp; English — before your competition even sees the message.</p>
+        <div style="display:flex; gap:14px;">
+          <button style="font-family:'Orbitron',sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:1px; font-size:14px; padding:16px 28px; border:none; border-radius:10px; background:#7c3aed; color:#fff; box-shadow:0 0 24px rgba(124,58,237,0.45); cursor:pointer;">Book a Demo</button>
+          <button style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:16px 28px; border:1px solid rgba(255,255,255,0.12); border-radius:10px; background:rgba(255,255,255,0.05); color:#fff; cursor:pointer;">See it Work</button>
+        </div>
+      </div>
+      <div style="position:relative; animation:floatY 6s ease-in-out infinite;">
+        <div style="background:rgba(15,10,30,0.8); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.1); border-radius:18px; padding:18px; box-shadow:0 30px 60px rgba(0,0,0,0.5);">
+          <div style="display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,0.07); padding-bottom:12px; margin-bottom:14px;">
+            <span style="width:8px; height:8px; border-radius:50%; background:#22c55e; animation:blink 1.6s infinite;"></span>
+            <span style="font-size:11px; font-weight:700; letter-spacing:1.5px; color:#fff;">CERRANA AI AGENT</span>
+          </div>
+          <div style="display:flex; justify-content:flex-end; margin-bottom:12px;"><span style="max-width:80%; padding:11px 13px; border-radius:13px 13px 3px 13px; background:rgba(124,58,237,0.85); color:#fff; font-size:13px;">¿Qué precio tiene la remodelación?</span></div>
+          <div style="display:flex; justify-content:flex-start; margin-bottom:12px;"><span style="max-width:82%; padding:11px 13px; border-radius:13px 13px 13px 3px; background:rgba(255,255,255,0.08); color:#e2e8f0; font-size:13px;">Con gusto. ¿Es residencial o comercial? Puedo agendarte una cotización gratis hoy.</span></div>
+          <div style="display:flex; justify-content:flex-end;"><span style="max-width:80%; padding:11px 13px; border-radius:13px 13px 3px 13px; background:rgba(124,58,237,0.85); color:#fff; font-size:13px;">¡Sí, agéndame! ✅</span></div>
+          <div style="display:flex; gap:8px; margin-top:14px; border-top:1px solid rgba(255,255,255,0.07); padding-top:12px;">
+            <div style="flex:1; height:34px; border-radius:7px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.07);"></div>
+            <div style="width:34px; height:34px; border-radius:7px; background:#7c3aed; display:flex; align-items:center; justify-content:center; color:#fff;">➤</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position:absolute; left:0; right:0; bottom:0; padding:18px 0; background:linear-gradient(transparent, rgba(5,5,10,0.9)); border-top:1px solid rgba(255,255,255,0.06); overflow:hidden;">
+      <div style="font-size:10px; letter-spacing:2px; color:#475569; text-transform:uppercase; padding:0 64px 10px;">Connects with</div>
+      <div style="display:flex; gap:48px; width:max-content; animation:marquee 22s linear infinite; padding-left:64px;">
+        <span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">WhatsApp</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Instagram</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Messenger</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">HubSpot</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">GoHighLevel</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Calendly</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Stripe</span>
+        <span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">WhatsApp</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Instagram</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Messenger</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">HubSpot</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">GoHighLevel</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Calendly</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Stripe</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="position:absolute; left:1320px; top:0; width:1200px;">
+  <div data-drags-parent="1" style="font-family:'Orbitron',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; color:#22d3ee; text-transform:uppercase; margin-bottom:14px; cursor:grab;">02 · Particle Network</div>
+  <div data-screen-label="Particle Hero" style="position:relative; width:1200px; height:740px; background:#05050A; border:1px solid rgba(255,255,255,0.08); border-radius:6px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+    <canvas ref="{{ particleCanvas }}" width="1200" height="740" style="position:absolute; inset:0; width:1200px; height:740px;"></canvas>
+    <div style="position:absolute; width:700px; height:480px; left:50%; top:38%; transform:translate(-50%,-50%); background:radial-gradient(ellipse, rgba(124,58,237,0.22), transparent 70%); filter:blur(40px);"></div>
+
+    <div style="position:relative; z-index:5; padding:96px 64px 0; text-align:center; max-width:880px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 13px; border-radius:999px; background:rgba(34,211,238,0.1); border:1px solid rgba(34,211,238,0.25); color:#22d3ee; font-size:12px; font-weight:700; margin-bottom:28px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:#22d3ee; animation:blink 1.6s infinite;"></span> NEVER MISS A LEAD AGAIN
+      </div>
+      <h1 style="font-family:'Orbitron',sans-serif; font-weight:800; font-size:64px; line-height:1.06; color:#fff; margin:0 0 24px;">Your AI Sales Agent<br><span style="background:linear-gradient(90deg,#a78bfa,#22d3ee); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 24px rgba(34,211,238,0.4));">Never Sleeps</span></h1>
+      <p style="color:#94a3b8; font-size:19px; font-weight:300; line-height:1.6; max-width:560px; margin:0 auto 36px;">Respond, qualify, and book every inbound lead in seconds — 24/7, bilingual, fully on autopilot.</p>
+      <div style="display:flex; gap:14px; justify-content:center;">
+        <button style="font-family:'Orbitron',sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:1px; font-size:14px; padding:16px 30px; border:none; border-radius:10px; background:#7c3aed; color:#fff; box-shadow:0 0 24px rgba(124,58,237,0.5); cursor:pointer;">Book a Demo</button>
+        <button style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:16px 30px; border:1px solid rgba(255,255,255,0.12); border-radius:10px; background:rgba(255,255,255,0.05); color:#fff; cursor:pointer;">See it Work</button>
+      </div>
+      <div style="display:flex; gap:40px; justify-content:center; margin-top:54px;">
+        <div><div style="font-family:'Orbitron',sans-serif; font-size:34px; font-weight:800; color:#fff;">&lt;30s</div><div style="font-size:12px; letter-spacing:1px; color:#64748b; text-transform:uppercase;">Response time</div></div>
+        <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div><div style="font-family:'Orbitron',sans-serif; font-size:34px; font-weight:800; color:#fff;">24/7</div><div style="font-size:12px; letter-spacing:1px; color:#64748b; text-transform:uppercase;">Always on</div></div>
+        <div style="width:1px; background:rgba(255,255,255,0.1);"></div>
+        <div><div style="font-family:'Orbitron',sans-serif; font-size:34px; font-weight:800; color:#fff;">2</div><div style="font-size:12px; letter-spacing:1px; color:#64748b; text-transform:uppercase;">Languages</div></div>
+      </div>
+    </div>
+
+    <div style="position:absolute; left:0; right:0; bottom:0; padding:18px 0; background:linear-gradient(transparent, rgba(5,5,10,0.92)); border-top:1px solid rgba(255,255,255,0.06); overflow:hidden;">
+      <div style="display:flex; gap:48px; width:max-content; animation:marquee 20s linear infinite;">
+        <span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">WhatsApp</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Instagram</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Messenger</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">HubSpot</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">GoHighLevel</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Calendly</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Stripe</span>
+        <span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">WhatsApp</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Instagram</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Messenger</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">HubSpot</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">GoHighLevel</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Calendly</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Stripe</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="position:absolute; left:2640px; top:0; width:1200px;">
+  <div data-drags-parent="1" style="font-family:'Orbitron',sans-serif; font-size:13px; font-weight:700; letter-spacing:2px; color:#a78bfa; text-transform:uppercase; margin-bottom:14px; cursor:grab;">03 · Neon Grid Pulse</div>
+  <div data-screen-label="Grid Hero" style="position:relative; width:1200px; height:740px; background:#05050A; border:1px solid rgba(255,255,255,0.08); border-radius:6px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+    <div style="position:absolute; inset:0; background:linear-gradient(rgba(124,58,237,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(124,58,237,0.12) 1px,transparent 1px); background-size:60px 60px; animation:gridMove 4s linear infinite; mask-image:radial-gradient(ellipse 80% 70% at 50% 30%, #000 40%, transparent 80%); -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 30%, #000 40%, transparent 80%);"></div>
+    <div style="position:absolute; left:0; right:0; height:160px; background:linear-gradient(transparent, rgba(34,211,238,0.18), transparent); filter:blur(8px); animation:scanBeam 7s linear infinite;"></div>
+    <div style="position:absolute; width:560px; height:560px; left:50%; top:-200px; transform:translateX(-50%); background:radial-gradient(circle, rgba(124,58,237,0.4), transparent 65%); filter:blur(80px);"></div>
+
+    <div style="position:relative; z-index:5; padding:90px 64px 0; text-align:center; max-width:840px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 13px; border-radius:999px; background:rgba(124,58,237,0.12); border:1px solid rgba(124,58,237,0.3); color:#a78bfa; font-size:12px; font-weight:700; margin-bottom:28px;">
+        <span style="width:7px; height:7px; border-radius:50%; background:#7c3aed; box-shadow:0 0 8px #7c3aed; animation:blink 1.6s infinite;"></span> CERRANA OS · ONLINE
+      </div>
+      <h1 style="font-family:'Orbitron',sans-serif; font-weight:800; font-size:60px; line-height:1.07; color:#fff; margin:0 0 22px; text-shadow:0 0 30px rgba(124,58,237,0.35);">Turn Every Ad Click<br><span style="background:linear-gradient(90deg,#a78bfa,#22d3ee); -webkit-background-clip:text; background-clip:text; color:transparent;">Into a Booked Call</span></h1>
+      <p style="color:#94a3b8; font-size:18px; font-weight:300; line-height:1.6; max-width:520px; margin:0 auto 34px;">The autonomous sales system that captures, qualifies, and closes leads from your paid campaigns — instantly.</p>
+      <div style="display:flex; gap:14px; justify-content:center; margin-bottom:46px;">
+        <button style="font-family:'Orbitron',sans-serif; font-weight:600; text-transform:uppercase; letter-spacing:1px; font-size:14px; padding:16px 30px; border:none; border-radius:10px; background:#7c3aed; color:#fff; box-shadow:0 0 30px rgba(124,58,237,0.55); cursor:pointer;">Book a Demo</button>
+        <button style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:16px 30px; border:1px solid rgba(255,255,255,0.12); border-radius:10px; background:rgba(255,255,255,0.05); color:#fff; cursor:pointer;">See Pricing</button>
+      </div>
+      <div style="display:flex; gap:16px; justify-content:center;">
+        <div style="flex:1; max-width:200px; background:rgba(15,10,30,0.7); border:1px solid rgba(124,58,237,0.25); border-radius:12px; padding:18px; backdrop-filter:blur(8px);"><div style="font-family:'Orbitron',sans-serif; color:#22d3ee; font-size:13px; font-weight:700; margin-bottom:6px;">CAPTURE</div><div style="color:#94a3b8; font-size:12px;">Every DM &amp; comment, instantly</div></div>
+        <div style="display:flex; align-items:center; color:#7c3aed; font-size:20px;">→</div>
+        <div style="flex:1; max-width:200px; background:rgba(15,10,30,0.7); border:1px solid rgba(124,58,237,0.25); border-radius:12px; padding:18px; backdrop-filter:blur(8px);"><div style="font-family:'Orbitron',sans-serif; color:#22d3ee; font-size:13px; font-weight:700; margin-bottom:6px;">QUALIFY</div><div style="color:#94a3b8; font-size:12px;">Intent scored in real time</div></div>
+        <div style="display:flex; align-items:center; color:#7c3aed; font-size:20px;">→</div>
+        <div style="flex:1; max-width:200px; background:rgba(15,10,30,0.7); border:1px solid rgba(34,211,238,0.35); border-radius:12px; padding:18px; backdrop-filter:blur(8px); box-shadow:0 0 20px rgba(34,211,238,0.15);"><div style="font-family:'Orbitron',sans-serif; color:#4ade80; font-size:13px; font-weight:700; margin-bottom:6px;">BOOK</div><div style="color:#94a3b8; font-size:12px;">Straight to your calendar</div></div>
+      </div>
+    </div>
+
+    <div style="position:absolute; left:0; right:0; bottom:0; padding:18px 0; background:linear-gradient(transparent, rgba(5,5,10,0.92)); border-top:1px solid rgba(255,255,255,0.06); overflow:hidden;">
+      <div style="display:flex; gap:48px; width:max-content; animation:marquee 24s linear infinite;">
+        <span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">WhatsApp</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Instagram</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Messenger</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">HubSpot</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">GoHighLevel</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Calendly</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Stripe</span>
+        <span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">WhatsApp</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Instagram</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Messenger</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">HubSpot</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">GoHighLevel</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Calendly</span><span style="font-family:'Orbitron',sans-serif; color:#64748b; font-size:18px; font-weight:600;">Stripe</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { particleCanvas: (el) => { this._canvas = el; if (el) this._initParticles(el); } };
+  }
+  _initParticles(canvas) {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    const ctx = canvas.getContext('2d');
+    const W = 1200, H = 740;
+    const N = 70;
+    const pts = [];
+    for (let i = 0; i < N; i++) {
+      pts.push({ x: Math.random()*W, y: Math.random()*H, vx: (Math.random()-0.5)*0.4, vy: (Math.random()-0.5)*0.4, r: Math.random()*1.8+0.8 });
+    }
+    const draw = () => {
+      ctx.clearRect(0,0,W,H);
+      for (const p of pts) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+      }
+      for (let i = 0; i < N; i++) {
+        for (let j = i+1; j < N; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+          const d = Math.sqrt(dx*dx + dy*dy);
+          if (d < 130) {
+            ctx.strokeStyle = 'rgba(124,58,237,' + (0.16 * (1 - d/130)) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke();
+          }
+        }
+      }
+      for (const p of pts) {
+        ctx.fillStyle = 'rgba(167,139,250,0.8)';
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill();
+      }
+      this._raf = requestAnimationFrame(draw);
+    };
+    draw();
+  }
+  componentWillUnmount() { if (this._raf) cancelAnimationFrame(this._raf); }
+}
+</script>
+</body>
+</html>
