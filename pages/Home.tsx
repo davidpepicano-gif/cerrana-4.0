@@ -5,6 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../utils/translations';
 import { Testimonial } from '../types';
 import { SEO } from '../components/SEO';
+import { HeroAnimated } from '../components/HeroAnimated';
 
 /* ------------------------------------------------------------
    COMPONENT: Interactive Chat Simulation (Hero)
@@ -577,57 +578,8 @@ export const Home: React.FC = () => {
                 schema={combinedSchema}
             />
             
-            {/* 1. HERO SECTION (Interactive Chat) */}
-            <section className="relative pt-32 pb-24 overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-900/20 rounded-full blur-[100px] pointer-events-none"></div>
-
-                <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                    <div>
-                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-bold border border-green-500/20 mb-6 backdrop-blur-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                            {t.hero.pill}
-                         </div>
-                         <h1 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight mb-6">
-                            {t.hero.titleLine1} <br/>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-cyan-300 drop-shadow-[0_0_20px_rgba(124,58,237,0.4)]">
-                                {t.hero.titleLine2}
-                            </span>
-                         </h1>
-                         <p className="text-xl text-slate-400 mb-8 max-w-lg font-light">
-                             {t.hero.subtitle}
-                         </p>
-                         
-                         <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                             <button onClick={() => navigate('/contact')} className="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-lg font-bold shadow-[0_0_20px_rgba(124,58,237,0.4)] font-display tracking-wide uppercase transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(124,58,237,0.6)]">
-                                 {t.hero.ctaPrimary}
-                             </button>
-                             <button onClick={() => document.getElementById('impact')?.scrollIntoView({behavior:'smooth'})} className="px-8 py-4 bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 text-white rounded-lg font-semibold transition-all shadow-lg hover:shadow-white/5">
-                                 {t.hero.ctaSecondary}
-                             </button>
-                         </div>
-                         
-                         {t.hero.urgency && <div className="flex items-center gap-3 bg-red-500/10 p-3 rounded-lg border border-red-500/20 max-w-md backdrop-blur-sm">
-                             <div className="text-red-400 text-lg">⚠️</div>
-                             <p className="text-red-300 text-xs font-medium">{t.hero.urgency}</p>
-                         </div>}
-                    </div>
-
-                    {/* Right: Interactive Chat Mockup */}
-                    <div className="relative">
-                        <HeroChat />
-                        {/* Floating Badges */}
-                        <div className="absolute -top-4 -right-4 bg-dark-900/90 backdrop-blur-md border border-white/10 p-3 rounded-lg shadow-xl animate-bounce">
-                             <div className="text-xs text-slate-400 uppercase">Speed</div>
-                             <div className="font-bold text-brand-400">Instant ⚡</div>
-                        </div>
-                         <div className="absolute bottom-10 -left-8 bg-dark-900/90 backdrop-blur-md border border-white/10 p-3 rounded-lg shadow-xl animate-pulse">
-                             <div className="text-xs text-slate-400 uppercase">Status</div>
-                             <div className="font-bold text-green-400">Online 🟢</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* 1. HERO SECTION (Animated — particle field + live tickers) */}
+            <HeroAnimated />
 
             {/* 2. IMPACT SECTION (Before/After Slider) */}
             <section id="impact" className="py-24 bg-dark-900/50 border-y border-white/5 relative">
