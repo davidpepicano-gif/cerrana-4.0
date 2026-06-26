@@ -17,11 +17,45 @@ export const translations = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service'
     },
+    seo: {
+      home: {
+        title: "24/7 AI Sales Agent in Spanish & English | Cerrana AI",
+        description: "Cerrana deploys AI sales agents that respond, qualify, and close every lead in seconds, 24/7 in Spanish and English. For B2C businesses in the US running ads."
+      },
+      platform: {
+        title: "Cerrana OS | The AI-Powered Operating System for B2C Sales",
+        description: "Meet Cerrana OS, the software that centralizes your channels (WhatsApp, Instagram, SMS), qualifies prospects with AI, and books calls on your CRM automatically."
+      },
+      services: {
+        title: "Done-For-You AI & Automation Services | Cerrana AI",
+        description: "Complete done-for-you deployment of funnels, CRM integrations, and AI conversational agents. We build and optimize your entire sales infrastructure."
+      },
+      pricing: {
+        title: "Transparent Automation Plans & Pricing | Cerrana AI",
+        description: "Find the perfect plan for your B2C business. From baseline CRM to dedicated AI booking agents and turnkey funnels. Transparent pricing built to scale."
+      },
+      about: {
+        title: "About Us | The Team Behind Cerrana AI",
+        description: "We believe in simple systems that scale businesses, not technical bloat. Read about our mission to democratize sales AI for B2C companies in the US."
+      },
+      contact: {
+        title: "Book Your Free 30-Min Sales Strategy Audit | Cerrana AI",
+        description: "Schedule a free 30-minute strategy call. We will audit your current sales pipeline and show you how AI can double your booked appointments."
+      },
+      privacy: {
+        title: "Privacy Policy | Cerrana AI",
+        description: "Learn how we collect, use, protect, and securely handle your leads' information and personal data at Cerrana AI."
+      },
+      terms: {
+        title: "Terms of Service | Cerrana AI",
+        description: "Review the terms of service governing the usage of the Cerrana OS platform and our contracted AI automation services."
+      }
+    },
     home: {
       hero: {
         pill: 'AI SALES AGENT · 24/7 · SPANISH & ENGLISH',
-        titleLine1: 'Your business responds, follows up,',
-        titleLine2: 'and closes each sale in seconds. Even at night.',
+        titleLine1: 'AI Sales Agent 24/7',
+        titleLine2: 'in Spanish & English',
         subtitle: 'Cerrana implements an AI sales agent that attends to every lead instantly, qualifies them, follows up, and closes — 24/7, in Spanish and English. Convert the leads you already pay to attract into sales.',
         ctaPrimary: 'Book a 20-Min Demo',
         ctaSecondary: 'How It Works',
@@ -522,11 +556,45 @@ export const translations = {
       privacy: 'Política de Privacidad',
       terms: 'Términos de Servicio'
     },
+    seo: {
+      home: {
+        title: "Agente de Ventas IA 24/7 en Español e Inglés | Cerrana AI",
+        description: "Cerrana implementa agentes de ventas con IA que responden, califican y cierran cada lead en segundos, 24/7 en español e inglés. Para negocios B2C en EE. UU. que invierten en ads."
+      },
+      platform: {
+        title: "Cerrana OS | El Sistema Operativo para Ventas B2C con IA",
+        description: "Conoce Cerrana OS, el software que unifica tus canales (WhatsApp, Instagram, SMS), califica prospectos con IA y agenda llamadas en tu CRM de forma automática."
+      },
+      services: {
+        title: "Servicios de Automatización e IA Done-For-You | Cerrana AI",
+        description: "Implementación completa \"hecha para ti\" de embudos, integraciones CRM y agentes conversacionales de IA. Montamos y optimizamos toda tu infraestructura de ventas."
+      },
+      pricing: {
+        title: "Planes y Precios Transparentes de Automatización | Cerrana AI",
+        description: "Encuentra el plan ideal para tu negocio B2C. Desde el CRM básico hasta agentes de IA dedicados y embudos llave en mano. Sin sorpresas, diseñado para escalar."
+      },
+      about: {
+        title: "Nosotros | El Equipo Detrás de Cerrana AI",
+        description: "Creemos en sistemas simples que escalan negocios, no en la complejidad técnica. Conoce nuestra misión de democratizar la IA de ventas para negocios B2C en EE. UU."
+      },
+      contact: {
+        title: "Agenda tu Auditoría de Ventas Gratuita de 30 min | Cerrana AI",
+        description: "Reserva una llamada de estrategia gratuita de 30 minutos. Analizaremos tu proceso de ventas y te mostraremos cómo la IA puede duplicar tus reservas de llamadas."
+      },
+      privacy: {
+        title: "Política de Privacidad | Cerrana AI",
+        description: "Consulta cómo recopilamos, utilizamos, protegemos y manejamos de manera segura la información de tus leads y los datos personales en Cerrana AI."
+      },
+      terms: {
+        title: "Términos del Servicio | Cerrana AI",
+        description: "Lee los términos de servicio que regulan el uso de la plataforma Cerrana OS y los servicios de automatización con IA contratados."
+      }
+    },
     home: {
       hero: {
         pill: 'AGENTE DE VENTAS IA · 24/7 · ESPAÑOL E INGLÉS',
-        titleLine1: 'Tu negocio responde, da seguimiento',
-        titleLine2: 'y cierra cada venta en segundos. Incluso de madrugada.',
+        titleLine1: 'Agente de ventas con IA 24/7',
+        titleLine2: 'en español e inglés',
         subtitle: 'Cerrana implementa un agente de ventas con IA que atiende cada lead al instante, lo califica, le da seguimiento y cierra — 24/7, en español e inglés. Convierte en clientes los leads que ya pagas por atraer.',
         ctaPrimary: 'Agenda una demo de 20 min',
         ctaSecondary: 'Cómo funciona',

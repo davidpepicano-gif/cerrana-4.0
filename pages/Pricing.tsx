@@ -92,8 +92,8 @@ export const Pricing: React.FC = () => {
   return (
     <div className="bg-dark-950 min-h-screen pb-24 text-slate-200">
       <SEO 
-        title="Precios | Cerrana AI — Sistema de Ventas con IA" 
-        description="Planes de Cerrana AI: CRM, agente de ventas con IA 24/7 y landing pages, montados y operados por nosotros. Desde $147/mes. Implementación en 7 días."
+        title={translations[language].seo.pricing.title} 
+        description={translations[language].seo.pricing.description}
         schema={pricingSchema}
       />
 

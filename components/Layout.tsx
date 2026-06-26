@@ -33,6 +33,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     { label: t.nav.about, path: '/about' },
   ];
 
+  // Helper to generate i18n link prefix paths
+  const getLocalizedPath = (path: string) => {
+    if (language === 'en') {
+      return `/en${path === '/' ? '' : path}`;
+    }
+    if (location.pathname.startsWith('/es')) {
+      return `/es${path === '/' ? '' : path}`;
+    }
+    return path;
+  };
+
   // Custom Logo Component - Abstract Tech 'C' with speed trails and node terminals
   const Logo = () => (
     <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
@@ -90,7 +101,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-4 group">
+          <Link to={getLocalizedPath('/')} className="flex items-center gap-4 group">
             <div className="bg-transparent p-1 rounded-lg group-hover:scale-105 transition-all">
               <Logo />
             </div>
@@ -98,15 +109,15 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               CERRANA
             </span>
           </Link>
-
+ 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 ml-auto">
             {navItems.map((item) => (
               <Link 
                 key={item.path} 
-                to={item.path} 
+                to={getLocalizedPath(item.path)} 
                 className={`text-sm font-medium tracking-wide transition-colors hover:text-brand-400 ${
-                  location.pathname === item.path ? 'text-brand-400 drop-shadow-[0_0_8px_rgba(139,92,246,0.5)]' : 'text-slate-300'
+                  location.pathname === getLocalizedPath(item.path) ? 'text-brand-400 drop-shadow-[0_0_8px_rgba(139,92,246,0.5)]' : 'text-slate-300'
                 }`}
               >
                 {item.label}
@@ -134,7 +145,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
 
             <button 
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate(getLocalizedPath('/contact'))}
               className="bg-brand-600 hover:bg-brand-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_25px_rgba(124,58,237,0.5)] flex items-center gap-2 border border-brand-500/50 ml-4"
             >
               {t.nav.bookCall} <ArrowRight size={16} />
@@ -154,9 +165,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-dark-900 border-b border-brand-900 shadow-2xl flex flex-col p-4 animate-in slide-in-from-top-5">
             <Link 
-                to="/" 
+                to={getLocalizedPath('/')} 
                 className={`py-4 text-lg font-medium border-b border-white/10 ${
-                  location.pathname === '/' ? 'text-brand-400' : 'text-slate-300'
+                  location.pathname === getLocalizedPath('/') ? 'text-brand-400' : 'text-slate-300'
                 }`}
             >
                 Home
@@ -164,9 +175,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             {navItems.map((item) => (
               <Link 
                 key={item.path} 
-                to={item.path} 
+                to={getLocalizedPath(item.path)} 
                 className={`py-4 text-lg font-medium border-b border-white/10 last:border-0 ${
-                  location.pathname === item.path ? 'text-brand-400' : 'text-slate-300'
+                  location.pathname === getLocalizedPath(item.path) ? 'text-brand-400' : 'text-slate-300'
                 }`}
               >
                 {item.label}
@@ -193,7 +204,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             </div>
 
             <button 
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate(getLocalizedPath('/contact'))}
               className="mt-4 w-full bg-brand-600 text-white py-3 rounded-xl font-semibold flex justify-center items-center gap-2 shadow-[0_0_15px_rgba(124,58,237,0.4)]"
             >
               {t.nav.bookCall}
@@ -234,10 +245,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div>
               <h3 className="text-white font-display font-semibold mb-4 tracking-wide">{t.footer.company}</h3>
               <ul className="space-y-3 text-sm">
-                <li><Link to="/about" className="hover:text-brand-400 transition-colors hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]">{t.nav.about}</Link></li>
-                <li><Link to="/services" className="hover:text-brand-400 transition-colors">{t.nav.services}</Link></li>
-                <li><Link to="/pricing" className="hover:text-brand-400 transition-colors">{t.nav.pricing}</Link></li>
-                <li><Link to="/contact" className="hover:text-brand-400 transition-colors">{t.nav.contact}</Link></li>
+                <li><Link to={getLocalizedPath('/about')} className="hover:text-brand-400 transition-colors hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]">{t.nav.about}</Link></li>
+                <li><Link to={getLocalizedPath('/services')} className="hover:text-brand-400 transition-colors">{t.nav.services}</Link></li>
+                <li><Link to={getLocalizedPath('/pricing')} className="hover:text-brand-400 transition-colors">{t.nav.pricing}</Link></li>
+                <li><Link to={getLocalizedPath('/contact')} className="hover:text-brand-400 transition-colors">{t.nav.contact}</Link></li>
               </ul>
             </div>
 
@@ -246,8 +257,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center gap-2"><Phone size={14} className="text-brand-500" /> +1 (919) 918-0505</li>
                 <li className="flex items-center gap-2 text-slate-300">support@cerrana.com</li>
-                <li><Link to="/privacy-policy" className="hover:text-brand-400 transition-colors">{t.footer.privacy}</Link></li>
-                <li><Link to="/terms-of-service" className="hover:text-brand-400 transition-colors">{t.footer.terms}</Link></li>
+                <li><Link to={getLocalizedPath('/privacy-policy')} className="hover:text-brand-400 transition-colors">{t.footer.privacy}</Link></li>
+                <li><Link to={getLocalizedPath('/terms-of-service')} className="hover:text-brand-400 transition-colors">{t.footer.terms}</Link></li>
               </ul>
             </div>
           </div>
@@ -261,7 +272,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       {/* Sticky Mobile CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-dark-900/90 backdrop-blur-xl border-t border-brand-500/30 p-4 z-50">
         <button 
-          onClick={() => navigate('/contact')}
+          onClick={() => navigate(getLocalizedPath('/contact'))}
           className="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3.5 rounded-xl shadow-[0_0_20px_rgba(124,58,237,0.4)] flex items-center justify-center gap-2 font-display tracking-wide uppercase"
         >
           {t.nav.bookCall} <ArrowRight size={18} />

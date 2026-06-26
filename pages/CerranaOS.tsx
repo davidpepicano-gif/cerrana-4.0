@@ -274,8 +274,8 @@ export const CerranaOS: React.FC = () => {
     return (
         <div className="bg-dark-950 min-h-screen text-slate-200">
             <SEO 
-                title="Cerrana OS | CRM y Agente de Ventas IA Todo en Uno" 
-                description="Cerrana OS centraliza tus leads, conversaciones, seguimiento y ventas en un solo sistema con IA. Para negocios B2C hispanos en EE. UU."
+                title={translations[language].seo.platform.title} 
+                description={translations[language].seo.platform.description}
                 schema={JSON.stringify({
                   "@context": "https://schema.org",
                   "@type": "BreadcrumbList",

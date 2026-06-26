@@ -170,8 +170,8 @@ export const Services: React.FC = () => {
   return (
     <div className="pb-24 md:pb-0 bg-dark-950 text-slate-200">
       <SEO 
-        title="Servicios | Implementación Done-For-You de Ventas con IA | Cerrana AI" 
-        description="Montamos, entrenamos y optimizamos tu agente de ventas con IA y tu CRM. Servicio done-for-you para negocios B2C que quieren más ventas."
+        title={translations[language].seo.services.title} 
+        description={translations[language].seo.services.description}
         schema={serviceSchema}
       />
 

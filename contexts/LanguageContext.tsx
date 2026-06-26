@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Language } from '../types';
 
 interface LanguageContextType {
@@ -8,41 +9,39 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const getBasePath = (pathname: string) => {
+  if (pathname.startsWith('/en')) {
+    return pathname.replace(/^\/en/, '') || '/';
+  }
+  if (pathname.startsWith('/es')) {
+    return pathname.replace(/^\/es/, '') || '/';
+  }
+  return pathname;
+};
+
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('es');
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    // 1. Check LocalStorage (Highest Priority - Explicit User Choice)
-    const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang === 'en' || savedLang === 'es') {
-      setLanguage(savedLang);
-      return;
-    }
-
-    // 2. Check Cookies (Secondary persistence)
-    const getCookie = (name: string) => {
-      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-      if (match) return match[2];
-      return null;
-    };
-    const cookieLang = getCookie('language') as Language;
-    if (cookieLang === 'en' || cookieLang === 'es') {
-      setLanguage(cookieLang);
-      return;
-    }
-
-    // 3. Auto-detect from Browser (Fallback)
-    const browserLang = navigator.language || (navigator.languages && navigator.languages[0]) || '';
-    if (browserLang.toLowerCase().startsWith('es')) {
-      setLanguage('es');
-    }
-  }, []);
+  // Derive language directly from the URL path
+  const language: Language = location.pathname.startsWith('/en') ? 'en' : 'es';
 
   const handleSetLanguage = (lang: Language) => {
-    setLanguage(lang);
-    localStorage.setItem('language', lang);
-    document.cookie = `language=${lang}; path=/; max-age=31536000`; // Persist for 1 year
+    const currentPath = location.pathname;
+    const basePath = getBasePath(currentPath);
+    
+    if (lang === 'en') {
+      navigate(`/en${basePath === '/' ? '' : basePath}${location.search}`);
+    } else {
+      navigate(`/es${basePath === '/' ? '' : basePath}${location.search}`);
+    }
   };
+
+  useEffect(() => {
+    // Sync with localStorage & cookie
+    localStorage.setItem('language', language);
+    document.cookie = `language=${language}; path=/; max-age=31536000`;
+  }, [language]);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
